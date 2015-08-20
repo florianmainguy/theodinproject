@@ -1,0 +1,180 @@
+/* Bannière en tête de page */
+
+.header {
+    height: 50px;
+}
+
+#gmail {
+    position:absolute;
+    right:210px;
+    top:22px;
+    color:#2F2F2F;
+    text-decoration:none;
+    font-family:Arial;
+    font-size:13px
+}
+
+#gmail:hover {
+    text-decoration:underline;
+}
+
+#images {
+    position:absolute;
+    right:150px;
+    top:22px;
+    color:#2F2F2F;
+    text-decoration:none;
+    font-family:Arial;
+    font-size:13px;
+}
+
+#images:hover {
+    text-decoration:underline;
+}
+
+#carré {
+    position: absolute;
+    height:20px; width:20px;
+    right: 110px;
+    top:21px;
+}
+
+#carré div {
+    float:left;
+    height:4px;width:4px;
+    background:#666;
+    margin:1px;
+}
+
+#carré:hover div{
+    background:#303030;
+} 
+
+#sign {
+    position: absolute;
+    right:25px;
+    top:16px;
+    background:#3A8CF1;
+    padding:7px 11px 7px 11px;
+    color:white;
+    font-family:Arial;
+    font-weight:bold;;
+    font-size:13px;
+    border:0;
+    border-radius:3px;
+    
+}
+
+input[type="submit"]:hover {
+    border: 1px solid #BFBFBF;
+    transition:.1s;
+}
+
+
+/* Milieu de page */
+
+.milieu {
+    text-align: -webkit-center;
+}
+
+.milieu-haut {
+    margin-top:50px;
+    height:200px;
+}
+
+#image {
+    padding-top:100px;
+}
+
+#uk {
+    position:relative;
+    top:-35px;
+    left:80px;
+    font-size:80%;
+    color:#666;
+}
+
+#barre input {
+    width:500px;
+    margin-bottom:10px;
+    Height:23px;
+    border:1px solid #DADADA;
+    border-radius:3px;
+    border-top-color:#C5C5C5;
+}
+
+#barre input:hover {
+    border: 1px solid #B5B5B5;
+    transition:.1s;
+}
+
+.search input {
+    display:inline;
+    background:#F5F5F5;
+    border:1px solid #E1E1E1;
+    border-radius:3px;
+    font-weight: bold;
+    font-family: Arial;
+    color:#444;
+    padding: 8px;
+    margin:5px;
+}
+
+
+
+/* Queue de page */
+
+#bas {
+    position:absolute;
+    bottom:0;left:0;
+    height:40px;width:100%;
+    background:#EEEEEE;
+    border-top:1px solid #E1E1E1;
+}
+
+#bas a {
+    font-family:Arial;
+    font-size:13px;
+    text-decoration: none;
+    color:#656565;
+}
+
+#bas a:hover{
+    text-decoration: underline;
+}
+
+#advertising {
+    position:absolute;
+    top:12px;
+    left:30px;
+}
+
+#business {
+    position:absolute;
+    top:12px;
+    left:125px;
+}
+
+#about {
+    position:absolute;
+    top:12px;
+    left:208px;
+}
+
+#privacy {
+    position:absolute;
+    top:12px;
+    right:175px;
+}
+
+#terms {
+    position:absolute;
+    top:12px;
+    right:108px;
+}
+
+#settings {
+    position:absolute;
+    top:12px;
+    right:30px;
+}
