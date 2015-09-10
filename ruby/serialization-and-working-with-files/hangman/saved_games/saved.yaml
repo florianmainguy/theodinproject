@@ -1,0 +1,25 @@
+--- !ruby/object:Hangman
+word_to_guess:
+- c
+- o
+- n
+- v
+- e
+- c
+- t
+- i
+- o
+- n
+word_uncomplete:
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+- "-"
+letters_played: []
+turn: 1
