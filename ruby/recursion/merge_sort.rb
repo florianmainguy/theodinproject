@@ -1,4 +1,4 @@
-# Recursive method to merge sort an array
+# Recursive method to "merge sort" an array
 
 def merge_sort(array)
   # base case
