@@ -12,7 +12,7 @@ class Knight
 	# Probabilities of displacement for the knight's next move
 	def next_move(start)
   	move = [[start[0] + 2, start[1] - 1], [start[0] + 2, start[1] + 1],
-  					[start[0] - 2, start[1] - 1], [start[0] - 2, start[1] + 1],
+            [start[0] - 2, start[1] - 1], [start[0] - 2, start[1] + 1],
   					[start[0] + 1, start[1] - 2], [start[0] + 1, start[1] + 2],
   				  [start[0] - 1, start[1] - 2], [start[0] - 1, start[1] + 2]]
 	end
