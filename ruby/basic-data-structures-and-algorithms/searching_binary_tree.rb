@@ -1,3 +1,6 @@
+# Builds a binary tree and creates two algorithms:
+# breadth-first-search and depth-first-search
+
 class Node
   attr_accessor :value, :left, :right
 

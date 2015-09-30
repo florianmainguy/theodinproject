@@ -1,5 +1,5 @@
-# Build a function knight_moves that shows the simplest possible way for a chess board
-# knight to get from one square to another. Output all squares the knight will stop on
+# Builds a function knight_moves that shows the simplest possible way for a chess board
+# knight to get from one square to another. Outputs all squares the knight will stop on
 # along the way.
 
 class Node
