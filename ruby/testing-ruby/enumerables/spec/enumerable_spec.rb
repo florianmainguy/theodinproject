@@ -4,44 +4,49 @@ describe Enumerable do
 
 	let(:array) {[1, 2, 3]}
 
-	before :all do
+	before :each do
 		@test = []
 	end
 
 	describe '#my_each' do
-
 		it 'applies a block to each element of an array' do
 			array.my_each { |element| @test << element }
 			@test.should eql array
 		end
 
+		it 'doesn t override an array' do
+			array.my_each { |element| element * 4 }
+			array.should eql [1, 2, 3]
+		end
 	end
 
+	describe 'my_each_with_index' do
+		it 'applies a block to each element of an array' do
+			array.my_each_with_index { |element, index| @test << element }
+			@test.should eql array
+		end
+
+		it 'passes the index of each element' do
+			array.my_each_with_index { |element, index| @test << element if index%2 == 0 }
+			@test.should eql [1, 3]
+		end
+	end
+
+	describe 'my_select' do
+		it 'selects some elements of an array' do
+			@test = array.my_select { |element| element%2 == 0 }
+			@test.should eql [2]
+		end
+
+		it 'returns an empty array if no elements match' do
+			@test = array.my_select { |element| element%5 == 0 }
+			@test.should eql []
+		end
+	end
 end
 
 =begin
-module Enumerable
-	def my_each
-		for i in 0..(self.size-1)
-			yield(self[i])
-		end
-		self
-	end
 
-	def my_each_with_index
-		for i in 0..(self.size-1)
-			yield(self[i],i)
-		end
-		self
-	end
-
-	def my_select
-		arr=[]
-		self.my_each do |n|
-			arr << n if yield(n)
-		end
-		arr
-	end
 
 	def my_all? 
 		bool=true
