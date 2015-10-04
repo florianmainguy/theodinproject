@@ -45,20 +45,29 @@ module Enumerable
 		bool
 	end
 
-	def my_count(arg)
-		count=1
-		self.my_each do |n|
-			if arg != n
-				next	
-			elsif !yield(n)
-				next	
+	def my_count(arg = nil)
+		count=0
+		if block_given?
+			self.my_each do |n|
+				if yield(n)
+					count += 1
+				end
 			end
-			count += 1
+		elsif arg
+			self.my_each do |n|
+				if arg == n
+					count += 1
+				end
+			end
+		else
+			self.my_each do |n|
+				count += 1
+			end
 		end
 		count
 	end
 
-	def my_map(proc)
+	def my_map(proc = nil)
 		arr=[]
 		if proc && block_given?
 			self.my_each {|n| arr << proc.call(yield(n))}
@@ -70,10 +79,16 @@ module Enumerable
 		arr
 	end
 
-	def my_inject(memo)
-		memo ||= self[0]	
-		self.my_each do |n|
-			memo=yield(memo,n)
+	def my_inject(memo = nil)
+		if memo
+			self.my_each do |n|
+				memo=yield(memo,n)
+			end
+		else
+			memo = self[0]	
+			self[1..-1].my_each do |n|
+				memo=yield(memo,n)
+			end
 		end
 		memo
 	end
