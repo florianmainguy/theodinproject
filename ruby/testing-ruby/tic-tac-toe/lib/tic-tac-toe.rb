@@ -24,14 +24,14 @@ class TicTacToe
 
   # Displays Tic Tac Toe board
   def display
-  	puts "     A   B   C"
+    puts "     A   B   C"
     puts "   -------------"
     puts " 1 | " + board(:a1) + " | " + board(:b1) + " | " + board(:c1) + " |"
-  	puts "   -------------"
-  	puts " 2 | " + board(:a2) + " | " + board(:b2) + " | " + board(:c2) + " |"
-  	puts "   -------------"
-  	puts " 3 | " + board(:a3) + " | " + board(:b3) + " | " + board(:c3) + " |"
-  	puts "   -------------"
+    puts "   -------------"
+    puts " 2 | " + board(:a2) + " | " + board(:b2) + " | " + board(:c2) + " |"
+    puts "   -------------"
+    puts " 3 | " + board(:a3) + " | " + board(:b3) + " | " + board(:c3) + " |"
+    puts "   -------------"
   end  
 
   # Asks the player to select a case and returns it
