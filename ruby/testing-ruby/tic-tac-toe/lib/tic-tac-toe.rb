@@ -19,7 +19,14 @@ class TicTacToe
   		         :c1 => " ", :c2 => " ", :c3 => " " }
   end
 
+  # Isolated ;ethod for TDD
+  # Returns @table
+  def get_board
+    @table
+  end
+
   def display
+    @table = get_board
   	puts "     A   B   C"
     puts "   -------------"
     puts " 1 | " + @table[:a1] + " | " + @table[:b1] + " | " + @table[:c1] + " |"
@@ -30,36 +37,44 @@ class TicTacToe
   	puts "   -------------"
   end  
 
-  def select
-    gets.chomp.downcase
+  # Isolated method for TDD
+  # Returns bool
+  def case_ok(bool = false)
+    bool
+  end
+
+  def handle_selection(input)
+    cases = ["a1","a2","a3","b1","b2","b3","c1","c2","c3"]
+
+    if !cases.include?(case_selected)
+      puts "Sorry I didn't understand. Which case ? (ex: a2, c3, b1)"
+    elsif @table[case_selected.to_sym] != " "
+      puts "Case already played ! Select another one:"
+    else
+      return true
+    end
+    return false
   end
 
   def case_chosen(player)
-  	cases = ["a1","a2","a3","b1","b2","b3","c1","c2","c3"]
-  	case_ok = false
+    @table = get_board
+  	
+  	bool = case_ok
 
     puts"You turn, " + player.name.capitalize + ". Select a case:"
-    while(case_ok == false)
-      case_selected = select
-      if !cases.include?(case_selected)
-        puts "Sorry I didn't understand. Which case ? (ex: a2, c3, b1)"
-        next
-      elsif @table[case_selected.to_sym] != " "
-      	puts case_selected.to_s.inspect
-        puts "Case already played ! Select another one:"
-        next
-      else
-      	case_ok = true
-      end
+    loop do
+      case_selected = gets.chomp.downcase
+      break if handle_selection(case_selected)
     end
-    case_selected
   end
 
   def fill_case(case_to_fill, player_symbol)
-  	 @table[case_to_fill.to_sym] = player_symbol
+    @table = get_board
+  	@table[case_to_fill.to_sym] = player_symbol
   end
 
   def victory?(sign)
+    @table = get_board
   	result = false
     win = [[:a1,:a2,:a3],[:b1,:b2,:b3],[:c1,:c2,:c3],[:a1,:b1,:c1],
            [:a2,:b2,:c2],[:a3,:b3,:c3],[:a1,:b2,:c3],[:a3,:b2,:c1]]
