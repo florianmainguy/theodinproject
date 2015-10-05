@@ -1,4 +1,10 @@
 # Tic Tac Toe
+#
+# This program is the first version I wrote. I improved it after doing the Rspec
+# project a bit further in the curriculum.
+#
+# I decided to leave this version like this, with its good and bad choices, 
+# as an example for other students.
 
 class Player
   attr_reader :name
@@ -30,17 +36,13 @@ class TicTacToe
   	puts "   -------------"
   end  
 
-  def select
-    gets.chomp.downcase
-  end
-
   def case_chosen(player)
   	cases = ["a1","a2","a3","b1","b2","b3","c1","c2","c3"]
   	case_ok = false
 
     puts"You turn, " + player.name.capitalize + ". Select a case:"
     while(case_ok == false)
-      case_selected = select
+      case_selected = gets.chomp.downcase
       if !cases.include?(case_selected)
         puts "Sorry I didn't understand. Which case ? (ex: a2, c3, b1)"
         next
@@ -98,5 +100,5 @@ class TicTacToe
   end
 end
 
-#game = TicTacToe.new
-#game.start
+game = TicTacToe.new
+game.start
