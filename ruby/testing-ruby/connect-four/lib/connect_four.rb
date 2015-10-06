@@ -20,6 +20,13 @@ class CellNode
   end
 end
 
+class Board
+  def initialize
+  end
+
+  def
+end
+
 class ConnectFour
 
 end

@@ -44,3 +44,11 @@ describe CellNode do
     end
   end
 end
+
+
+describe Board do
+  describe '#initialize' do
+    it ''
+
+  end
+end
