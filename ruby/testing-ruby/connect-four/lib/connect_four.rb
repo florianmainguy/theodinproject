@@ -12,8 +12,12 @@ class Player
   end
 end
 
-class Cell
+class CellNode
+  attr_accessor :color, :left, :up, :right, :down, :diag_lu, :diag_ld, :diag_ru, :diag_rd
 
+  def initialize(color = "")
+    @color = color
+  end
 end
 
 class ConnectFour
