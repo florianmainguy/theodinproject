@@ -42,13 +42,23 @@ describe CellNode do
       cell = CellNode.new("red")
       expect(cell.color).to eq "red"
     end
+
+    ### attr_successor gets###
+    context "#left" do
+      it "writes the" do
+        input = { color: "red", name: "Flo" }
+        player = Player.new(input)
+        expect(player.color).to eq "red"
+      end
+    end
   end
 end
 
 
 describe Board do
   describe '#initialize' do
-    it ''
-
+    it "initializes the board" do
+      expect { Board.new }.to_not raise_error
+    end
   end
 end

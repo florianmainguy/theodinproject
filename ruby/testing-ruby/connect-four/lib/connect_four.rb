@@ -21,10 +21,15 @@ class CellNode
 end
 
 class Board
+  attr_reader :grid
+
   def initialize
+    @grid = default_grid
   end
 
-  def
+  def default_grid
+  end
+
 end
 
 class ConnectFour
