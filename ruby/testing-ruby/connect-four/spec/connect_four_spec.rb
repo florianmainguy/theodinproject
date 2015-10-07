@@ -78,31 +78,31 @@ describe CellNode do
     end
   end
 
-  context "#diag_lu" do
+  context "#lu" do
     it "writes and returns 'diag_lu'" do
-      @cell.diag_lu = 'diag_lu'
-      expect(@cell.diag_lu).to eq "diag_lu"
+      @cell.lu = 'diag_lu'
+      expect(@cell.lu).to eq "diag_lu"
     end
   end
 
-  context "#diag_ld" do
+  context "#ld" do
     it "writes and returns 'diag_ld'" do
-      @cell.diag_ld = 'diag_ld'
-      expect(@cell.diag_ld).to eq "diag_ld"
+      @cell.ld = 'diag_ld'
+      expect(@cell.ld).to eq "diag_ld"
     end
   end
 
-  context "#diag_ru" do
+  context "#ru" do
     it "writes and returns 'diag_ru'" do
-      @cell.diag_ru = 'diag_ru'
-      expect(@cell.diag_ru).to eq "diag_ru"
+      @cell.ru = 'diag_ru'
+      expect(@cell.ru).to eq "diag_ru"
     end
   end
 
-  context "#diag_rd" do
+  context "#rd" do
     it "writes and returns 'diag_rd'" do
-      @cell.diag_rd = 'diag_rd'
-      expect(@cell.diag_rd).to eq "diag_rd"
+      @cell.rd = 'diag_rd'
+      expect(@cell.rd).to eq "diag_rd"
     end
   end
 end
@@ -110,6 +110,7 @@ end
 
 
 describe Board do
+
   before :each do
     @board = Board.new
   end
@@ -120,12 +121,12 @@ describe Board do
     end
 
     it "sets the grid with 7 columns" do
-      expect(@board.grid).to have(7).things
+      expect(@board.grid.size).to eq 7
     end
 
     it "creates 6 rows in each column" do
       @board.grid.each do |columns|
-        expect(columns).to have(6).things
+        expect(columns.size).to eq 6
       end
     end
   end
@@ -138,31 +139,25 @@ describe Board do
 
   describe 'get_cell' do
     it "returns the cell based on the (x, y) coordinate" do
-      grid = [['', '', '', '', '', ''], ['', '', 'something', '', '', ''], 
-              ['', '', '', '', '', ''], ['', '', '', '', '', ''], ['', '', '', '', '', ''],
-              ['', '', '', '', '', ''], ['', '', '', '', '', ''], ['', '', '', '', '', '']]
+      grid = [[CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new]]
       board = Board.new(grid)
-      expect(board.get_cell(1, 2)).to eq "something"
+      expect(board.get_cell(1, 1).color).to eq "X"
     end
   end
 
   describe 'set_cell' do
     it "updates the color of the cell object at (x, y) coordinate" do
-      Cat = Struct.new(:color)
-      grid = [[Cat.new('orange'), '', '', '', '', ''], ['', '', '', '', '', ''], 
-              ['', '', '', '', '', ''], ['', '', '', '', '', ''], ['', '', '', '', '', ''],
-              ['', '', '', '', '', ''], ['', '', '', '', '', ''], ['', '', '', '', '', '']]
-      board = Board.new(grid)
-      board.set_cell(0, 0, "green")
-      expect(board.get_cell(0, 0).color).to eq "green"
+      @board.set_cell(0, 0, "green")
+      expect(@board.get_cell(0, 0).color).to eq "green"
     end
   end
 
   describe '#game_over' do
-    #TestCell = Struct.new(:color)
-    #let(:x) { TestCell.new('X') }
-    #let(:y) { TestCell.new('Y') }
-    #let(:o) { TestCell.new }
     let(:x) { CellNode.new('X') }
     let(:y) { CellNode.new('Y') }
     let(:o) { CellNode.new }
@@ -181,35 +176,55 @@ describe Board do
     it "returns false if winner? is false and draw? is false" do
       @board.stub(:winner?) { false }
       @board.stub(:draw?) { false }
-      expect(@board.game_over).to be_false
+      expect(@board.game_over).to be_falsey
     end
 
+   
     it "returns :draw when all spaces on the board are taken" do
-      grid = [[x, x, y, y, x, x], [y, y, x, x, y, y], [x, x, y, y, x, x], [y, y, x, x, y, y],
-              [x, x, y, y, x, x], [y, y, x, x, y, y], [x, x, y, y, x, x]]
+      grid = [[CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X')],
+              [CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y')],
+              [CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X')],
+              [CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y')],
+              [CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X')],
+              [CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y')]]
       board = Board.new(grid)
       board.last_cell_played = board.get_cell(1, 2)
       expect(board.game_over).to eq :draw
     end
 
     it "returns :winner when there is 4 cells of the same color horizontaly" do
-      grid = [[o, o, o, o, o, o], [o, x, x, x, x, o], [o, o, o, o, o, o], [o, o, o, o, o, o],
-              [o, o, o, o, o, o], [o, o, o, o, o, o], [o, o, o, o, o, o]]
+      grid = [[CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new]]
       board = Board.new(grid)
+      board.last_cell_played = board.get_cell(1, 1)
       expect(board.game_over).to eq :winner
     end
  
     it "returns :winner when there is 4 cells of the same color verticaly" do
-      grid = [[o, o, o, o, o, o], [o, y, o, o, o, o], [o, y, o, o, o, o], [o, y, o, o, o, o],
-              [o, y, o, o, o, o], [o, o, o, o, o, o], [o, o, o, o, o, o]]
+      grid = [[CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new('X'), CellNode.new('X'), CellNode.new('X'), CellNode.new('X'), CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new]]
       board = Board.new(grid)
+      board.last_cell_played = board.get_cell(1, 1)
       expect(board.game_over).to eq :winner
     end
  
     it "returns :winner when there is 4 cells of the same color diagonally" do
-      grid = [[o, x, o, o, o, o], [o, o, x, o, o, o], [o, o, o, x, o, o], [o, o, o, o, x, o],
-              [o, o, o, o, o, o], [o, o, o, o, o, o], [o, o, o, o, o, o]]
+      grid = [[CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new('X'), CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new]]
       board = Board.new(grid)
+      board.last_cell_played = board.get_cell(1, 1)
       expect(board.game_over).to eq :winner
     end
   end

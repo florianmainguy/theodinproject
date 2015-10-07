@@ -17,7 +17,7 @@ end
 
 
 class CellNode
-  attr_accessor :color, :left, :up, :right, :down, :diag_lu, :diag_ld, :diag_ru, :diag_rd
+  attr_accessor :color, :left, :up, :right, :down, :lu, :ld, :ru, :rd
 
   def initialize(color = "")
     @color = color
@@ -32,7 +32,7 @@ class Board
 
   def initialize(grid = nil)
     @grid = grid || default_grid
-    connect_cells #if grid.nil?
+    connect_cells if @grid.is_a?(Array)
   end
 
   # Returns cell at coordinate (x, y)
@@ -63,16 +63,16 @@ class Board
 
   # Links cells between them
   def connect_cells
-    @grid.each_with_index do |columns, columns_index|
-      columns.each_with_index do |cell, cell_index|
-        cell.left    = @grid[columns_index - 1][cell_index]     || nil if @grid[columns_index - 1]
-        cell.up      = @grid[columns_index][cell_index + 1]     || nil if @grid[columns_index]
-        cell.right   = @grid[columns_index + 1][cell_index]     || nil if @grid[columns_index + 1]
-        cell.down    = @grid[columns_index][cell_index - 1]     || nil if @grid[columns_index]
-        cell.diag_lu = @grid[columns_index - 1][cell_index + 1] || nil if @grid[columns_index - 1]
-        cell.diag_ld = @grid[columns_index - 1][cell_index - 1] || nil if @grid[columns_index - 1]
-        cell.diag_ru = @grid[columns_index + 1][cell_index + 1] || nil if @grid[columns_index + 1]
-        cell.diag_rd = @grid[columns_index + 1][cell_index - 1] || nil if @grid[columns_index + 1]
+    @grid.each_with_index do |columns, col_i|
+      columns.each_with_index do |cell, cell_i|
+        cell.left  = @grid[col_i-1][cell_i]   if col_i != 0 
+        cell.up    = @grid[col_i][cell_i+1]   if cell_i + 1 < columns.length
+        cell.right = @grid[col_i+1][cell_i]   if col_i + 1 < @grid.length
+        cell.down  = @grid[col_i][cell_i-1]   if cell_i != 0
+        cell.lu    = @grid[col_i-1][cell_i+1] if col_i != 0 && cell_i + 1 < columns.length
+        cell.ld    = @grid[col_i-1][cell_i-1] if col_i != 0 && cell_i != 0
+        cell.ru    = @grid[col_i+1][cell_i+1] if col_i + 1 < @grid.length && cell_i + 1 < columns.length
+        cell.rd    = @grid[col_i+1][cell_i-1] if col_i + 1 < @grid.length && cell_i != 0
       end
     end
   end
@@ -112,7 +112,6 @@ class Board
     cell = last_cell_played
     count = 1
     while cell.down && cell.down.color == cell.color
-      ###BUGBUGBUGBUG puts "youhou"
       cell = cell.down
     end
     while cell.up && cell.up.color == cell.color
@@ -127,11 +126,11 @@ class Board
   def check_diagonal1
     cell = last_cell_played
     count = 1
-    while cell.diag_ld && cell.diag_ld.color == cell.color
-      cell = cell.diag_ld
+    while cell.ld && cell.ld.color == cell.color
+      cell = cell.ld
     end
-    while cell.diag_ru && cell.diag_ru.color == cell.color
-      cell = cell.diag_ru
+    while cell.ru && cell.ru.color == cell.color
+      cell = cell.ru
       count += 1
     end
     return true if count >= 4
@@ -142,11 +141,11 @@ class Board
   def check_diagonal2
     cell = last_cell_played
     count = 1
-    while cell.diag_rd && cell.diag_rd.color == cell.color
-      cell = cell.diag_rd
+    while cell.rd && cell.rd.color == cell.color
+      cell = cell.rd
     end
-    while cell.diag_lu && cell.diag_lu.color == cell.color
-      cell = cell.diag_lu
+    while cell.lu && cell.lu.color == cell.color
+      cell = cell.lu
       count += 1
     end
     return true if count >= 4
