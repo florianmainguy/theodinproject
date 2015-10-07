@@ -33,17 +33,18 @@ end
 
 
 
+
+
 describe CellNode do
   before :each do
     @cell = CellNode.new
   end
 
   describe '#initialize' do
-    it "is initialized with a color of '' by default" do
-      expect(@cell.color).to eq ''
+    it "is initialized with a color of ' ' by default" do
+      expect(@cell.color).to eq ' '
     end
 
-    ### usefull ????? ###
     it "can be initialized with a color of 'red'" do
       cell = CellNode.new("red")
       expect(cell.color).to eq "red"
@@ -109,6 +110,8 @@ end
 
 
 
+
+
 describe Board do
 
   before :each do
@@ -141,6 +144,7 @@ describe Board do
     it "returns the cell based on the (x, y) coordinate" do
       grid = [[CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
@@ -186,7 +190,8 @@ describe Board do
               [CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X')],
               [CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y')],
               [CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X')],
-              [CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y')]]
+              [CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y')],
+              [CellNode.new('X'), CellNode.new('X'), CellNode.new('Y'), CellNode.new('Y'), CellNode.new('X'), CellNode.new('X')]]
       board = Board.new(grid)
       board.last_cell_played = board.get_cell(1, 2)
       expect(board.game_over).to eq :draw
@@ -198,6 +203,7 @@ describe Board do
               [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new, CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new]]
       board = Board.new(grid)
       board.last_cell_played = board.get_cell(1, 1)
@@ -207,6 +213,7 @@ describe Board do
     it "returns :winner when there is 4 cells of the same color verticaly" do
       grid = [[CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new('X'), CellNode.new('X'), CellNode.new('X'), CellNode.new('X'), CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
@@ -222,10 +229,81 @@ describe Board do
               [CellNode.new, CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new('X'), CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new('X'), CellNode.new],
+              [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new],
               [CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new, CellNode.new]]
       board = Board.new(grid)
       board.last_cell_played = board.get_cell(1, 1)
       expect(board.game_over).to eq :winner
+    end
+  end
+end
+
+
+
+
+
+describe Game do
+ 
+  let (:flo) { Player.new({color: "X", name: "flo"}) }
+  let (:ginny) { Player.new({color: "Y", name: "ginny"}) }
+ 
+  context "#initialize" do
+    it "randomly selects a current_player" do
+      Array.any_instance.stub(:shuffle) { [ginny, flo] }
+      game = Game.new([flo, ginny])
+      expect(game.current_player).to eq ginny
+    end
+ 
+    it "randomly selects an other player" do
+      Array.any_instance.stub(:shuffle) { [ginny, flo] }
+      game = Game.new([flo, ginny])
+      expect(game.other_player).to eq flo
+    end
+  end
+
+  context "#switch_players" do
+    it "will set @current_player to @other_player" do
+      game = Game.new([flo, ginny])
+      other_player = game.other_player
+      game.switch_players
+      expect(game.current_player).to eq other_player
+    end
+ 
+    it "will set @other_player to @current_player" do
+      game = Game.new([flo, ginny])
+      current_player = game.current_player
+      game.switch_players
+      expect(game.other_player).to eq current_player
+    end
+  end
+
+  describe "#select_case" do
+    it "asks the player to select a case and returns it" do
+      game = Game.new([flo, ginny])
+      game.stub(:current_player) { flo }
+      game.stub(:gets) { 'B3' }
+      game.stub(:handle_selection) { true }
+      expect(game.select_case).to eq 'B3'
+    end
+  end
+
+  describe '#handle_selection' do
+    it 'returns true if the selected case is correct' do
+      game = Game.new([flo, ginny])
+      game.stub(:human_move_to_coordinate) { [2, 1] }
+      expect(game.handle_selection('C2')).to be_truthy
+    end
+
+    it 'returns false if the input is wrong' do
+      game = Game.new([flo, ginny])
+      expect(game.handle_selection('potato')).to be_falsy
+    end
+
+    it 'returns false if the selected case is already taken' do
+      game = Game.new([flo, ginny])
+      game.board.set_cell(2, 1, 'X')
+      game.stub(:human_move_to_coordinate) { [2, 1] }
+      expect(game.handle_selection('C2')).to be_falsy
     end
   end
 end
