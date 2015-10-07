@@ -2,8 +2,12 @@
 #
 # The objective of the game is to connect four of one's own discs of the same color
 # next to each other vertically, horizontally, or diagonally.
-
-
+#
+# Points to improve:
+# - You have to select precisely in which case you will place your disc. It would be
+#   more clever to select only the column, and the disc will go on the first available
+#   space from the bottom.
+# - Symplify methods to get more consice methods and less interaction with other classes.
 
 class Player
   attr_reader :name, :color
@@ -15,7 +19,6 @@ class Player
 end
 
 
-
 class CellNode
   attr_accessor :color, :left, :up, :right, :down, :lu, :ld, :ru, :rd
 
@@ -23,7 +26,6 @@ class CellNode
     @color = color
   end
 end
-
 
 
 class Board
@@ -172,6 +174,7 @@ class Board
   end
 end
 
+
 class Game
   attr_reader :players, :board, :current_player, :other_player
 
@@ -187,8 +190,9 @@ class Game
 
   # Asks the player to select a case and returns it
   def select_case
-    puts"You turn, " + @current_player.name + ". Select a case:"
+    puts"You turn, " + @current_player.name + "."
     loop do
+      puts "Select a case:"
       case_selected = gets.chomp.upcase
       return case_selected if handle_selection(case_selected)
     end
@@ -206,12 +210,21 @@ class Game
 
     if !cases.include?(input)
       puts "Sorry I didn't understand. Which case ? (ex: a2, c3, b1)"
-    elsif board.get_cell(to_coordinate(input)[0], to_coordinate(input)[1]).color != ' '
-      puts "Case already played ! Select another one:"
+      return false
     else
-      return true
+      coor = to_coordinate(input)
+      x, y = coor[0], coor[1]
+      cell = board.get_cell(x, y)
+
+      if cell.color != ' '
+        puts "Case already played ! Select another one:"
+        return false
+      elsif x != 0 && cell.down && cell.down.color == ' '
+        puts "You can't play there. It's gravity, sorry."
+        return false
+      end
     end
-    return false
+    return true
   end
 
   # Launches the real game!
@@ -225,8 +238,8 @@ class Game
       board.set_cell(x, y, current_player.color)
       result = board.game_over
       if result == :winner
-        puts "Congratulation #{current_player.name} you won!"
         board.display
+        puts "Congratulation #{current_player.name} you won!"
         return
       elsif result == :draw
         puts "No winners. Draw."
@@ -254,7 +267,7 @@ class Game
   end
 end
 
-flo = Player.new({color: "X", name: "flo"})
-ginny = Player.new({color: "Y", name: "ginny"})
-game = Game.new([flo, ginny])
-game.play
+#flo = Player.new({color: "X", name: "flo"})
+#ginny = Player.new({color: "O", name: "ginny"})
+#game = Game.new([flo, ginny])
+#game.play

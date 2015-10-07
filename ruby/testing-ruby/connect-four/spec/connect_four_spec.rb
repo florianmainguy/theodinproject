@@ -33,8 +33,6 @@ end
 
 
 
-
-
 describe CellNode do
   before :each do
     @cell = CellNode.new
@@ -110,8 +108,6 @@ end
 
 
 
-
-
 describe Board do
 
   before :each do
@@ -180,7 +176,7 @@ describe Board do
     it "returns false if winner? is false and draw? is false" do
       @board.stub(:winner?) { false }
       @board.stub(:draw?) { false }
-      expect(@board.game_over).to be_falsey
+      expect(@board.game_over).to eq false
     end
 
    
@@ -240,12 +236,10 @@ end
 
 
 
-
-
 describe Game do
  
   let (:flo) { Player.new({color: "X", name: "flo"}) }
-  let (:ginny) { Player.new({color: "Y", name: "ginny"}) }
+  let (:ginny) { Player.new({color: "O", name: "ginny"}) }
  
   context "#initialize" do
     it "randomly selects a current_player" do
@@ -290,20 +284,18 @@ describe Game do
   describe '#handle_selection' do
     it 'returns true if the selected case is correct' do
       game = Game.new([flo, ginny])
-      game.stub(:human_move_to_coordinate) { [2, 1] }
-      expect(game.handle_selection('C2')).to be_truthy
+      expect(game.handle_selection('C1')).to eq true
     end
 
     it 'returns false if the input is wrong' do
       game = Game.new([flo, ginny])
-      expect(game.handle_selection('potato')).to be_falsy
+      expect(game.handle_selection('potato')).to eq false
     end
 
     it 'returns false if the selected case is already taken' do
       game = Game.new([flo, ginny])
       game.board.set_cell(2, 1, 'X')
-      game.stub(:human_move_to_coordinate) { [2, 1] }
-      expect(game.handle_selection('C2')).to be_falsy
+      expect(game.handle_selection('C2')).to eq false
     end
   end
 end
