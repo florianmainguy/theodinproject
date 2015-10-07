@@ -1,7 +1,5 @@
 require './lib/connect_four.rb'
 
-
-
 describe Player do
   describe '#initialize' do
     it 'raises an error if called without argument' do
@@ -30,7 +28,6 @@ describe Player do
     end
   end
 end
-
 
 
 describe CellNode do
@@ -105,7 +102,6 @@ describe CellNode do
     end
   end
 end
-
 
 
 describe Board do
@@ -233,7 +229,6 @@ describe Board do
     end
   end
 end
-
 
 
 describe Game do
