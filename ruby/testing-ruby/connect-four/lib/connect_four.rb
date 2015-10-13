@@ -267,7 +267,7 @@ class Game
   end
 end
 
-#flo = Player.new({color: "X", name: "flo"})
-#ginny = Player.new({color: "O", name: "ginny"})
-#game = Game.new([flo, ginny])
-#game.play
+flo = Player.new({color: "X", name: "flo"})
+ginny = Player.new({color: "O", name: "ginny"})
+game = Game.new([flo, ginny])
+game.play
