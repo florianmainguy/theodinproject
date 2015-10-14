@@ -60,5 +60,6 @@ class Board
   # Fill the case given by the piece given
   def set_case(case_selected, piece)
     grid[case_selected[0]][case_selected[1]] = piece
+    piece.location = case_selected
   end
 end

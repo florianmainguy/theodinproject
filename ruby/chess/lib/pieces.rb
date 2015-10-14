@@ -19,11 +19,11 @@ class King < Pieces
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[x-1, y], [x-1, y+1]...]
-    # fill all possible moves
-    # each
-    # si dans le tableau, ajouter a array
+    moves = [[x-1, y], [x-1, y+1], [x, y+1], [x+1, y+1],
+             [x+1, y], [x+1, y-1], [x, y-1], [x-1, y-1]]
 
+    moves.delete_if { |coord| coord[0] < 0 || coord[0] > 7 ||
+                              coord[1] < 0 || coord[1] > 7 }
     moves
   end
 end
@@ -33,6 +33,17 @@ class Queen < Pieces
     @color = color
     @location = location
     @color == 'white' ? @unicode = "\u2655" : @unicode = "\u265B"
+  end
+
+  def possible_moves
+    x = location[0]
+    y = location[1]
+    moves = [[x-1, y], [x-1, y+1], [x, y+1], [x+1, y+1],
+             [x+1, y], [x+1, y-1], [x, y-1], [x-1, y-1]]
+
+    moves.delete_if { |coord| coord[0] < 0 || coord[0] > 7 ||
+                              coord[1] < 0 || coord[1] > 7 }
+    moves
   end
 end
 

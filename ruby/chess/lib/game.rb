@@ -45,6 +45,10 @@ class Game
     puts "Where do you want to move it? 'C' to select another piece."
     case_to = select_case
     break if case_to == 'C'
+
+    ### def move_is_possible?
+    ###   piece == step or slide ?
+    ###   
     if piece.possible_moves.include?(case_to)
       board.set_case(case_to, piece)
     else
