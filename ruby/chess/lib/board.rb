@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # Board
 
 require_relative 'pieces.rb'
@@ -53,4 +51,6 @@ class Board
     end
     puts "     A    B    C    D    E    F    G    H"
   end
+
+  
 end
