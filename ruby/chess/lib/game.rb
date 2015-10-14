@@ -10,6 +10,7 @@ class Game
   # Launch chess game
   def start
     welcome_players
+    board.display
     until victory || draw
       next_turn
     end
@@ -29,24 +30,47 @@ class Game
 
   # Play next player's turn
   def next_turn
+    puts "#{current_player.name}, your turn. Select a piece:"
+    case_from = select_case
+    piece = board.piece_of(case_from)
+    if !piece
+      puts "There is no piece on this case. Start again."
+      break
+    end
+    if piece.color != current_player.color
+      puts "This is not your piece! Start again."
+      break
+    end
+    
+    puts "Where do you want to move it? 'C' to select another piece."
+    case_to = select_case
+    break if case_to == 'C'
+    if piece.possible_moves.include?(case_to)
+      board.set_case(case_to, piece)
+    else
+      puts "You can't move your piece here. Start again."
+      break
+    end
+    
     board.display
-    puts "#{current_player.name}, your turn. Select a piece: (ex: e4)"
-    case_selected
-    
-    puts "Where do you want to move it? 'O' to select another piece."
-    
 
+    temp = current_player
+    current_player = other_player
+    other_player = temp
   end
 
   # Select a case from the player
-  def case_selected
-    possibilities = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'a8']
-    selection = gets.chomp.downcase
-
+  def select_case
+    selection = mapping(gets.chomp.downcase)
+    unless selection
+      puts "Sorry wrong input. Try again: (ex: e4)"
+      selection = select_case
+    end
+    return selection
   end
 
   # Map the selected case to the actual board case
-  def mapping
+  def mapping(input)
     mapping = {
       'a1'=>[0,0], 'a2'=>[0,1], 'a3'=>[0,2], 'a4'=>[0,3], 'a5'=>[0,4], 'a6'=>[0,5],
       'a7'=>[0,6], 'a8'=>[0,7],
@@ -63,9 +87,10 @@ class Game
       'g1'=>[6,0], 'g2'=>[6,1], 'g3'=>[6,2], 'g4'=>[6,3], 'g5'=>[6,4], 'g6'=>[6,5],
       'g7'=>[6,6], 'g8'=>[6,7],
       'h1'=>[7,0], 'h2'=>[7,1], 'h3'=>[7,2], 'h4'=>[7,3], 'h5'=>[7,4], 'h6'=>[7,5],
-      'h7'=>[7,6], 'h8'=>[7,7]
+      'h7'=>[7,6], 'h8'=>[7,7],
+      'C' => 'C'
     }
-    mapping[human_move]
+    mapping[input]
   end
 
   # Return true if one player won

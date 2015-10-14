@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-#
 # Chess
 #
 # Player vs Player
