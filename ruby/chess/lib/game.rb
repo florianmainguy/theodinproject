@@ -177,13 +177,27 @@ class Game
       do
         next_case = [coord[0], coord[1]]
         break if offboard(next_case)
-
-        ### suite ###
-          return true if next_case == case_to
-        next if offboard(cell)
-        if board.get_case(cell)
+        next if empty?(next_case)
+        piece = board.get_case(next_case)
+        if piece.color == current_player.color
+          return true if piece.is_a?(Queen) || piece.is_a?(Bishop)
+        end
       end
     end
+
+    line.each do |coord|
+      do
+        next_case = [coord[0], coord[1]]
+        break if offboard(next_case)
+        next if empty?(next_case)
+        piece = board.get_case(next_case)
+        if piece.color == current_player.color
+          return true if piece.is_a?(Queen) || piece.is_a?(Rook)
+        end
+      end
+    end
+
+    ### knight & pawn
   end
 
   # Return true if the given king is checkmate
