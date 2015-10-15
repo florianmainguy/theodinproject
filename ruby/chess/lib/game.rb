@@ -30,10 +30,11 @@ class Game
 
   # Play next player's turn
   def next_turn
+    # Select the piece the player wants to move
     puts "#{current_player.name}, your turn. Select a piece:"
     case_from = select_case
-    piece = board.piece_of(case_from)
-    if !piece
+    piece = board.get_case(case_from)
+    if piece.nil?
       puts "There is no piece on this case. Start again."
       break
     end
@@ -42,22 +43,25 @@ class Game
       break
     end
     
+    # Move the piece to the selected case
     puts "Where do you want to move it? 'C' to select another piece."
     case_to = select_case
     break if case_to == 'C'
-
-    ### def move_is_possible?
-    ###   piece == step or slide ?
-    ###   
-    if piece.possible_moves.include?(case_to)
+    if move_is_possible?(piece, case_from, case_to)
+      king = find_king(current_player)
+      if king_check?(king)
+        puts "If you do that, your king will be in check! Start again."
+        break
+      end
       board.set_case(case_to, piece)
+      board.set_case(case_from, nil)
     else
       puts "You can't move your piece here. Start again."
       break
     end
     
+    # Display the board and change player
     board.display
-
     temp = current_player
     current_player = other_player
     other_player = temp
@@ -92,13 +96,109 @@ class Game
       'g7'=>[6,6], 'g8'=>[6,7],
       'h1'=>[7,0], 'h2'=>[7,1], 'h3'=>[7,2], 'h4'=>[7,3], 'h5'=>[7,4], 'h6'=>[7,5],
       'h7'=>[7,6], 'h8'=>[7,7],
-      'C' => 'C'
+      'c' => 'C'
     }
     mapping[input]
   end
 
+  # Return true if the piece can move from and to the selected cases
+  # ex: case_from = [3,5], case_to = [2,4]
+  def move_is_possible?(piece, case_from, case_to)
+    move = [case_to[0] - case_from[0], case_to[1] - case_from[1]]
+
+    # Algorithm for stepping pieces
+    if piece.type == 'step'
+      ### king cant go near other king ###
+      if piece.possible_moves.include?(move)
+        next_case = board.get_case(case_to)
+        ### empty? ###
+        return available?(next_case)
+      else
+        return false
+      end
+
+    # Algorithm for sliding pieces
+    elsif piece.type == 'slide'
+      piece.possible_moves.each do |coord|
+        prev_case = case_from
+        do
+          next_case = [[prev_case[0] + coord[0]], [prev_case[1] + coord[1]]
+          break if offboard(next_case) || !taken_by_adverse(next_case)
+          return true if next_case == case_to
+        end
+      end
+      return false
+    end
+  end
+
+  # Return true if the case selected is free
+  # Return false if case taken by own piece or case off board
+  def empty?(case_selected)
+    if case_selected == nil
+      return true
+    end
+    return false
+  end
+
+  # Return true if the case selected is taken by adverse piece
+  def taken_by_adverse(case_selected)
+    if case_selected.color != piece.color
+      return true
+    end
+    return false
+  end
+
+  # Return true if the case selected is offboard
+  def offboard(coord)
+    return true if coord[0] < 0 || coord[0] > 7 ||
+                   coord[1] < 0 || coord[1] > 7
+  end
+
+  # Return king of given player
+  def find_king(player)
+    board.grid.each do |col|
+      col.each do |cell|
+        return cell if cell.is_a?(King) && cell.color == player.color
+      end
+    end
+  end
+
+  # Return true if the given king is in check
+  def king_check?(king)
+    x = king.location[0]
+    y = king.location[1]
+    diag = [[x-1, y+1], [x+1, y+1], [x+1, y-1], [x-1, y-1]]
+    line = [[x, y+1], [x+1, y], [x, y-1], [x-1, y]]
+    knight = [[x-2, y-1], [x-2, y+1], [x-1, y+2], [x+1, y+2],
+              [x+2, y+1], [x+2, y-1], [x+1, y-2], [x-1, y-2]]
+    pawn = [[x-1, y+1], [x+1, y+1]]
+
+    diag.each do |coord|
+      do
+        next_case = [coord[0], coord[1]]
+        break if offboard(next_case)
+
+        ### suite ###
+          return true if next_case == case_to
+        next if offboard(cell)
+        if board.get_case(cell)
+      end
+    end
+  end
+
+  # Return true if the given king is checkmate
+  def king_checkmate?(king)
+
+  end
+
   # Return true if one player won
   def victory
+    king = find_king(current_player)
+    if king_check?(king)
+      puts "Check!"
+      return true if king_checkmate?(king)
+    end
+    return false
   end
 
   # Return true if there is a draw
