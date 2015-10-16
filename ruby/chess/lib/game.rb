@@ -97,13 +97,13 @@ class Game
     move = [case_to[0] - case_from[0], case_to[1] - case_from[1]]
 
     # Check if move is coherent with piece's way of displacement
-    if !piece.possible_moves.include?(move)
+    if piece.type == 'step' && !piece.possible_moves.include?(move)
       puts "This piece can't move like that! Start again."
       return false 
     end
 
     # Check if obstruction on path for sliding pieces
-    if piece.type == 'slide' && no_obstruction?(piece, case_from, case_to)
+    if piece.type == 'slide' && obstruction?(piece, case_from, case_to)
       puts "Obstruction in the path. Start again"
       return false 
     end
@@ -135,12 +135,12 @@ class Game
   end
 
   # Return true if there is no obstacles on the path of a sliding piece
-  def no_obstruction?(piece, case_from, case_to)
+  def obstruction?(piece, case_from, case_to)
     piece.possible_moves.each do |coord|
       next_case = case_from
       loop do
-        next_case = [[next_case[0] + coord[0]], [next_case[1] + coord[1]]]
-        return true if next_case == case_to
+        next_case = [next_case[0] + coord[0], next_case[1] + coord[1]]
+        return false if next_case == case_to
         break if offboard(next_case) || !empty?(next_case)
       end
     end
@@ -215,7 +215,7 @@ class Game
     if king_check?(current_player)
       puts "Check!"
       if king_checkmate?
-        puts "Well done #{other_player} you won!"
+        puts "Well done #{other_player.name} you won!"
         return true
       end
     end
