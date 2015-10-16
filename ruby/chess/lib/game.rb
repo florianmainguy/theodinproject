@@ -1,5 +1,3 @@
-# Main algorithm
-
 require_relative 'board.rb'
 require_relative 'pieces.rb'
 require_relative 'player.rb'
@@ -33,68 +31,28 @@ class Game
     puts "Ok let's start!"
   end
 
-  # Play next player's turn
+  # Play next player's turn:
+  # The player has to select the case from which he wants to move the piece. Then, he
+  # has to select the case where he wants to move the piece. If the move is authorized,
+  # the piece is moved, the board displayed and the other player becomes the current one.
   def next_turn
-
-    case_from = select_from(current_player)
-    # case selected exists?
-    # ok if piece of player's color on this case
-
-    case_to = select_to(current_player)
-    # 'C' to select another piece
-    # case selected exists?
-    # non ok if piece of player's color on this case
-
-    move_possible?(case_from, case_to)
-    # compare move to piece possibles moves
-    # king of current_player in check?
-
-    move_piece(case_from, case_to)
-    # move piece
-
-    display & change players
-
-
-
-
-    # Select the piece the player wants to move
     puts "#{current_player.name}, your turn. Select a piece:"
     case_from = select_case
-    piece = board.get_case(case_from)
-    if piece.nil?
-      puts "There is no piece on this case. Start again."
-      return
-    end
-    if piece.color != current_player.color
-      puts "This is not your piece! Start again."
-      return
-    end
-    
-    # Move the piece to the selected case
+    return if case_not_valid?(case_from, 'from')
+
     puts "Where do you want to move it? 'C' to select another piece."
     case_to = select_case
-    return if case_to == 'C'
-    if move_is_possible?(piece, case_from, case_to)
-      king = find_king(current_player)
-      if king_check?(king)
-        puts "If you do that, your king will be in check! Start again."
-        return
-      end
-      board.set_case(case_to, piece)
-      board.set_case(case_from, nil)
-    else
-      puts "You can't move your piece here. Start again."
-      return
-    end
-    
-    # Display the board and change player
+    return if case_to == 'C' || case_not_valid?(case_to, 'to')
+
+    return if !move_possible?(case_from, case_to)
+    move_piece(board, case_from, case_to) 
+
     board.display
-    temp = current_player
-    current_player = other_player
-    other_player = temp
+    change_players
   end
 
-  # Select a case from the player
+  # Return the selected case by the current player in an array
+  # ex: e4 => [4,3]
   def select_case
     selection = mapping(gets.chomp.downcase)
     unless selection
@@ -104,6 +62,99 @@ class Game
     return selection
   end
 
+  # Return true if the player is not allowed to play the selected case
+  def case_not_valid?(case_selected, input)
+    piece = board.get_case(case_selected)
+
+    # case_from
+    if input == 'from'
+      if piece.nil?
+        puts "There is no piece on this case. Start again."
+        return true
+      elsif piece.color != current_player.color
+        puts "This is not your piece! Start again."
+        return true
+      end
+    # case_to
+    elsif input == 'to'
+      if piece.nil?
+        return false
+      elsif piece.color == current_player.color
+        puts "This is not your piece! Start again."
+        return true
+      end
+    end
+    return false
+  end
+
+  # Return true if the piece can move from and to the selected case
+  def move_possible? (case_from, case_to)
+    piece = board.get_case(case_from)
+    move = [case_to[0] - case_from[0], case_to[1] - case_from[1]]
+
+    # Check if move is coherent with piece's way of displacement
+    if piece.possible_moves.exclude?(move)
+      puts "This piece can't move like that! Start again."
+      return false 
+    end
+
+    # Check if obstruction on path for sliding pieces
+    if piece.type == 'slide' && no_obstruction?(piece, case_from, case_to)
+      puts "Obstruction in the path. Start again"
+      return false 
+    end
+
+    # Check if a pawn can go in diag
+    if piece.is_a?(Pawn) && move[1] != 0
+      return false if pawn_cant_diag(piece, case_to)
+    end
+
+    # Create a copy of 'board' for following tests
+    board_temp = board
+    move_piece(board_temp, case_from, case_to)
+
+    # Check if kings stand one case apart
+    if kings_too_close?(board_temp)
+      puts "Kings can't be that close. Start again."
+      return false 
+    end
+
+    # Check if king of current's player would be in check
+    if king_check?(board_temp, current_player)
+      "If you do that, your king will be in check! Start again."
+      return false 
+    end
+
+    return true
+  end
+
+  # Return true if there is no obstacles on the path of a sliding piece
+  def no_obstruction?(piece, case_from, case_to)
+    piece.possible_moves.each do |coord|
+      next_case = case_from
+      loop do
+        next_case = [[next_case[0] + coord[0]], [next_case[1] + coord[1]]]
+        return true if next_case == case_to
+        break if offboard(next_case) || !empty?(next_case)
+      end
+    end
+  end
+      
+  # Move the piece to the selected case
+  def move_piece (board_used , case_from, case_to)
+    piece = board.get_case(case_from)
+
+    board_used.set_case(case_to, piece)
+    board_used.set_case(case_from, nil)
+  end
+
+  # Change order of players
+  def change_players
+    temp = current_player
+    current_player = other_player
+    other_player = temp
+  end
+  
   # Map the selected case to the actual board case
   def mapping(input)
     mapping = {
@@ -123,54 +174,14 @@ class Game
       'g7'=>[6,6], 'g8'=>[6,7],
       'h1'=>[7,0], 'h2'=>[7,1], 'h3'=>[7,2], 'h4'=>[7,3], 'h5'=>[7,4], 'h6'=>[7,5],
       'h7'=>[7,6], 'h8'=>[7,7],
-      'c' => 'C'
+      'c' =>['C']
     }
     mapping[input]
   end
 
-  # Return true if the piece can move from and to the selected cases
-  # ex: case_from = [3,5], case_to = [2,4]
-  def move_is_possible?(piece, case_from, case_to)
-    move = [case_to[0] - case_from[0], case_to[1] - case_from[1]]
-
-    # Algorithm for stepping pieces
-    if piece.type == 'step'
-      ### king cant go near other king ###
-
-      if piece.possible_moves.include?(move)
-        next_case = board.get_case(case_to)
-        return false if offboard(next_case)
-        return available?(next_case)
-      else
-        return false
-      end
-
-    # Algorithm for sliding pieces
-    elsif piece.type == 'slide'
-      piece.possible_moves.each do |coord|
-        prev_case = case_from
-        loop do
-          next_case = [[prev_case[0] + coord[0]], [prev_case[1] + coord[1]]]
-          break if offboard(next_case) || !taken_by_adverse?(next_case)
-          return true if next_case == case_to
-        end
-      end
-      return false
-    end
-  end
-
   # Return true if the case selected is free
-  # Return false if case taken by own piece or case off board
   def empty?(case_selected)
     if case_selected == nil
-      return true
-    end
-    return false
-  end
-
-  # Return true if the case selected is taken by adverse piece
-  def taken_by_adverse?(case_selected)
-    if case_selected.color != piece.color
       return true
     end
     return false
@@ -195,10 +206,9 @@ class Game
 
   # Return true if one player won
   def victory
-    king = find_king(current_player)
-    if king_check?(king)
+    if king_check?(board, current_player)
       puts "Check!"
-      if king_checkmate?(king)
+      if king_checkmate?
         puts "Well done #{other_player} you won!"
         return true
       end
@@ -206,26 +216,31 @@ class Game
     return false
   end
 
+  # Return true if kings are one case apart
+  def kings_too_close?(board_used)
+    king1 = find_king(current_player)
+    return true if king1.possible_moves.include?(find_king(other_player))
+  end
+
   # Return true if the given king is in check
-  def king_check?(king)
-    x = king.location[0]
-    y = king.location[1]
-    return true if check_diag?(x, y) || check_line?(x, y) ||
-                   check_knight?(x, y) || check_pawn?(x, y)
+  def king_check?(board_used, player)
+    x = find_king(player).location[0]
+    y = find_king(player).location[1]
+    return true if check_diag?(board_used, x, y) || check_line?(board_used, x, y) ||
+                   check_knight?(board_used, x, y) || check_pawn?(board_used, x, y)
   end
 
   # Return true if king is in check by a diag piece
-  def check_diag?(x, y)
+  def check_diag?(board_used, x, y)
     diag = [[x-1, y+1], [x+1, y+1], [x+1, y-1], [x-1, y-1]]
 
     diag.each do |coord|
       next_case = [x, y]
       loop do
         next_case = [next_case[0] + coord[0], next_case[1] + coord[1]]
-        puts next_case.inspect
         break if offboard(next_case)
         next if empty?(next_case)
-        piece = board.get_case(next_case)
+        piece = board_used.get_case(next_case)
         if piece.color == current_player.color
           return true if piece.is_a?(Queen) || piece.is_a?(Bishop)
         end
@@ -234,7 +249,7 @@ class Game
   end
 
   # Return true if king is in check by a line piece
-  def check_line?(x, y)
+  def check_line?(board_used, x, y)
     line = [[x, y+1], [x+1, y], [x, y-1], [x-1, y]]
 
     line.each do |coord|
@@ -243,7 +258,7 @@ class Game
         next_case = [next_case[0] + coord[0], next_case[1] + coord[1]]
         break if offboard(next_case)
         next if empty?(next_case)
-        piece = board.get_case(next_case)
+        piece = board_used.get_case(next_case)
         if piece.color == current_player.color
           return true if piece.is_a?(Queen) || piece.is_a?(Rook)
         end
@@ -252,38 +267,38 @@ class Game
   end
 
   # Return true if king is in check by a knight
-  def check_knight?(x, y)
+  def check_knight?(board_used, x, y)
     knight = [[x-2, y-1], [x-2, y+1], [x-1, y+2], [x+1, y+2],
               [x+2, y+1], [x+2, y-1], [x+1, y-2], [x-1, y-2]]
 
     knight.each do |coord|
       next_case = [coord[0], coord[1]]
-        break if offboard(next_case)
-        next if empty?(next_case)
-        piece = board.get_case(next_case)
-        if piece.color == current_player.color
-          return true if piece.is_a?(Knight)
-        end
+      break if offboard(next_case)
+      next if empty?(next_case)
+      piece = board_used.get_case(next_case)
+      if piece.color == current_player.color
+        return true if piece.is_a?(Knight)
+      end
     end
   end
 
   # Return true if king is in check by a pawn
-  def check_pawn?(x, y)
+  def check_pawn?(board_used, x, y)
     pawn = [[x-1, y+1], [x+1, y+1]]
 
     pawn.each do |coord|
       next_case = [coord[0], coord[1]]
-        break if offboard(next_case)
-        next if empty?(next_case)
-        piece = board.get_case(next_case)
-        if piece.color == current_player.color
-          return true if piece.is_a?(Pawn)
-        end
+      break if offboard(next_case)
+      next if empty?(next_case)
+      piece = board_used.get_case(next_case)
+      if piece.color == current_player.color
+        return true if piece.is_a?(Pawn)
+      end
     end
   end
 
   # Return true if the given king is checkmate
-  def king_checkmate?(king)
+  def king_checkmate?
     puts "Is there checkmate? Y/N"
     answer = gets.chomp.upcase
     return true if answer == 'Y'
@@ -299,6 +314,14 @@ class Game
       end
     end
     return true if counter < 3
+    return false
+  end
+
+  # Return true if pawn can't move in diag
+  def pawn_cant_diag (piece, case_to)
+    case_selected = get_case(case_to)
+    return true if case_selected.empty?
+    return true if case_selected.color == piece.color
     return false
   end
 end
