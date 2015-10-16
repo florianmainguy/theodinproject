@@ -1,5 +1,5 @@
 # pawn should be able to move 2 cases at the beginning
-# sliding pieces doesnt work : FORGOT TO IMPLEMENT SLIDE MOVES !!!
+
 
 require_relative 'board.rb'
 require_relative 'pieces.rb'
@@ -212,11 +212,15 @@ class Game
 
   # Return true if one player won
   def victory
-    if king_check?(current_player)
-      puts "Check!"
-      if king_checkmate?
+    king = find_king(current_player)
+    the_bad = king_check?(king)
+    if the_bad
+      if king_checkmate?(king, the_bad)
+        puts "Checkmate!"
         puts "Well done #{other_player.name} you won!"
         return true
+      else
+        puts "Check!"
       end
     end
     return false
@@ -229,11 +233,30 @@ class Game
   end
 
   # Return true if the given king is in check
-  def king_check?(player)
-    x = find_king(player).location[0]
-    y = find_king(player).location[1]
-    return true if check_diag?(x, y) || check_line?(x, y) ||
-                   check_knight?(x, y) || check_pawn?(x, y)
+  def king_check?(king)
+    x = king.location[0]
+    y = king.location[1]
+    return check_diag?(x, y) || check_line?(x, y) ||
+           check_knight?(x, y) || check_pawn?(x, y)
+  end
+
+  # Return true if the given king is checkmate
+  def king_checkmate?(king, the_bad)
+    #puts "Is there checkmate? Y/N"
+    #answer = gets.chomp.upcase
+    #return true if answer == 'Y'
+    #return false
+
+    can the king move ?
+      if yes
+      all empty cases around.each
+        return yes if not check
+      end
+
+    kill the_bad or intercepte
+      put all friends pieces in array
+      look if they possible mvts == the_bad.location || the_bad.path
+
   end
 
   # Return true if king is in check by a diag piece
@@ -248,7 +271,7 @@ class Game
         next if empty?(next_case)
         piece = board.get_case(next_case)
         if piece.color == other_player.color
-          return true if piece.is_a?(Queen) || piece.is_a?(Bishop)
+          return piece if piece.is_a?(Queen) || piece.is_a?(Bishop)
         else
           break
         end
@@ -259,7 +282,7 @@ class Game
 
   # Return true if king is in check by a line piece
   def check_line?(x, y)
-    line = [[x, y+1], [x+1, y], [x, y-1], [x-1, y]]
+    line = [[ 0, 1], [ 1, 0], [ 0,-1], [-1, 0]]
 
     line.each do |coord|
       next_case = [x, y]
@@ -269,7 +292,7 @@ class Game
         next if empty?(next_case)
         piece = board.get_case(next_case)
         if piece.color == other_player.color
-          return true if piece.is_a?(Queen) || piece.is_a?(Rook)
+          return piece if piece.is_a?(Queen) || piece.is_a?(Rook)
         else
           break
         end
@@ -280,8 +303,8 @@ class Game
 
   # Return true if king is in check by a knight
   def check_knight?(x, y)
-    knight = [[x-2, y-1], [x-2, y+1], [x-1, y+2], [x+1, y+2],
-              [x+2, y+1], [x+2, y-1], [x+1, y-2], [x-1, y-2]]
+    knight = [[-2,-1], [-2, 1], [ 1, 2], [ 1, 2],
+              [ 2, 1], [ 2,-1], [ 1,-2], [-1,-2]]
 
     knight.each do |coord|
       next_case = [coord[0], coord[1]]
@@ -289,7 +312,7 @@ class Game
       next if empty?(next_case)
       piece = board.get_case(next_case)
       if piece.color == other_player.color
-        return true if piece.is_a?(Knight)
+        return piece if piece.is_a?(Knight)
       else
         break
       end
@@ -299,7 +322,7 @@ class Game
 
   # Return true if king is in check by a pawn
   def check_pawn?(x, y)
-    pawn = [[x-1, y+1], [x+1, y+1]]
+    pawn = [[-1, 1], [ 1, 1]]
 
     pawn.each do |coord|
       next_case = [coord[0], coord[1]]
@@ -307,19 +330,11 @@ class Game
       next if empty?(next_case)
       piece = board.get_case(next_case)
       if piece.color == other_player.color
-        return true if piece.is_a?(Pawn)
+        return piece if piece.is_a?(Pawn)
       else
         break
       end
     end
-    return false
-  end
-
-  # Return true if the given king is checkmate
-  def king_checkmate?
-    puts "Is there checkmate? Y/N"
-    answer = gets.chomp.upcase
-    return true if answer == 'Y'
     return false
   end
 
