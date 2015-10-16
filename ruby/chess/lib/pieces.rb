@@ -19,8 +19,8 @@ class King < Pieces
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[x-1, y], [x-1, y+1], [x, y+1], [x+1, y+1],
-             [x+1, y], [x+1, y-1], [x, y-1], [x-1, y-1]]
+    moves = [[-1, 0], [-1, 1], [ 0, 1], [ 1, 1],
+             [ 1, 0], [ 1,-1], [ 0,-1], [-1,-1]]
     moves
   end
 end
@@ -34,8 +34,8 @@ class Queen < Pieces
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[x-1, y], [x+1, y+1], [x, y+1], [x+1, y+1],
-             [x+1, y], [x+1, y-1], [x, y-1], [x-1, y-1]]
+    moves = [[-1, 0], [ 1, 1], [ 0, 1], [ 1, 1],
+             [ 1, 0], [ 1,-1], [ 0,-1], [-1,-1]]
     moves
   end
 end
@@ -49,7 +49,7 @@ class Rook < Pieces
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[x-1, y], [x, y+1], [x+1, y], [x, y-1]]
+    moves = [[-1, 0], [ 0, 1], [ 1, 0], [ 0,-1]]
     moves
   end
 end
@@ -63,7 +63,7 @@ class Bishop < Pieces
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[x+1, y+1], [x+1, y+1], [x+1, y-1], [x-1, y-1]]
+    moves = [[ 1, 1], [ 1, 1], [ 1,-1], [-1,-1]]
     moves
   end
 end
@@ -77,8 +77,8 @@ class Knight < Pieces
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[x-2, y-1], [x-2, y+1], [x-1, y+2], [x+1, y+2],
-             [x+2, y+1], [x+2, y-1], [x-1, y-2], [x+1, y-2]]
+    moves = [[-2,-1], [-2, 1], [-1, 2], [ 1, 2],
+             [ 2, 1], [ 2,-1], [-1,-2], [ 1,-2]]
     moves
   end
 end
@@ -90,10 +90,11 @@ class Pawn < Pieces
   end
 
   def possible_moves
-    x = location[0]
-    y = location[1]
-    moves = [[x-1, y+1], [x, y+1], [x+1, y+1],
-             [x+1, y-1], [x, y-1], [x-1, y-1]]
+    if color == 'white'
+      moves = [[-1, 1], [ 0, 1], [ 1, 1]]
+    else
+      moves = [[ 1,-1], [ 0,-1], [-1,-1]]
+    end
     moves
   end
 end

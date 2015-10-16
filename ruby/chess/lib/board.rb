@@ -19,7 +19,8 @@ class Board
     array[5][0] = Bishop.new('white', [5,0], 'slide')
     array[6][0] = Knight.new('white', [6,0], 'step')
     array[7][0] = Rook.new('white', [7,0], 'slide')
-    array[0..7].each { |column| column[1] = Pawn.new('white', [column,1], 'step') }
+    array[0..7].each_with_index { |column, index| 
+                                   column[1] = Pawn.new('white', [index,1], 'step') }
 
     array[0][7] = Rook.new('black', [0,7], 'slide')
     array[1][7] = Knight.new('black', [1,7], 'step')
@@ -29,7 +30,8 @@ class Board
     array[5][7] = Bishop.new('black', [5,7], 'slide')
     array[6][7] = Knight.new('black', [6,7], 'step')
     array[7][7] = Rook.new('black', [7,7], 'slide')
-    array[0..7].each { |column| column[6] = Pawn.new('black', [column,6], 'step') }
+    array[0..7].each_with_index { |column, index| 
+                                   column[6] = Pawn.new('black', [index,6], 'step') }
 
     array
   end
@@ -48,6 +50,7 @@ class Board
       puts "   |----|----|----|----|----|----|----|----|"
     end
     puts "     A    B    C    D    E    F    G    H"
+    puts
   end
 
   # Return the piece selected
