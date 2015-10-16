@@ -35,6 +35,28 @@ class Game
 
   # Play next player's turn
   def next_turn
+
+    case_from = select_from(current_player)
+    # case selected exists?
+    # ok if piece of player's color on this case
+
+    case_to = select_to(current_player)
+    # 'C' to select another piece
+    # case selected exists?
+    # non ok if piece of player's color on this case
+
+    move_possible?(case_from, case_to)
+    # compare move to piece possibles moves
+    # king of current_player in check?
+
+    move_piece(case_from, case_to)
+    # move piece
+
+    display & change players
+
+
+
+
     # Select the piece the player wants to move
     puts "#{current_player.name}, your turn. Select a piece:"
     case_from = select_case
@@ -129,7 +151,7 @@ class Game
         prev_case = case_from
         loop do
           next_case = [[prev_case[0] + coord[0]], [prev_case[1] + coord[1]]]
-          break if offboard(next_case) || !taken_by_adverse(next_case)
+          break if offboard(next_case) || !taken_by_adverse?(next_case)
           return true if next_case == case_to
         end
       end
@@ -147,7 +169,7 @@ class Game
   end
 
   # Return true if the case selected is taken by adverse piece
-  def taken_by_adverse(case_selected)
+  def taken_by_adverse?(case_selected)
     if case_selected.color != piece.color
       return true
     end
@@ -188,10 +210,8 @@ class Game
   def king_check?(king)
     x = king.location[0]
     y = king.location[1]
-
     return true if check_diag?(x, y) || check_line?(x, y) ||
                    check_knight?(x, y) || check_pawn?(x, y)
-    return false
   end
 
   # Return true if king is in check by a diag piece
