@@ -1,10 +1,14 @@
 # Main algorithm
 
+require_relative 'board.rb'
+require_relative 'pieces.rb'
+require_relative 'player.rb'
+
 class Game
   attr_accessor :current_player, :other_player, :board
 
   def initialize
-    board = Board.new
+    @board = Board.new
   end
 
   # Launch chess game
@@ -20,11 +24,12 @@ class Game
 
   # Ask players names and which color they want to play
   def welcome_players
+    puts
     puts "Welcome to this chess game!"
     puts "Give me the name of the player who wants to be White:"
-    current_player = Player.new(gets.chomp.downcase, 'white')
+    @current_player = Player.new(gets.chomp.downcase, 'white')
     puts "Give me the name of the player who wants to be Black:"
-    other_player = Player.new(gets.chomp.downcase, 'black')
+    @other_player = Player.new(gets.chomp.downcase, 'black')
     puts "Ok let's start!"
   end
 
@@ -36,28 +41,28 @@ class Game
     piece = board.get_case(case_from)
     if piece.nil?
       puts "There is no piece on this case. Start again."
-      break
+      return
     end
     if piece.color != current_player.color
       puts "This is not your piece! Start again."
-      break
+      return
     end
     
     # Move the piece to the selected case
     puts "Where do you want to move it? 'C' to select another piece."
     case_to = select_case
-    break if case_to == 'C'
+    return if case_to == 'C'
     if move_is_possible?(piece, case_from, case_to)
       king = find_king(current_player)
       if king_check?(king)
         puts "If you do that, your king will be in check! Start again."
-        break
+        return
       end
       board.set_case(case_to, piece)
       board.set_case(case_from, nil)
     else
       puts "You can't move your piece here. Start again."
-      break
+      return
     end
     
     # Display the board and change player
@@ -109,9 +114,10 @@ class Game
     # Algorithm for stepping pieces
     if piece.type == 'step'
       ### king cant go near other king ###
+
       if piece.possible_moves.include?(move)
         next_case = board.get_case(case_to)
-        ### empty? ###
+        return false if offboard(next_case)
         return available?(next_case)
       else
         return false
@@ -121,8 +127,8 @@ class Game
     elsif piece.type == 'slide'
       piece.possible_moves.each do |coord|
         prev_case = case_from
-        do
-          next_case = [[prev_case[0] + coord[0]], [prev_case[1] + coord[1]]
+        loop do
+          next_case = [[prev_case[0] + coord[0]], [prev_case[1] + coord[1]]]
           break if offboard(next_case) || !taken_by_adverse(next_case)
           return true if next_case == case_to
         end
@@ -158,24 +164,45 @@ class Game
   def find_king(player)
     board.grid.each do |col|
       col.each do |cell|
-        return cell if cell.is_a?(King) && cell.color == player.color
+        if cell
+          return cell if cell.is_a?(King) && cell.color == player.color
+        end
       end
     end
+  end
+
+  # Return true if one player won
+  def victory
+    king = find_king(current_player)
+    if king_check?(king)
+      puts "Check!"
+      if king_checkmate?(king)
+        puts "Well done #{other_player} you won!"
+        return true
+      end
+    end
+    return false
   end
 
   # Return true if the given king is in check
   def king_check?(king)
     x = king.location[0]
     y = king.location[1]
+
+    return true if check_diag?(x, y) || check_line?(x, y) ||
+                   check_knight?(x, y) || check_pawn?(x, y)
+    return false
+  end
+
+  # Return true if king is in check by a diag piece
+  def check_diag?(x, y)
     diag = [[x-1, y+1], [x+1, y+1], [x+1, y-1], [x-1, y-1]]
-    line = [[x, y+1], [x+1, y], [x, y-1], [x-1, y]]
-    knight = [[x-2, y-1], [x-2, y+1], [x-1, y+2], [x+1, y+2],
-              [x+2, y+1], [x+2, y-1], [x+1, y-2], [x-1, y-2]]
-    pawn = [[x-1, y+1], [x+1, y+1]]
 
     diag.each do |coord|
-      do
-        next_case = [coord[0], coord[1]]
+      next_case = [x, y]
+      loop do
+        next_case = [next_case[0] + coord[0], next_case[1] + coord[1]]
+        puts next_case.inspect
         break if offboard(next_case)
         next if empty?(next_case)
         piece = board.get_case(next_case)
@@ -184,10 +211,16 @@ class Game
         end
       end
     end
+  end
+
+  # Return true if king is in check by a line piece
+  def check_line?(x, y)
+    line = [[x, y+1], [x+1, y], [x, y-1], [x-1, y]]
 
     line.each do |coord|
-      do
-        next_case = [coord[0], coord[1]]
+      next_case = [x, y]
+      loop do
+        next_case = [next_case[0] + coord[0], next_case[1] + coord[1]]
         break if offboard(next_case)
         next if empty?(next_case)
         piece = board.get_case(next_case)
@@ -196,26 +229,56 @@ class Game
         end
       end
     end
+  end
 
-    ### knight & pawn
+  # Return true if king is in check by a knight
+  def check_knight?(x, y)
+    knight = [[x-2, y-1], [x-2, y+1], [x-1, y+2], [x+1, y+2],
+              [x+2, y+1], [x+2, y-1], [x+1, y-2], [x-1, y-2]]
+
+    knight.each do |coord|
+      next_case = [coord[0], coord[1]]
+        break if offboard(next_case)
+        next if empty?(next_case)
+        piece = board.get_case(next_case)
+        if piece.color == current_player.color
+          return true if piece.is_a?(Knight)
+        end
+    end
+  end
+
+  # Return true if king is in check by a pawn
+  def check_pawn?(x, y)
+    pawn = [[x-1, y+1], [x+1, y+1]]
+
+    pawn.each do |coord|
+      next_case = [coord[0], coord[1]]
+        break if offboard(next_case)
+        next if empty?(next_case)
+        piece = board.get_case(next_case)
+        if piece.color == current_player.color
+          return true if piece.is_a?(Pawn)
+        end
+    end
   end
 
   # Return true if the given king is checkmate
   def king_checkmate?(king)
-
-  end
-
-  # Return true if one player won
-  def victory
-    king = find_king(current_player)
-    if king_check?(king)
-      puts "Check!"
-      return true if king_checkmate?(king)
-    end
+    puts "Is there checkmate? Y/N"
+    answer = gets.chomp.upcase
+    return true if answer == 'Y'
     return false
   end
 
   # Return true if there is a draw
   def draw
+    counter = 0
+    board.grid.each do |col|
+      col.each do |cell|
+        counter +=1 if cell
+      end
+    end
+    return true if counter < 3
+    return false
   end
 end

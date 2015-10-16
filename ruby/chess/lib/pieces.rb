@@ -21,9 +21,6 @@ class King < Pieces
     y = location[1]
     moves = [[x-1, y], [x-1, y+1], [x, y+1], [x+1, y+1],
              [x+1, y], [x+1, y-1], [x, y-1], [x-1, y-1]]
-
-    moves.delete_if { |coord| coord[0] < 0 || coord[0] > 7 ||
-                              coord[1] < 0 || coord[1] > 7 }
     moves
   end
 end
@@ -39,9 +36,6 @@ class Queen < Pieces
     y = location[1]
     moves = [[x-1, y], [x+1, y+1], [x, y+1], [x+1, y+1],
              [x+1, y], [x+1, y-1], [x, y-1], [x-1, y-1]]
-
-    moves.delete_if { |coord| coord[0] < 0 || coord[0] > 7 ||
-                              coord[1] < 0 || coord[1] > 7 }
     moves
   end
 end
@@ -51,12 +45,26 @@ class Rook < Pieces
     super
     @color == 'white' ? @unicode = "\u2656" : @unicode = "\u265C"
   end
+
+  def possible_moves
+    x = location[0]
+    y = location[1]
+    moves = [[x-1, y], [x, y+1], [x+1, y], [x, y-1]]
+    moves
+  end
 end
 
 class Bishop < Pieces
   def initialize (color, location, type)
     super
     @color == 'white' ? @unicode = "\u2657" : @unicode = "\u265D"
+  end
+
+  def possible_moves
+    x = location[0]
+    y = location[1]
+    moves = [[x+1, y+1], [x+1, y+1], [x+1, y-1], [x-1, y-1]]
+    moves
   end
 end
 
@@ -65,11 +73,27 @@ class Knight < Pieces
     super
     @color == 'white' ? @unicode = "\u2658" : @unicode = "\u265E"
   end
+
+  def possible_moves
+    x = location[0]
+    y = location[1]
+    moves = [[x-2, y-1], [x-2, y+1], [x-1, y+2], [x+1, y+2],
+             [x+2, y+1], [x+2, y-1], [x-1, y-2], [x+1, y-2]]
+    moves
+  end
 end
 
 class Pawn < Pieces
   def initialize (color, location, type)
     super
     @color == 'white' ? @unicode = "\u2659" : @unicode = "\u265F"
+  end
+
+  def possible_moves
+    x = location[0]
+    y = location[1]
+    moves = [[x-1, y+1], [x, y+1], [x+1, y+1],
+             [x+1, y-1], [x, y-1], [x-1, y-1]]
+    moves
   end
 end

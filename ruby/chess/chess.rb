@@ -3,7 +3,7 @@
 # Player vs Player
 # Script to launch a new game
 
-require './lib/board.rb'
+require './lib/game.rb'
 
-board = Board.new
-board.display
+game = Game.new
+game.start
