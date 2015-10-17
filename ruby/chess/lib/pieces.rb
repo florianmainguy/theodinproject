@@ -1,7 +1,7 @@
 # Parent class of all pieces
 class Pieces
   attr_reader :unicode, :color, :type
-  attr_accessor :location
+  attr_accessor :location, :path
 
   def initialize (color, location, type)
     @color = color
@@ -29,12 +29,13 @@ class Queen < Pieces
   def initialize (color, location, type)
     super
     @color == 'white' ? @unicode = "\u2655" : @unicode = "\u265B"
+    @path = []
   end
 
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[-1, 0], [ 1, 1], [ 0, 1], [ 1, 1],
+    moves = [[-1, 0], [-1, 1], [ 0, 1], [ 1, 1],
              [ 1, 0], [ 1,-1], [ 0,-1], [-1,-1]]
     moves
   end
@@ -44,6 +45,7 @@ class Rook < Pieces
   def initialize (color, location, type)
     super
     @color == 'white' ? @unicode = "\u2656" : @unicode = "\u265C"
+    @path = []
   end
 
   def possible_moves
@@ -58,12 +60,13 @@ class Bishop < Pieces
   def initialize (color, location, type)
     super
     @color == 'white' ? @unicode = "\u2657" : @unicode = "\u265D"
+    @path = []
   end
 
   def possible_moves
     x = location[0]
     y = location[1]
-    moves = [[ 1, 1], [ 1, 1], [ 1,-1], [-1,-1]]
+    moves = [[-1, 1], [ 1, 1], [ 1,-1], [-1,-1]]
     moves
   end
 end
