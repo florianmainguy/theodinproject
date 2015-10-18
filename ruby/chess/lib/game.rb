@@ -1,4 +1,4 @@
-# pawn should be able to move 2 cases at the beginning
+
 # 'c' doesnt work
 # knight check
 
@@ -115,9 +115,13 @@ class Game
     end
 
     # Check if a pawn can go in diag
-    if piece.is_a?(Pawn) && move[0] != 0
+    if piece.is_a?(Pawn)
       answer = [false, "Pawn can't move like that."]
-      return answer if pawn_cant_diag(piece, case_to)
+      if move[0] != 0
+        return answer if pawn_cant_diag(piece, case_to)
+      elsif move[1] == 2 || move[1] == -2
+        return answer if pawn_cant_double(piece, case_from)
+      end
     end
 
     # Temporary move for the next tests
@@ -364,6 +368,15 @@ class Game
     case_selected = board.get_case(case_to)
     return true if case_selected.color == piece.color
     return false
+  end
+
+  # Return true if pawn can move up to 2 cases
+  def pawn_cant_double(piece, case_from)
+    if piece.color == 'white'
+      return true if case_from[1] != 1
+    elsif piece.color == 'black'
+      return true if case_from[1] != 6
+    end
   end
 
   # Return true if the given king is checkmate

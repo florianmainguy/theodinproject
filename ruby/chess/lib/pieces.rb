@@ -94,9 +94,9 @@ class Pawn < Pieces
 
   def possible_moves
     if color == 'white'
-      moves = [[-1, 1], [ 0, 1], [ 1, 1]]
+      moves = [[-1, 1], [ 0, 1], [ 1, 1], [ 0, 2]]
     else
-      moves = [[ 1,-1], [ 0,-1], [-1,-1]]
+      moves = [[ 1,-1], [ 0,-1], [-1,-1], [ 0,-2]]
     end
     moves
   end
