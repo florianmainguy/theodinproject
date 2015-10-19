@@ -1,3 +1,6 @@
+# Small and big castling to implement
+# Pat
+
 require_relative 'board.rb'
 require_relative 'pieces.rb'
 require_relative 'player.rb'
@@ -17,8 +20,6 @@ class Game
       next_turn
     end
   end
-
-  private
 
   # Ask players names and which color they want to play
   def welcome_players
@@ -110,7 +111,7 @@ class Game
       if piece.nil?
         return false
       elsif piece.color == current_player.color
-        puts "This your piece! Start again."
+        puts "This is your piece! Start again."
         return true
       end
     end
@@ -123,6 +124,14 @@ class Game
   def move_possible(case_from, case_to)
     piece = board.get_case(case_from)
     move = [case_to[0] - case_from[0], case_to[1] - case_from[1]]
+
+    # Check if castling 
+    if piece.is_a?(King)
+      if move == [-2, 0] || move == [2, 0]
+        can_castle?(piece, move) ? answer = [true] : answer = [false, "Can't castle sorry."]
+        return answer
+      end 
+    end
 
     # Check if move is coherent with piece's way of displacement
     if piece.type == 'step' && !piece.possible_moves.include?(move)
@@ -189,6 +198,8 @@ class Game
 
     board.set_case(case_to, piece)
     board.set_case(case_from, nil)
+
+    piece.counter += 1
   end
 
   # Return true if pawn reached the last line
@@ -437,7 +448,12 @@ class Game
   # Return true if kings are one case apart
   def kings_too_close?
     king1 = find_king(current_player)
-    return true if king1.possible_moves.include?(find_king(other_player))
+    king2 = find_king(other_player)
+    king1.possible_moves.each do |coord|
+      next_case = [king1.location[0] + coord[0], king1.location[1] + coord[1]]
+      return true if next_case == king2.location
+    end
+    return false
   end
 
   # Return an array with all the pieces of the given color
@@ -450,5 +466,26 @@ class Game
       end
     end 
     array
+  end
+
+  # Return an array with the first element as an array indicating if king can
+  # castle or not
+  def can_castle?(king, move)
+    if move == [-2, 0]
+      path = [[0,3], [0,2], [0,1], [0,0]] if king.color == 'white'
+      path = [[7,3], [7,2], [7,1], [7,0]] if king.color == 'black'
+    elsif move == [ 2, 0]
+      path = [[0,5], [0,6], [0,7]] if king.color == 'white'
+      path = [[7,5], [7,6], [7,7]] if king.color == 'black'
+    end
+
+
+
+    king & rook never moved
+
+    squares in between empty
+
+    king not in check on path
+
   end
 end

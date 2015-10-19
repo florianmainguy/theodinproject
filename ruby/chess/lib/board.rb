@@ -3,8 +3,8 @@
 class Board
   attr_reader :grid
 
-  def initialize
-    @grid = default_grid
+  def initialize(grid = nil)
+    @grid = grid || default_grid
   end
 
   # Fill the board with all the pieces in their intitial location
