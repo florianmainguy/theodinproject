@@ -1,4 +1,4 @@
-# Small and big castling to implement
+
 # Pat
 
 require_relative 'board.rb'
@@ -52,7 +52,8 @@ class Game
       puts answer[1]
       return
     end
-    move_piece(case_from, case_to) 
+    move_piece(case_from, case_to) if board.get_case(case_from)  # If castling hasn't been done
+    board.get_case(case_to).counter += 1  # Memorize number of times a piece moved
 
     board.display
     change_players
@@ -128,7 +129,11 @@ class Game
     # Check if castling 
     if piece.is_a?(King)
       if move == [-2, 0] || move == [2, 0]
-        can_castle?(piece, move) ? answer = [true] : answer = [false, "Can't castle sorry."]
+        if can_castle?(piece, move)
+          answer = [true]
+        else
+          answer = [false, "Can't castle sorry."]
+        end
         return answer
       end 
     end
@@ -198,8 +203,6 @@ class Game
 
     board.set_case(case_to, piece)
     board.set_case(case_from, nil)
-
-    piece.counter += 1
   end
 
   # Return true if pawn reached the last line
@@ -334,7 +337,8 @@ class Game
   def check_step?(x, y, input)
     knight = [[-2,-1], [-2, 1], [-1, 2], [ 1, 2],
               [ 2, 1], [ 2,-1], [ 1,-2], [-1,-2]]
-    pawn = [[-1, 1], [ 1, 1]]
+    pawn = [[-1, 1], [ 1, 1]] if current_player.color == 'white'
+    pawn = [[-1,-1], [ 1,-1]] if current_player.color == 'black'
 
     input == 'knight' ? direction = knight : direction = pawn
 
@@ -347,7 +351,7 @@ class Game
         return piece if piece.is_a?(Knight) && direction == knight
         return piece if piece.is_a?(Pawn) && direction == pawn
       else
-        break
+        next
       end
     end
     return false
@@ -468,24 +472,38 @@ class Game
     array
   end
 
-  # Return an array with the first element as an array indicating if king can
-  # castle or not
+  # Return true if king can castle
   def can_castle?(king, move)
     if move == [-2, 0]
-      path = [[0,3], [0,2], [0,1], [0,0]] if king.color == 'white'
-      path = [[7,3], [7,2], [7,1], [7,0]] if king.color == 'black'
+      path = [[4,0], [3,0], [2,0], [1,0], [0,0]] if king.color == 'white'
+      path = [[4,7], [3,7], [2,7], [1,7], [0,7]] if king.color == 'black'
     elsif move == [ 2, 0]
-      path = [[0,5], [0,6], [0,7]] if king.color == 'white'
-      path = [[7,5], [7,6], [7,7]] if king.color == 'black'
+      path = [[4,0], [5,0], [6,0], [7,0]] if king.color == 'white'
+      path = [[4,7], [5,7], [6,7], [7,7]] if king.color == 'black'
     end
 
+    piece1 = board.get_case(path.first)
+    piece2 = board.get_case(path.last)
 
+    # King and Rook should be at their initial location
+    return false if empty?(path.first) || empty?(path.last)
 
-    king & rook never moved
+    # Squares in between should be empty
+    path[1..-2].each { |square| return false unless empty?(square) }
 
-    squares in between empty
+    # King & Rook shouldn't have mooved
+    return false if piece1.counter > 0 || piece2.counter > 0
+    
+    # King shouldn't be in check on the path
+    2.times do |nb|
+      move_piece(path[nb], path[nb+1])
+      if king_check?(king)
+        move_piece(path[nb+1], path[0])
+        return false
+      end
+    end
+    move_piece(path.last, path[1])
 
-    king not in check on path
-
+    return true
   end
 end
