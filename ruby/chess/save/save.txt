@@ -1,0 +1,307 @@
+--- !ruby/object:Game
+board: !ruby/object:Board
+  grid:
+  - - !ruby/object:Rook
+      color: white
+      location:
+      - 0
+      - 0
+      type: slide
+      counter: 0
+      unicode: "♖"
+      path: []
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 0
+      - 1
+      type: step
+      counter: 0
+      unicode: "♙"
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 0
+      - 4
+      type: step
+      counter: 1
+      unicode: "♟"
+    - 
+    - 
+    - !ruby/object:Rook
+      color: black
+      location:
+      - 0
+      - 7
+      type: slide
+      counter: 0
+      unicode: "♜"
+      path: []
+  - - !ruby/object:Knight
+      color: white
+      location:
+      - 1
+      - 0
+      type: step
+      counter: 0
+      unicode: "♘"
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 1
+      - 1
+      type: step
+      counter: 0
+      unicode: "♙"
+    - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 1
+      - 6
+      type: step
+      counter: 0
+      unicode: "♟"
+    - !ruby/object:Knight
+      color: black
+      location:
+      - 1
+      - 7
+      type: step
+      counter: 0
+      unicode: "♞"
+  - - !ruby/object:Bishop
+      color: white
+      location:
+      - 2
+      - 0
+      type: slide
+      counter: 0
+      unicode: "♗"
+      path: []
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 2
+      - 1
+      type: step
+      counter: 0
+      unicode: "♙"
+    - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 2
+      - 6
+      type: step
+      counter: 0
+      unicode: "♟"
+    - !ruby/object:Bishop
+      color: black
+      location:
+      - 2
+      - 7
+      type: slide
+      counter: 0
+      unicode: "♝"
+      path: []
+  - - !ruby/object:Queen
+      color: white
+      location:
+      - 3
+      - 0
+      type: slide
+      counter: 0
+      unicode: "♕"
+      path: []
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 3
+      - 1
+      type: step
+      counter: 0
+      unicode: "♙"
+    - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 3
+      - 6
+      type: step
+      counter: 0
+      unicode: "♟"
+    - !ruby/object:Queen
+      color: black
+      location:
+      - 3
+      - 7
+      type: slide
+      counter: 0
+      unicode: "♛"
+      path: []
+  - - !ruby/object:King
+      color: white
+      location:
+      - 4
+      - 0
+      type: step
+      counter: 0
+      unicode: "♔"
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 4
+      - 1
+      type: step
+      counter: 0
+      unicode: "♙"
+    - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 4
+      - 6
+      type: step
+      counter: 0
+      unicode: "♟"
+    - !ruby/object:King
+      color: black
+      location:
+      - 4
+      - 7
+      type: step
+      counter: 0
+      unicode: "♚"
+  - - !ruby/object:Bishop
+      color: white
+      location:
+      - 5
+      - 0
+      type: slide
+      counter: 0
+      unicode: "♗"
+      path: []
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 5
+      - 1
+      type: step
+      counter: 0
+      unicode: "♙"
+    - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 5
+      - 6
+      type: step
+      counter: 0
+      unicode: "♟"
+    - !ruby/object:Bishop
+      color: black
+      location:
+      - 5
+      - 7
+      type: slide
+      counter: 0
+      unicode: "♝"
+      path: []
+  - - !ruby/object:Knight
+      color: white
+      location:
+      - 6
+      - 0
+      type: step
+      counter: 0
+      unicode: "♘"
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 6
+      - 1
+      type: step
+      counter: 0
+      unicode: "♙"
+    - 
+    - 
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 6
+      - 6
+      type: step
+      counter: 0
+      unicode: "♟"
+    - !ruby/object:Knight
+      color: black
+      location:
+      - 6
+      - 7
+      type: step
+      counter: 0
+      unicode: "♞"
+  - - !ruby/object:Rook
+      color: white
+      location:
+      - 7
+      - 0
+      type: slide
+      counter: 0
+      unicode: "♖"
+      path: []
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: white
+      location:
+      - 7
+      - 3
+      type: step
+      counter: 1
+      unicode: "♙"
+    - 
+    - 
+    - !ruby/object:Pawn
+      color: black
+      location:
+      - 7
+      - 6
+      type: step
+      counter: 0
+      unicode: "♟"
+    - !ruby/object:Rook
+      color: black
+      location:
+      - 7
+      - 7
+      type: slide
+      counter: 0
+      unicode: "♜"
+      path: []
+current_player: !ruby/object:Player
+  name: f
+  color: white
+other_player: !ruby/object:Player
+  name: g
+  color: black

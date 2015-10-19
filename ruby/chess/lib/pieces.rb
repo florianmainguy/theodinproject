@@ -1,4 +1,4 @@
-# Parent class of all pieces
+# Parent class of all pieces.
 class Pieces
   attr_reader :unicode, :color, :type
   attr_accessor :location, :path, :counter

@@ -1,5 +1,4 @@
-# Board
-
+# Class for the board. Allows to display the chess board and to get and set squares.
 class Board
   attr_reader :grid
 

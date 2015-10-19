@@ -1,10 +1,9 @@
-
-# Pat
-
 require_relative 'board.rb'
 require_relative 'pieces.rb'
 require_relative 'player.rb'
+require 'yaml'
 
+# Main class with all the logic of the chess
 class Game
   attr_accessor :current_player, :other_player, :board
 
@@ -16,15 +15,51 @@ class Game
   def start
     welcome_players
     board.display
-    until victory || draw
+    until victory? || draw? || stalemate?
       next_turn
     end
+  end
+
+  # Load saved game if exists
+  def load_game
+    Dir.chdir("save")
+    if File.exists?("save.txt")
+      data = YAML::load(File.read("save.txt"))
+      self.current_player = data.current_player
+      self.other_player = data.other_player
+      self.board = data.board
+      puts "Game Loaded!"
+      puts 
+      Dir.chdir("..")
+    else
+      puts "You have no saved games."
+      puts ""
+      Dir.chdir("..")
+    end
+  end
+
+  # Save game
+  def save_game
+    Dir.chdir("save")
+    File.open("save.txt", 'w') { |file| file.write(YAML::dump(self))}
+    puts "Game Saved!"
+    Dir.chdir("..")
+    exit
   end
 
   # Ask players names and which color they want to play
   def welcome_players
     puts
     puts "Welcome to this chess game!"
+    puts "Load a game? 'y' to load:"
+    Dir.mkdir("save") unless Dir.exists? "save"
+
+    choice = gets.chomp.downcase
+    if choice.include? "y"
+      load_game
+      return
+    end
+
     puts "Give me the name of the player who wants to be White:"
     @current_player = Player.new(gets.chomp.downcase, 'white')
     puts "Give me the name of the player who wants to be Black:"
@@ -39,13 +74,14 @@ class Game
   # 'C' allows the player to start again his turn.
   def next_turn
     puts
-    puts "#{current_player.name.capitalize}, your turn. Select a piece:"
+    puts "#{current_player.name.capitalize}, your turn. Select a piece or 'save' to save:"
     case_from = select_case
+    save_game if case_from == 'save'
     return if case_from == 'C' || case_not_valid?(case_from, 'from')
 
     puts "Where do you want to move it? 'C' to select another piece."
     case_to = select_case
-    return if case_to == 'C' || case_not_valid?(case_to, 'to')
+    return if case_to == 'C' || case_not_valid?(case_to, 'to') || case_to == 'save'
 
     answer = move_possible(case_from, case_to)
     if !answer[0]
@@ -89,7 +125,7 @@ class Game
       'g7'=>[6,6], 'g8'=>[6,7],
       'h1'=>[7,0], 'h2'=>[7,1], 'h3'=>[7,2], 'h4'=>[7,3], 'h5'=>[7,4], 'h6'=>[7,5],
       'h7'=>[7,6], 'h8'=>[7,7],
-      'c' => 'C'
+      'c' => 'C', 'save' => 'save'
     }
     mapping[input]
   end
@@ -272,7 +308,7 @@ class Game
   end
 
   # Return true if one player won
-  def victory
+  def victory?
     king = find_king(current_player)
     the_bad = king_check?(king)
     if the_bad
@@ -358,7 +394,7 @@ class Game
   end
 
   # Return true if there is a draw
-  def draw
+  def draw?
     counter = 0
     board.grid.each do |col|
       col.each do |cell|
@@ -366,6 +402,15 @@ class Game
       end
     end
     return true if counter < 3
+    return false
+  end
+
+  # Return true if there is a stalemate
+  def stalemate?
+    pieces = find_pieces(current_player.color)
+    if pieces.size == 1
+      return true unless king_can_move?(pieces[0])
+    end
     return false
   end
 
