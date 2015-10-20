@@ -455,7 +455,7 @@ class Game
   # Return true if there is at least one empty case around the king
   def king_can_move?(king)
     current_case = king.location
-    king.possible_moves.each do |coord|
+    king.possible_moves[0..-3].each do |coord|  # [0..-3] to avoid castle moves
       next_case = [current_case[0] + coord[0], current_case[1] + coord[1]]
       next if offboard(next_case)
       if empty?(next_case)
