@@ -11,7 +11,8 @@ class Game
     @board = Board.new
   end
 
-  # Launch chess game
+  # Launch chess game.
+  # Exit only if one player won, if there is a draw or if there is stalemate.
   def start
     welcome_players
     board.display
@@ -20,34 +21,14 @@ class Game
     end
   end
 
-  # Load saved game if exists
-  def load_game
-    Dir.chdir("save")
-    if File.exists?("save.txt")
-      data = YAML::load(File.read("save.txt"))
-      self.current_player = data.current_player
-      self.other_player = data.other_player
-      self.board = data.board
-      puts "Game Loaded!"
-      puts 
-      Dir.chdir("..")
-    else
-      puts "You have no saved games."
-      puts ""
-      Dir.chdir("..")
-    end
-  end
 
-  # Save game
-  def save_game
-    Dir.chdir("save")
-    File.open("save.txt", 'w') { |file| file.write(YAML::dump(self))}
-    puts "Game Saved!"
-    Dir.chdir("..")
-    exit
-  end
 
-  # Ask players names and which color they want to play
+  ##################
+  # WELCOME PLAYERS
+  ##################
+  
+  # Possibility to load a saved game
+  # Otherwise Ask players names and which color they want to play
   def welcome_players
     puts
     puts "Welcome to this chess game!"
@@ -67,10 +48,16 @@ class Game
     puts "Ok let's start!"
   end
 
+
+
+  ############
+  # NEXT TURN
+  ############
   # Play next player's turn:
-  # The player has to select the case from which he wants to move the piece. Then, he
-  # has to select the case where he wants to move the piece. If the move is authorized,
-  # the piece is moved, the board displayed and the other player becomes the current one.
+  # The player has to select the case from which he wants to move the piece.
+  # Then, he has to select the case where he wants to move the piece.
+  # If the move is authorized, the piece is moved, the board displayed
+  # and the other player becomes the current one.
   # 'C' allows the player to start again his turn.
   def next_turn
     puts
@@ -93,6 +80,13 @@ class Game
 
     board.display
     change_players
+  end
+
+  # Change order of players
+  def change_players
+    temp = self.current_player
+    self.current_player = self.other_player
+    self.other_player = temp
   end
 
   # Return the selected case by the current player in an array
@@ -218,6 +212,17 @@ class Game
     return answer
   end
 
+  # Move the piece to the selected case
+  def move_piece(case_from, case_to)
+    piece = board.get_case(case_from)
+
+    # Case when pawn reaches last line
+    piece = change_pawn(piece) if pawn_reached_end?(piece, case_to)
+
+    board.set_case(case_to, piece)
+    board.set_case(case_from, nil)
+  end
+
   # Return true if there are obstacles on the path of a sliding piece
   def obstruction?(piece, case_from, case_to)
     piece.possible_moves.each do |coord|
@@ -228,17 +233,6 @@ class Game
         break if offboard(next_case) || !empty?(next_case)
       end
     end
-  end
-      
-  # Move the piece to the selected case
-  def move_piece(case_from, case_to)
-    piece = board.get_case(case_from)
-
-    # Case when pawn reaches last line
-    piece = change_pawn(piece) if pawn_reached_end?(piece, case_to)
-
-    board.set_case(case_to, piece)
-    board.set_case(case_from, nil)
   end
 
   # Return true if pawn reached the last line
@@ -275,11 +269,22 @@ class Game
     end 
   end
 
-  # Change order of players
-  def change_players
-    temp = self.current_player
-    self.current_player = self.other_player
-    self.other_player = temp
+  # Return true if pawn can't move in diag
+  def pawn_cant_diag(piece, case_to)
+    return true if empty?(case_to)
+    case_selected = board.get_case(case_to)
+    return true if case_selected.color == piece.color
+    return false
+  end
+
+  # Return true if pawn can move up to 2 cases
+  def pawn_cant_double(piece, case_from)
+    if piece.color == 'white'
+      return true if case_from[1] != 1
+    elsif piece.color == 'black'
+      return true if case_from[1] != 6
+    end
+    return false
   end
 
   # Return true if the case selected is free of pieces
@@ -296,16 +301,11 @@ class Game
                    coord[1] < 0 || coord[1] > 7
   end
 
-  # Return king of given player
-  def find_king(player)
-    board.grid.each do |col|
-      col.each do |cell|
-        if cell
-          return cell if cell.is_a?(King) && cell.color == player.color
-        end
-      end
-    end
-  end
+
+
+  #############################
+  # VICTORY, DRAW OR SLATEMATE
+  #############################
 
   # Return true if one player won
   def victory?
@@ -321,6 +321,29 @@ class Game
       end
     end
     return false
+  end
+
+  # Return king of given player
+  def find_king(player)
+    board.grid.each do |col|
+      col.each do |cell|
+        if cell
+          return cell if cell.is_a?(King) && cell.color == player.color
+        end
+      end
+    end
+  end
+
+  # Return an array with all the pieces of the given color
+  def find_pieces(color)
+    array = []
+    board.grid.each do |column|
+      column.each do |piece|
+        next if !piece
+        array.push(piece) if piece.color == color
+      end
+    end 
+    array
   end
 
   # Return true if the given king is in check
@@ -389,45 +412,6 @@ class Game
       else
         next
       end
-    end
-    return false
-  end
-
-  # Return true if there is a draw
-  def draw?
-    counter = 0
-    board.grid.each do |col|
-      col.each do |cell|
-        counter +=1 if cell
-      end
-    end
-    return true if counter < 3
-    return false
-  end
-
-  # Return true if there is a stalemate
-  def stalemate?
-    pieces = find_pieces(current_player.color)
-    if pieces.size == 1
-      return true unless king_can_move?(pieces[0])
-    end
-    return false
-  end
-
-  # Return true if pawn can't move in diag
-  def pawn_cant_diag(piece, case_to)
-    return true if empty?(case_to)
-    case_selected = board.get_case(case_to)
-    return true if case_selected.color == piece.color
-    return false
-  end
-
-  # Return true if pawn can move up to 2 cases
-  def pawn_cant_double(piece, case_from)
-    if piece.color == 'white'
-      return true if case_from[1] != 1
-    elsif piece.color == 'black'
-      return true if case_from[1] != 6
     end
     return false
   end
@@ -505,18 +489,6 @@ class Game
     return false
   end
 
-  # Return an array with all the pieces of the given color
-  def find_pieces(color)
-    array = []
-    board.grid.each do |column|
-      column.each do |piece|
-        next if !piece
-        array.push(piece) if piece.color == color
-      end
-    end 
-    array
-  end
-
   # Return true if king can castle
   def can_castle?(king, move)
     if move == [-2, 0]
@@ -550,5 +522,38 @@ class Game
     move_piece(path.last, path[1])
 
     return true
+  end
+
+
+
+  ################################
+  # LOAD AND SAVE FUNCTIONALITIES
+  ################################
+
+  # Load saved game if exists
+  def load_game
+    Dir.chdir("save")
+    if File.exists?("save.txt")
+      data = YAML::load(File.read("save.txt"))
+      self.current_player = data.current_player
+      self.other_player = data.other_player
+      self.board = data.board
+      puts "Game Loaded!"
+      puts 
+      Dir.chdir("..")
+    else
+      puts "You have no saved games."
+      puts ""
+      Dir.chdir("..")
+    end
+  end
+
+  # Save game
+  def save_game
+    Dir.chdir("save")
+    File.open("save.txt", 'w') { |file| file.write(YAML::dump(self))}
+    puts "Game Saved!"
+    Dir.chdir("..")
+    exit
   end
 end

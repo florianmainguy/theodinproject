@@ -215,5 +215,49 @@ describe Game do
         expect(game.move_possible([7,7], [6,7]).first).to eq false
       end
     end
+
+    context "regards to castling" do
+      let(:board) do
+        array = Array.new(8) { Array.new(8) }
+        array[4][0] = King.new('white', [4,0], 'step')
+        array[0][0] = Rook.new('white', [0,0], 'slide')
+        array[7][0] = Rook.new('white', [7,0], 'slide')
+        array[4][7] = King.new('black', [4,7], 'step')
+        array[0][7] = Rook.new('black', [0,7], 'slide')
+        array[7][7] = Rook.new('black', [7,7], 'slide')
+        Board.new(array)
+      end
+      it "returns an array with 1st element eq to true if king can castle" do
+        game.stub(:board) { board }
+        game.stub(:current_player) { ginny }
+        game.stub(:other_player) { flo }
+        expect(game.move_possible([4,0], [2,0]).first).to eq true
+        expect(game.move_possible([4,0], [6,0]).first).to eq true
+        expect(game.move_possible([4,7], [2,7]).first).to eq true
+        expect(game.move_possible([4,7], [6,7]).first).to eq true
+      end
+      let(:board) do
+        array = Array.new(8) { Array.new(8) }
+        array[4][0] = King.new('white', [4,0], 'step')
+        array[0][0] = Rook.new('white', [0,0], 'slide')
+        array[5][0] = Queen.new('white', [5,0], 'slide')
+        array[4][7] = King.new('black', [4,7], 'step')
+        array[0][7] = Rook.new('black', [0,7], 'slide')
+        array[5][7] = Queen.new('black', [5,7], 'slide')
+        Board.new(array)
+      end
+      it "returns an array with 1st element eq to false if king can castle" do
+        game.stub(:board) { board }
+        game.stub(:current_player) { ginny }
+        game.stub(:other_player) { flo }
+        expect(game.move_possible([4,0], [2,0]).first).to eq false
+        expect(game.move_possible([4,7], [2,7]).first).to eq false
+      end
+    end
   end
 end
+
+# check
+# victory
+# draw
+# slatemate
