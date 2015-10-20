@@ -255,6 +255,26 @@ describe Game do
       end
     end
   end
+
+  describe '#king_check?' do
+    
+    context "if check by a rook" do
+      let(:board) do
+        array = Array.new(8) { Array.new(8) }
+        array[4][0] = King.new('white', [4,0], 'step')
+        array[4][7] = King.new('black', [4,7], 'step')
+        array[0][0] = Rook.new('black', [0,0], 'slide')
+        Board.new(array)
+      end
+      it "returns an array" do
+        game.stub(:board) { board }
+        game.stub(:current_player) { flo }
+        game.stub(:other_player) { ginny }
+        king = board.get_case([4,0])
+        expect(game.king_check?(king)).to be_kind_of(Rook)
+      end
+    end
+  end
 end
 
 # check

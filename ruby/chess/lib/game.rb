@@ -323,6 +323,27 @@ class Game
     return false
   end
 
+  # Return true if there is a draw
+  def draw?
+    counter = 0
+    board.grid.each do |col|
+      col.each do |cell|
+        counter +=1 if cell
+      end
+    end
+    return true if counter < 3
+    return false
+  end
+
+  # Return true if there is a stalemate
+  def stalemate?
+    pieces = find_pieces(current_player.color)
+    if pieces.size == 1
+      return true unless king_can_move?(pieces[0])
+    end
+    return false
+  end
+
   # Return king of given player
   def find_king(player)
     board.grid.each do |col|
