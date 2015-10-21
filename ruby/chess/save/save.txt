@@ -20,16 +20,16 @@ board: !ruby/object:Board
       unicode: "♙"
     - 
     - 
+    - 
+    - 
     - !ruby/object:Pawn
       color: black
       location:
       - 0
-      - 4
+      - 6
       type: step
-      counter: 1
+      counter: 0
       unicode: "♟"
-    - 
-    - 
     - !ruby/object:Rook
       color: black
       location:
@@ -84,16 +84,16 @@ board: !ruby/object:Board
       counter: 0
       unicode: "♗"
       path: []
+    - 
+    - 
     - !ruby/object:Pawn
       color: white
       location:
       - 2
-      - 1
+      - 3
       type: step
-      counter: 0
+      counter: 1
       unicode: "♙"
-    - 
-    - 
     - 
     - 
     - !ruby/object:Pawn
@@ -270,16 +270,16 @@ board: !ruby/object:Board
       counter: 0
       unicode: "♖"
       path: []
-    - 
-    - 
     - !ruby/object:Pawn
       color: white
       location:
       - 7
-      - 3
+      - 1
       type: step
-      counter: 1
+      counter: 0
       unicode: "♙"
+    - 
+    - 
     - 
     - 
     - !ruby/object:Pawn
@@ -300,8 +300,8 @@ board: !ruby/object:Board
       unicode: "♜"
       path: []
 current_player: !ruby/object:Player
-  name: f
-  color: white
-other_player: !ruby/object:Player
   name: g
   color: black
+other_player: !ruby/object:Player
+  name: f
+  color: white

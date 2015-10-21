@@ -331,7 +331,10 @@ class Game
         counter +=1 if cell
       end
     end
-    return true if counter < 3
+    if counter < 3
+      puts "Draw!"
+      return true
+    end
     return false
   end
 
@@ -339,7 +342,10 @@ class Game
   def stalemate?
     pieces = find_pieces(current_player.color)
     if pieces.size == 1
-      return true unless king_can_move?(pieces[0])
+      unless king_can_move?(pieces[0])
+        puts "Slatemate!"
+        return true 
+      end
     end
     return false
   end
