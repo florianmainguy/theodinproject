@@ -21,7 +21,7 @@ A blogger app used to familiarize with rails.
 
 ## 2- Ruby
 
-#### [Ruby blocks]
+#### [Ruby blocks](https://github.com/florianmainguy/theodinproject/blob/master/ruby/building-blocks)
 A few simple ruby scripts.
 
 #### [Advanced ruby blocks]
