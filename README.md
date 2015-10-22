@@ -26,3 +26,6 @@ A few simple ruby scripts.
 
 #### [Advanced ruby blocks](https://github.com/florianmainguy/theodinproject/blob/master/ruby/advanced-building-blocks)
 Introduction to Computer Science with two advanced problems.
+
+#### [OOP]
+Build a Tic Tac Toe and a Mastermind using OOP.
