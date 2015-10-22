@@ -1,6 +1,6 @@
 ## Google Homepage
 
-First personel project through [the Odin Project](http://www.theodinproject.com/web-development-101/html-css?ref=lnav).
+First personel project through [The Odin Project](http://www.theodinproject.com/web-development-101/html-css?ref=lnav).
 
 Basics of HTML and CSS.<br>
 Rebuild Google homepage with just some HTML and CSS.
