@@ -7,7 +7,7 @@ Curriculum:
 
 ## 1- Web development 101
 
-#### [Google homepage]
+#### [Google homepage](https://github.com/florianmainguy/theodinproject/tree/master/web-development-101/google-homepage)
 The first project to learn basics of HTML and CSS
 
 #### [Etch a sketch] 
