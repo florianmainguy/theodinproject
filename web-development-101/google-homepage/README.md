@@ -3,4 +3,5 @@
 First personel project through [the Odin Project](http://www.theodinproject.com/web-development-101/html-css?ref=lnav).
 
 ###Basics of HTML and CSS
-Rebuild Google homepage
+Rebuild Google homepage with just some HTML and CSS.
+See it live [here]()
