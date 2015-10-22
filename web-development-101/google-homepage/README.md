@@ -4,4 +4,4 @@ First personel project through [the Odin Project](http://www.theodinproject.com/
 
 ###Basics of HTML and CSS
 Rebuild Google homepage with just some HTML and CSS.
-See it live [here]()
+See it live [here](http://htmlpreview.github.io/?https://github.com/florianmainguy/theodinproject/blob/master/web-development-101/google-homepage/index.html)
