@@ -2,7 +2,7 @@
 
 From [The Odin Project](http://www.theodinproject.com/ruby-programming/ruby-final-project)<br><br>
 Build a command line Chess game where two players can play against each other.<br>
-To run the game, launch 'chess.rb'<br>
+To run the game, launch `chess.rb`<br>
 <br>
 
 ## Functionalities Implemented:
