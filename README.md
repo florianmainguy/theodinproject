@@ -45,5 +45,5 @@ Implementation of a binary tree data structure and of the DFS and BFS algortihms
 #### [Testing Ruby with RSpec](https://github.com/florianmainguy/theodinproject/tree/master/ruby/basic-data-structures-and-algorithms)
 Write specs for previous problems already implemented.
 
-#### [Final Project](https://github.com/florianmainguy/theodinproject/tree/master/ruby/chess)
+#### [Final Ruby Project](https://github.com/florianmainguy/theodinproject/tree/master/ruby/chess)
 Write a command line chess game
