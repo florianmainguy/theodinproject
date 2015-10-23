@@ -29,3 +29,6 @@ Introduction to Computer Science with two advanced problems.
 
 #### [OOP](https://github.com/florianmainguy/theodinproject/tree/master/ruby/OOP)
 Build a Tic Tac Toe and a Mastermind using OOP.
+
+#### [Serialization and files](https://github.com/florianmainguy/theodinproject/tree/master/ruby/serialization-and-working-with-files)
+Interacting with files with an Event Manager and a Hangman game.
