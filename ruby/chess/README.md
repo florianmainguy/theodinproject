@@ -27,7 +27,7 @@ To run the game, launch `chess.rb`<br>
 <br>Piece selected by player.
 
 * **Castling can be made**
-<br>If the player's king is not in check and can't be on the way to castle. And if the king and the rook concerned have not moved since beginning of game.
+<br>If the player's king is not in check and can't be on his way to castle. And if the king and the rook concerned have not moved since beginning of game.
 
 * **Game can be saved at beginning of every turn**
 <br>If so, exit the game. Player chooses to load a game or create a new one at beginning of game.
