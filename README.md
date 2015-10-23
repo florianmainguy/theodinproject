@@ -46,4 +46,4 @@ Implementation of a binary tree data structure and of the DFS and BFS algortihms
 Write specs for previous problems already implemented.
 
 #### [Final Ruby Project](https://github.com/florianmainguy/theodinproject/tree/master/ruby/chess)
-Write a command line chess game
+Write a command line chess game.
