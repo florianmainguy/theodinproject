@@ -1,13 +1,13 @@
 ## Ruby Final Project - Chess Game
 
-From [The Odin Project](http://www.theodinproject.com/ruby-programming/ruby-final-project)
+From [The Odin Project](http://www.theodinproject.com/ruby-programming/ruby-final-project)<br>
 Build a command line Chess game where two players can play against each other.<br>
 To run the game, launch chess.rb<br>
 <br>
 Functionalities Implemented:
-..*Prints "Check!" when a king is in check
-...The player in check has no choice but to move his king on a safe case, to move a
-...piece between his king and the adverse piece, or to take this adverse piece.
+*Prints "Check!" when a king is in check
+<br>The player in check has no choice but to move his king on a safe case, to move a
+<br>piece between his king and the adverse piece, or to take this adverse piece.
 
 ..*Prints "Checmate!" when a king is in checkmate and exit the game
 ...Happens when the player's king is in check and has no solution to avoid the same
