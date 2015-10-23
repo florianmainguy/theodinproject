@@ -35,3 +35,6 @@ Interacting with files with an Event Manager and a Hangman game.
 
 #### [Ruby on the Web](https://github.com/florianmainguy/theodinproject/tree/master/ruby/ruby-on-the-web)
 First contact with an API with the Twitter Spambot and a basic interaction between a Web Server and a Browser.
+
+#### [Recursion](https://github.com/florianmainguy/theodinproject/tree/master/ruby/recursion)
+Solving the Fibonacci Sequence Generator and the Merge Sort problems recursively.
