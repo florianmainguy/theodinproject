@@ -1,4 +1,3 @@
-# Twitter spambot
+## Twitter spambot
 
-Tuto from jumpstartlab<br>
-http://tutorials.jumpstartlab.com/projects/microblogger.html
+Tuto from [JumpstartLab](http://tutorials.jumpstartlab.com/projects/microblogger.html)
