@@ -32,3 +32,6 @@ Build a Tic Tac Toe and a Mastermind using OOP.
 
 #### [Serialization and files](https://github.com/florianmainguy/theodinproject/tree/master/ruby/serialization-and-working-with-files)
 Interacting with files with an Event Manager and a Hangman game.
+
+#### [Ruby on the Web](https://github.com/florianmainguy/theodinproject/tree/master/ruby/ruby-on-the-web)
+First contact with an API with the Twitter Spambot and a basic interaction between a Web Server and a Browser.
