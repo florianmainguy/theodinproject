@@ -1,4 +1,6 @@
-# Recursion
+## Recursion
 
-From The Odin Project:<br>
-http://www.theodinproject.com/ruby-programming/recursion?ref=lnav
+From [The Odin Project](http://www.theodinproject.com/ruby-programming/recursion?ref=lnav)
+
+How to solve two famous problems recursively.
+The Fibonacci Sequence Generator and the Merge Sort problems.
