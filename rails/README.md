@@ -1,5 +1,5 @@
 ## Starting on Rails
 From [The Odin Project](http://www.theodinproject.com/ruby-on-rails/getting-your-feet-wet)
 
-Chapters 1 and 2 of [The Rails Tutorial](https://www.railstutorial.org/book/beginning#cha-beginning) by Michael Hartl.<br>
-Two simple web apps to start on Rails.
+[The Rails Tutorial](https://www.railstutorial.org/book/beginning#cha-beginning) by Michael Hartl.<br>
+[Sample_app](https://obscure-plateau-2336.herokuapp.com/)
