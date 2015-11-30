@@ -1,0 +1,20 @@
+<h1>Form for updating an existing user</h1>
+
+<%= form_for @user do |f| %>
+  User Name: <%= f.text_field :username %> <br>
+  Email:     <%= f.email_field :email %> <br>
+  Password:  <%= f.password_field :password %> <br>
+  <%= f.submit "Submit" %>
+  
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
