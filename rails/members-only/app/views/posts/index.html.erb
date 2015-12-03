@@ -1,0 +1,29 @@
+<div class="container">
+	<h1 class="text-center">Members Only</h1>
+	
+	<% if flash[:success] %> <!-- Success popup minus button to close it -->
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong><%= flash[:success] %></strong>
+		</div>
+	<% end %>
+	<% if !flash[:error].nil? %> <!-- Error popup for entering blank data -->
+		<div class="alert alert-error">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong><%= flash[:error] %></strong>
+		</div>
+	<% end %>
+	
+		<% @posts.each do |f| %>
+			<div class="content">
+				<% if logged_in? %>
+					<em><p class="name"><%= f.user.name %></p></em>
+				<% end %>
+				<p class="body"><%= f.body %></p>
+			</div>
+		<% end %>
+	
+	<% if logged_in? %>
+		<%= link_to "Create new Post", new_post_path, class: "btn btn-standard" %>
+	<% end %>	
+</div>

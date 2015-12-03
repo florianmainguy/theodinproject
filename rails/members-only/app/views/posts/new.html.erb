@@ -1,0 +1,26 @@
+<div class="container text-center">
+	
+	<h1>New Post</h1>
+	
+	<% if !flash[:error].nil? %> <!-- Error popup for entering blank data -->
+		<div class="alert alert-error">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong><%= flash[:error] %></strong>
+		</div>
+	<% end %>
+	
+	<% if flash[:success] %> <!-- Success popup minus button to close it -->
+		<div class="alert alert-success">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong><%= flash[:success] %></strong>
+		</div>
+	<% end %>
+	
+	<%= form_for @post do |f| %>
+		<%= f.label :body %>
+		<%= f.text_field :body %>
+		<br>
+	
+		<%= f.submit 'Submit', class:"btn btn-standard" %>
+	<% end %>
+</div>
