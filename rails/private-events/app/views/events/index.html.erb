@@ -1,0 +1,13 @@
+<% provide(:title, 'Index Events') %>
+
+<h1>Event index:</h1>
+
+<% @events.each do |event| %>
+  <li>
+    <p>Event created by <%= User.find(event.creator_id).name %>:</p>
+    <p>Date: <%= event.date %> || Location: <%= event.location %></p>
+    <p>Description: <%= event.description %></p>
+  </li>
+<% end %>
+
+<%= link_to "Create an event",   new_event_path %>

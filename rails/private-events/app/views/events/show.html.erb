@@ -1,0 +1,9 @@
+<% provide(:title, 'Event') %>
+
+<h1>Event details</h1>
+
+<p>Event created by <%= @event.creator %>:</p>
+<p>Date: <%= @event.date %> || Location: <% @event.location %></p>
+<p>Description: <%= @event.description %></p>
+
+<%= link_to "Go back to index",   events_path %>

@@ -1,0 +1,15 @@
+<% provide(:title, @user.name) %>
+
+<h1>Show Page of <%= @user.name.capitalize %></h1>
+
+<p>Events created by <%= @user.name %>:</p>
+<% if @user.created_events.any? %>
+  <% @user.created_events.each do |event| %>
+    <li>Date: <%= event.date %> || Location: <% event.location %></li>
+    <p>Description: <%= @event.description %></p>
+  <% end %>
+<% else %>
+  <p>No event Yet.</p>
+<% end %>
+
+<%= link_to "Create new event", new_event_path %>
