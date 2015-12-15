@@ -2,7 +2,17 @@
 
 <h1>Event index:</h1>
 
-<% @events.each do |event| %>
+<p>Past Events:</p>
+<% @past_events.each do |event| %>
+  <li>
+    <p><%= link_to 'Event', event %> created by <%= User.find(event.creator_id).name %>:</p>
+    <p>Date: <%= event.date %> || Location: <%= event.location %></p>
+    <p>Description: <%= event.description %></p>
+  </li>
+<% end %>
+
+<p>Future Events:</p>
+<% @future_events.each do |event| %>
   <li>
     <p><%= link_to 'Event', event %> created by <%= User.find(event.creator_id).name %>:</p>
     <p>Date: <%= event.date %> || Location: <%= event.location %></p>

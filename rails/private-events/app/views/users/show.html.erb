@@ -7,10 +7,28 @@
   <% @user.created_events.each do |event| %>
     <li>Date: <%= event.date %> || Location: <%= event.location %></li>
     <p>Description: <%= event.description %></p>
-    <%= link_to 'Link to Event', event_path %><br>
+    <%= link_to 'Link to Event', event %><br>
   <% end %>
 <% else %>
   <p>No event Yet.</p>
+<% end %>
+
+<h4>Events attended by <%= @user.name %>:</h4>
+<% if @upcoming_events %>
+  <p>Upcoming Events:</p>
+  <% @upcoming_events.each do |event| %>
+    <li>Date: <%= event.date %> || Location: <%= event.location %></li>
+    <p>Description: <%= event.description %></p>
+    <%= link_to 'Link to Event', event %><br>
+  <% end %>
+<% end %>
+<% if @previous_events %>
+  <p>Previous Events:</p>
+  <% @previous_events.each do |event| %>
+    <li>Date: <%= event.date %> || Location: <%= event.location %></li>
+    <p>Description: <%= event.description %></p>
+    <%= link_to 'Link to Event', event %><br>
+  <% end %>
 <% end %>
 
 <%= link_to "Create new event", new_event_path %> <br>
