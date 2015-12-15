@@ -4,10 +4,11 @@
 
 <% @events.each do |event| %>
   <li>
-    <p>Event created by <%= User.find(event.creator_id).name %>:</p>
+    <p><%= link_to 'Event', event %> created by <%= User.find(event.creator_id).name %>:</p>
     <p>Date: <%= event.date %> || Location: <%= event.location %></p>
     <p>Description: <%= event.description %></p>
   </li>
 <% end %>
 
-<%= link_to "Create an event",   new_event_path %>
+<%= link_to "Create an event", new_event_path %><br>
+<%= link_to "User Page", root_path %>

@@ -2,8 +2,14 @@
 
 <h1>Event details</h1>
 
-<p>Event created by <%= @event.creator %>:</p>
+<h4>Event created by <%= User.find(@event.creator_id).name %>:</h4>
 <p>Date: <%= @event.date %> || Location: <% @event.location %></p>
 <p>Description: <%= @event.description %></p>
+
+<h4>List of attendees:</h4>
+<% @event.attendees.each do |attendee| %>
+  <li><%= attendee.name %></li>
+<% end %>
+<br>
 
 <%= link_to "Go back to index",   events_path %>
