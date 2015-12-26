@@ -1,0 +1,5 @@
+Airport.create(name: 'SFO')
+Airport.create(name: 'NYC')
+Airport.create(name: 'PARIS')
+Airport.create(name: 'LONDON')
+Airport.create(name: 'TOKYO')
