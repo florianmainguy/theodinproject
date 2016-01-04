@@ -7,7 +7,7 @@ In this case, we'll build the first three steps of a typical checkout process fo
 <br><br>
 A typical airline booking flow:
 <br><br>
-1. Enter desired dates / airports and click "Search"
-2. Choose from among a list of eligible flights
-3. Enter passenger information for all passengers
-4. Enter billing information
+1. Enter desired dates / airports and click "Search"<br>
+2. Choose from among a list of eligible flights<br>
+3. Enter passenger information for all passengers<br>
+4. Enter billing information<br>
