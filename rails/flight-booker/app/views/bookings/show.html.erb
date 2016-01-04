@@ -1,0 +1,14 @@
+<h2>Trip booked</h2>
+<h2>Booking information</h2>
+Booking ID: <%= @booking.id %> <br>
+Flight ID: <%= @booking.get_flight.id %><br> 
+Departure: <%= @booking.get_flight.start_airport.name %><br> 
+Arrival: <%= @booking.get_flight.stop_airport.name %><br> 
+Date: <%= @booking.get_flight.start_time %><br> 
+
+<h2>Passengers</h2>
+<ul>
+  <% @booking.passengers.each do |passenger| %>
+  <li><%= passenger.name %></li>
+  <% end %>
+</ul>

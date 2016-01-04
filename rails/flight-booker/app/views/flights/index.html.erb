@@ -9,25 +9,39 @@
 
 				<div class="form-group col-md-6 rm-p">
 					<%= label_tag(:from, "Departure Airport:") %>
-					<%= select_tag(:from, options_for_select(@airports), class: "form-control") %>
+					<%= select_tag(:from, options_for_select(@airports, @departure_airport), class: "form-control") %>
 				</div>
 
 				<div class="form-group col-md-6">
 					<%= label_tag(:to, "Destination Airport:") %>
-					<%= select_tag(:to, options_for_select(@airports), class: "form-control") %>
+					<%= select_tag(:to, options_for_select(@airports, @arrival_airport), class: "form-control") %>
 				</div>
 
 				<div class="form-group col-md-6 rm-p">
 					<%= label_tag(:departure_date, "Date:") %>
-					<%= select_tag(:departure_date, options_for_select(@dates), class: "form-control") %>
+					<%= select_tag(:departure_date, options_for_select(@dates, @date), class: "form-control") %>
 				</div>
 
 				<div class="form-group col-md-6">
 					<%= label_tag(:passengers, "Number of Passengers:") %>
-					<%= select_tag(:passengers, options_for_select(@passengers), class: "form-control") %>
+					<%= select_tag(:passengers, options_for_select(@nb_passengers, @pas), class: "form-control") %>
 				</div>
 
 				<%= submit_tag "Search", class: "btn btn-primary col-md-4 col-md-offset-8" %>
 			<% end %>
 	</div>
 </div>
+
+<% if !@flights.empty? %>
+	<%= form_tag(new_booking_path, method: "get") do %>
+    <% @flights.each do |f| %>
+      <%= radio_button_tag(:flight_id, f.id) %>
+      From <%= f.start_airport.name %>
+      to <%= f.stop_airport.name %>
+      | Date <%= f.start_time %>
+      </p>
+    <% end %>
+    <%= hidden_field_tag(:passengers, params[:passengers]) %>
+    <p><%= submit_tag "Select", class: "btn btn-primary col-md-4 col-md-offset-8" %></p>
+   <% end %>
+<% end %>
