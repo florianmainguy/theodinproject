@@ -1,0 +1,13 @@
+<% if !flash[:error].nil? %> <!-- Error popup for entering blank data -->
+	<div class="alert alert-error">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<strong><%= flash[:error] %></strong>
+	</div>
+<% end %>
+	
+<% if flash[:success] %> <!-- Success popup minus button to close it -->
+	<div class="alert alert-success">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<strong><%= flash[:success] %></strong>
+	</div>
+<% end %>
