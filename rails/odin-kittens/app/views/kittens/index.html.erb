@@ -7,6 +7,10 @@
   <% @kittens.each do |kitten| %>
     <p>Kitten <%= kitten.name %></p>
     <p>Age: <%= kitten.age %>, Cuteness: <%= kitten.cuteness %>, Softness: <%= kitten.softness %></p>
-    <br>
+    <%= link_to 'Show', kitten %>
+    <%= link_to 'Edit', edit_kitten_path(kitten) %>
+    <br><br>
   <% end %>
 <% end %>
+
+<%= link_to 'Create a New Kitten', new_kitten_path %>

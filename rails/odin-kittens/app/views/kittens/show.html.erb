@@ -2,7 +2,9 @@
 <br>
 
 <ul>
-  <li>Age: <%= kitten.age %></li>
-  <li>Cuteness: <%= kitten.cuteness %></li>
-  <li>Softness: <%= kitten.softness %></li>
+  <li>Age: <%= @kitten.age %></li>
+  <li>Cuteness: <%= @kitten.cuteness %></li>
+  <li>Softness: <%= @kitten.softness %></li>
 </ul>
+
+<%= link_to 'Index', kittens_path %>
