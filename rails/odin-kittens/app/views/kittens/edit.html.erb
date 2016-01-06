@@ -3,4 +3,5 @@
 
 <%= render 'shared/form' %>
 
+<%= link_to 'Destroy', @kitten, method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Return to Index', kittens_path %>

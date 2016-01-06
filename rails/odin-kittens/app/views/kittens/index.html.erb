@@ -9,6 +9,7 @@
     <p>Age: <%= kitten.age %>, Cuteness: <%= kitten.cuteness %>, Softness: <%= kitten.softness %></p>
     <%= link_to 'Show', kitten %>
     <%= link_to 'Edit', edit_kitten_path(kitten) %>
+    <%= link_to 'Destroy', kitten, method: :delete, data: { confirm: 'Are you sure?' } %>
     <br><br>
   <% end %>
 <% end %>
