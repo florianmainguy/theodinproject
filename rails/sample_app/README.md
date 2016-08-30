@@ -5,4 +5,6 @@ This is the sample application for the
 Learn Web Development with Rails](http://www.railstutorial.org/)<br>
 by [Michael Hartl](http://www.michaelhartl.com/).
 <br/>
-See it live: [Sample_app](https://obscure-plateau-2336.herokuapp.com/)
+See it live: [Sample_app](https://obscure-plateau-2336.herokuapp.com/)<br/>
+Email: example@railstutorial.org <br/>
+Password: foobar
