@@ -1,6 +1,6 @@
 ## Sample App
 
-From [The Odin Project](http://www.theodinproject.com/ruby-on-rails/let-s-get-building)<br/>
+From [The Odin Project](http://www.theodinproject.com/ruby-on-rails/let-s-get-building)<br/><br/>
 This is the sample application for the
 [Ruby on Rails Tutorial:
 Learn Web Development with Rails](http://www.railstutorial.org/)<br>
