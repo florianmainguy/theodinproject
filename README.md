@@ -49,7 +49,7 @@ Write specs for previous problems already implemented.
 #### [Final Ruby Project](https://github.com/florianmainguy/theodinproject/tree/master/ruby/chess)
 Write a command line chess game.
 
-## Ruby & Rails
+## 3- Ruby & Rails
 
 #### [Sample App](https://github.com/florianmainguy/theodinproject/tree/master/rails/sample_app)
 Build Hartl's main project in his book - a microblog website.
