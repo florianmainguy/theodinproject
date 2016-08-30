@@ -4,3 +4,5 @@ This is the sample application for the
 [Ruby on Rails Tutorial:
 Learn Web Development with Rails](http://www.railstutorial.org/)<br>
 by [Michael Hartl](http://www.michaelhartl.com/).
+<br/>
+See it live: [Sample_app](https://obscure-plateau-2336.herokuapp.com/)
