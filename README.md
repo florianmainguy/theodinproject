@@ -2,6 +2,7 @@
 
 [The Odin Project](http://www.theodinproject.com/home) is a website that provides a proven path to learn web development. It puts emphasis on practice with many small projects.
 
+I did the curriculum till the end of the Ruby & Rails section. My goal was to get a foot into the door in web development. It gave me a good overview and even more. At the end of this course, I was able to create and deploy complete rails applications.
 
 Curriculum:
 
