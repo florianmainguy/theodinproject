@@ -51,7 +51,7 @@ Write a command line chess game.
 
 ## Ruby & Rails
 
-#### [Microblog App](https://github.com/florianmainguy/theodinproject/tree/master/rails/sample_app)
+#### [Sample App](https://github.com/florianmainguy/theodinproject/tree/master/rails/sample_app)
 Build Hartl's main project in his book - a microblog website.
 
 #### [Micro-Reddit](https://github.com/florianmainguy/theodinproject/tree/master/rails/micro-reddit)
