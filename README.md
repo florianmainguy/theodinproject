@@ -42,7 +42,7 @@ Solve the Fibonacci Sequence Generator and the Merge Sort problems recursively.
 #### [Data Structures and Algorithms](https://github.com/florianmainguy/theodinproject/tree/master/ruby/basic-data-structures-and-algorithms)
 Implementation of a binary tree data structure and of the DFS and BFS algortihms on a real problem.
 
-#### [Testing Ruby with RSpec](https://github.com/florianmainguy/theodinproject/tree/master/ruby/basic-data-structures-and-algorithms)
+#### [Testing Ruby with RSpec](https://github.com/florianmainguy/theodinproject/tree/master/ruby/testing-ruby)
 Write specs for previous problems already implemented.
 
 #### [Final Ruby Project](https://github.com/florianmainguy/theodinproject/tree/master/ruby/chess)
