@@ -2,6 +2,7 @@
 
 [The Odin Project](http://www.theodinproject.com/home) is a website that provides a proven path to learn web development. It puts emphasis on practice with many small projects.
 
+I did the curriculum till the end of the Ruby & Rails section. My goal was to get a foot into the door in web development. It gave me a good overview and even more. At the end of this course, I was able to create and deploy complete rails applications.
 
 Curriculum:
 
@@ -47,3 +48,26 @@ Write specs for previous problems already implemented.
 
 #### [Final Ruby Project](https://github.com/florianmainguy/theodinproject/tree/master/ruby/chess)
 Write a command line chess game.
+
+## 3- Ruby & Rails
+
+#### [Sample App](https://github.com/florianmainguy/theodinproject/tree/master/rails/sample_app)
+Build Hartl's main project in his book - a microblog website.
+
+#### [Micro-Reddit](https://github.com/florianmainguy/theodinproject/tree/master/rails/micro-reddit)
+Build a very simple Reddit site.
+
+#### [Rails Forms](https://github.com/florianmainguy/theodinproject/tree/master/rails/re-former)
+Practice building forms in rails.
+
+#### [Members Only](https://github.com/florianmainguy/theodinproject/tree/master/rails/members-only)
+Practice building authentication in Rails with a basic posting site.
+
+#### [Private Events](https://github.com/florianmainguy/theodinproject/tree/master/rails/private-events)
+Build a basic replica of Eventbrite where users can log in, create events and sign up to attend events.
+
+#### [Flight Booker](https://github.com/florianmainguy/theodinproject/tree/master/rails/flight-booker)
+Build a basic flight booker app. Search flights by airport and date and book a flight.
+
+#### [Kittens API](https://github.com/florianmainguy/theodinproject/tree/master/rails/odin-kittens)
+Build a data-producing API.
