@@ -1,0 +1,38 @@
+<header class="login-header">
+  <div class="login-header-content">
+    <div class="login-logo-container">
+      <%#= image_tag "tracebook-logo.png", class: "login-logo" %>
+      <h1>Fakebook</h1>
+    </div>
+    
+    <%= form_tag session_path, class: "login-form-container" do %>
+      <table class="login-form">
+        <tr>
+          <td>
+            <%= label_tag :email %>
+          </td>
+          <td>
+            <%= label_tag :password %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= email_field_tag :email %>
+          </td>
+          <td>
+            <%= password_field_tag :password %>
+          <td>
+            <%= submit_tag "Log In" %>
+        </tr>
+        <tr>
+          <td>
+            <%= label_tag 'remember_me' do %>
+              <%= check_box_tag :remember_me %>
+              Remember me?
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</header>

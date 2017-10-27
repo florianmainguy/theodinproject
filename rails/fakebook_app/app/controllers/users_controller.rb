@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
-  def index
-  end
 
-  def new
+  def index
     render html: "You really should sign in!"
   end
 end

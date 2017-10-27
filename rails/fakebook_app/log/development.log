@@ -453,3 +453,47 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 16ms (Views: 5.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2017-10-27 18:04:04 +0100
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/activerecord-5.0.6/lib/active_record/railtie.rb:113)
+Processing by UsersController#index as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 15ms (Views: 6.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-10-27 18:17:38 +0100
+Processing by UsersController#index as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-10-27 18:17:40 +0100
+Processing by UsersController#index as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-10-27 18:18:02 +0100
+Processing by UsersController#index as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-10-27 18:18:27 +0100
+Processing by UsersController#index as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-10-27 18:18:49 +0100
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/activerecord-5.0.6/lib/active_record/railtie.rb:113)
+Processing by UsersController#index as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 46ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+
+
