@@ -1,0 +1,11 @@
+  [1m[35m (358.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "fakebook_postgresql_test"[0m
+  [1m[35m (2569.6ms)[0m  [1m[35mCREATE DATABASE "fakebook_postgresql_test" ENCODING = 'utf8'[0m
+  [1m[35m (7.4ms)[0m  [1m[35mBEGIN[0m
+------------------------------------------
+UsersControllerTest: test_should_get_index
+------------------------------------------
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1601ms (Views: 1597.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m

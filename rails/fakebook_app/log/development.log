@@ -445,3 +445,11 @@ Started GET "/" for ::1 at 2017-10-26 22:18:24 +0100
 Processing by UsersController#new as HTML
   Rendered html template (0.0ms)
 Completed 200 OK in 39ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+Started GET "/" for ::1 at 2017-10-27 15:07:05 +0100
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from block (3 levels) in <class:Railtie> at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/activerecord-5.0.6/lib/active_record/railtie.rb:113)
+Processing by UsersController#new as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 16ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
