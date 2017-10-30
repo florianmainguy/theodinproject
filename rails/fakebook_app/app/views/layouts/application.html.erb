@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FakebookApp</title>
+  <title>Fakebook</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,12 +12,13 @@
 </head>
 <body>
   <% if 1==0 %>
-    <%= render partial: "shared/navbar" %>
+    <%#= render partial: "shared/navbar" %>
   <% else %>
-    <%= render partial: "shared/login" %>
+    <%#= render partial: "shared/login" %>
   <% end %>
 
   <%= yield %>
+  <%= debug(params) if Rails.env.development? %>
 
 </body>
 </html>
