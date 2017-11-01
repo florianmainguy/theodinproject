@@ -11,10 +11,14 @@
   <![endif]-->
 </head>
 <body>
-  <% if 1==0 %>
-    <%#= render partial: "shared/navbar" %>
+  <% if user_signed_in? %>
+    <%= render partial: "shared/navbar" %>
   <% else %>
-    <%#= render partial: "shared/login" %>
+    <%= render partial: "shared/login" %>
+  <% end %>
+
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, id: "flash_#{name}" %>
   <% end %>
 
   <%= yield %>

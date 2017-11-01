@@ -4,8 +4,7 @@
       <%#= image_tag "tracebook-logo.png", class: "login-logo" %>
       <h1>Fakebook</h1>
     </div>
-    
-    <%= form_tag, class: "login-form-container" do %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "login-form-container"}) do %>
       <table class="login-form">
         <tr>
           <td>

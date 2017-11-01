@@ -7,4 +7,4 @@ $ git push heroku
 $ heroku run rails db:migrate
 provide title ?
 images root page
-<%= form_for (resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+navbar to implement
