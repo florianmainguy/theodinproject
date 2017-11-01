@@ -31,13 +31,11 @@
             </td>
           </tr>
         </table>
-      </div>
-
-
-      <div class="col-right">
+      </div><!--
+      --><div class="col-right">
         <h1>Sign Up</h1>
         <h3>Let's get started!</h3>
-        <%= form_for (resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <%= devise_error_messages! %>
 
           <%= f.text_field :first_name, class: "input",
@@ -63,6 +61,3 @@
     <hr>
   </section>
 </div>
-
-
-<%= render "users/shared/links" %>
