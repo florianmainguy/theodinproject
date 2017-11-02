@@ -7,5 +7,5 @@ $ git push heroku
 $ heroku run rails db:migrate
 provide title ?
 images root page
-navbar to implement
 navbar image css
+implement dozen of users in database and implement search bar navbar

@@ -1,37 +1,25 @@
 <!-- Navbar -->
-<nav id="top-nav" class="navbar navbar-static-top">
+<nav id="top-nav" class="navbar navbar-expand-lg navbar-light">
   <div class="container">
 
     <!-- Burger Button -->
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-collapse">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="navbar-header">
+    <div class="navbar-brand">
       <%= link_to authenticated_root_path(current_user) do %>
-        <div class="nav-brand-img"></div>
         <span class="nav-brand-word">Fakebook</span>
       <% end %>
     </div><!-- end navbar-header -->
 
     <!-- Collapsible Nav -->
-    <div id="nav-collapse" class="collapse navbar-collapse">
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
 
       <!-- Search Bar -->
-      <%= form_tag authenticated_root_path, :method => :get,
-                               class: "navbar-form navbar-left" do %>
-        <div class="input-group">
-          <%= search_field_tag :search, nil, class: "form-control",
-                                             placeholder: "Search" %>
-          <div class="input-group-btn">
-            <%= button_tag name: nil, class: "btn btn-default" do %>
-              <i class="glyphicon glyphicon-search"></i>
-            <% end %>
-          </div>
-        </div>
+      <%= form_tag authenticated_root_path, :method => :get, class: "form-inline my-2 my-lg-0" do %>
+        <%= text_field_tag(:search, params[:search], class:"form-control mr-sm-2", placeholder:"Search") %>
+        <%= submit_tag("Search", name: nil, class:"btn btn-outline-success my-2 my-sm-0") %>
       <% end %><!-- end search bar -->
 
       <!-- Requests, Username, and Sign Out Links -->
