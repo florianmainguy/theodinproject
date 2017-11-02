@@ -8,3 +8,4 @@ $ heroku run rails db:migrate
 provide title ?
 images root page
 navbar to implement
+navbar image css

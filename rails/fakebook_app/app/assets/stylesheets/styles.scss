@@ -392,7 +392,7 @@ a {
     vertical-align: middle;
     height: 24px;
     width: 24px;
-    background-image: image-url('tracebook-logo.png');
+    /*background-image: image-url('tracebook-logo.png');*/
     background-size: 24px 24px;
     overflow: hidden;
     border-radius: 50%;
@@ -423,6 +423,7 @@ a {
 
   .icon-bar {
     background-color: white;
+    
   }
 
   .nav-icon {
