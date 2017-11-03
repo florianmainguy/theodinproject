@@ -5,7 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '>= 5.0.0.rc2', '< 5.1'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'sprockets-rails'
-
+gem 'faker'
+gem 'devise'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -27,8 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.11'
-
-gem 'devise'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

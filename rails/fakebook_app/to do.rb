@@ -8,4 +8,6 @@ $ heroku run rails db:migrate
 provide title ?
 images root page
 navbar image css
-implement dozen of users in database and implement search bar navbar
+fix navbar & login styles
+fakebook in navbar --> send to profile current user
+glyphicon in rails 5 ?

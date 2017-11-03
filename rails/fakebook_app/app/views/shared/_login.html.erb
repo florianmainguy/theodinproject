@@ -4,28 +4,28 @@
       <%#= image_tag "tracebook-logo.png", class: "login-logo" %>
       <h1>Fakebook</h1>
     </div>
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "login-form-container"}) do %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "login-form-container"}) do |f|%>
       <table class="login-form">
         <tr>
           <td>
-            <%= label_tag :email %>
+            <%= f.label :email %>
           </td>
           <td>
-            <%= label_tag :password %>
+            <%= f.label :password %>
           </td>
         </tr>
         <tr>
           <td>
-            <%= email_field_tag :email %>
+            <%= f.text_field :email %>
           </td>
           <td>
-            <%= password_field_tag :password %>
+            <%= f.password_field :password %>
           <td>
             <%= submit_tag "Log In" %>
         </tr>
         <tr>
           <td>
-            <%= label_tag 'remember_me' do %>
+            <%= f.label 'remember_me' do %>
               <%= check_box_tag :remember_me %>
               Remember me?
             <% end %>

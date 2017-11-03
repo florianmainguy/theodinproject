@@ -17,9 +17,15 @@
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
 
       <!-- Search Bar -->
-      <%= form_tag authenticated_root_path, :method => :get, class: "form-inline my-2 my-lg-0" do %>
-        <%= text_field_tag(:search, params[:search], class:"form-control mr-sm-2", placeholder:"Search") %>
-        <%= submit_tag("Search", name: nil, class:"btn btn-outline-success my-2 my-sm-0") %>
+      <%= form_tag authenticated_root_path, :method => :get, class: "navbar-form navbar-left" do %>
+        <div class="input-group">
+          <%= search_field_tag(:search, params[:search], class:"form-control", placeholder:"Search") %>
+          <div class="input-group-btn">
+            <% button_tag name: nil, class:"btn btn-default" do %>
+              <i class="glyphicon glyphicon-search"></i>
+            <% end %>
+          </div>
+        </div>
       <% end %><!-- end search bar -->
 
       <!-- Requests, Username, and Sign Out Links -->
