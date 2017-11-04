@@ -10,4 +10,15 @@ class User < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def self.search(user_name) 
+    if user_name
+      where('first_name ILIKE ? or last_name ILIKE ?', "%#{user_name}%", "%#{user_name}%")
+    else
+      all
+    end
+  end
+
+  def self.search_by_full_name(names) 
+    where('first_name ILIKE ? and last_name ILIKE ?', "%#{names[0]}%", "%#{names[1]}%")
+  end
 end

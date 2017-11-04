@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    user_search = params[:search].split(" ")
+    if user_search.count > 1
+      @users = User.search_by_full_name(user_search)
+    else
+      @users = User.search(user_search[0])
+    end
   end
 end
