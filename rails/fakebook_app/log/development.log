@@ -18837,3 +18837,1138 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 41ms (Views: 38.7ms | ActiveRecord: 0.3ms)
 
 
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+Started GET "/?utf8=%E2%9C%93&search=" for ::1 at 2017-11-06 10:29:59 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (22.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (25.8ms)
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"users"} missing required keys: [:id]):
+    1: <h1>Users#index</h1>
+    2: <ul>
+    3:   <% @users.each do |user| %>
+    4:     <li><%= link_to(user.full_name, user_path) %></li>
+    5:   <% end %>
+    6: </ul>
+  
+app/views/users/index.html.erb:4:in `block in _app_views_users_index_html_erb___3397251478409056588_70227405359760'
+app/views/users/index.html.erb:3:in `_app_views_users_index_html_erb___3397251478409056588_70227405359760'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (103.2ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227368548840 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (827.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (934.9ms)
+Started GET "/?utf8=%E2%9C%93&search=" for ::1 at 2017-11-06 10:33:16 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.9ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+Completed 200 OK in 1311ms (Views: 1308.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/popper.self-7cef4fc3261fb0f37f4ae78984d8d818c26878b57c46aa18963ba91d7b5c161e.js?body=1" for ::1 at 2017-11-06 10:33:18 +0000
+Started GET "/assets/bootstrap.self-0cfb9a07e29ebdbbb41fc3c09c4d482c4113fcb27b69c67b4890764f38b2851f.js?body=1" for ::1 at 2017-11-06 10:33:18 +0000
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for ::1 at 2017-11-06 10:33:18 +0000
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for ::1 at 2017-11-06 10:33:18 +0000
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-11-06 10:33:18 +0000
+Started GET "/assets/application.self-7862a8a8b42407b4741a1adeeea35f0d13ddc4f702ec532adb0674491d296495.js?body=1" for ::1 at 2017-11-06 10:33:18 +0000
+Started GET "/assets/fontawesome-webfont-2adefcbc041e7d18fcf2d417879dc5a09997aa64d675b7a3c4b6ce33da13f3fe.woff2" for ::1 at 2017-11-06 10:33:18 +0000
+Started GET "/users/167" for ::1 at 2017-11-06 10:33:26 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_cover with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views"
+  * "/Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/devise-4.3.0/app/views"
+):
+    1: <div class="container">
+    2: 
+    3:   <%= render partial: "shared/cover", :locals => { user: @user } %>
+    4: 
+    5:   <main id="timeline">
+    6:     <div class="row">
+  
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227435150800'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (67.1ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227380963580 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (128.4ms)
+Started GET "/users/167" for ::1 at 2017-11-06 10:37:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (25.7ms)
+  Rendered users/show.html.erb within layouts/application (29.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_photos_path' for #<#<Class:0x00007fbe2aa8bc50>:0x00007fbe32122eb8>
+Did you mean?  user_path):
+    2:   <div id="cover" class="row">
+    3:     <!-- Cover Image -->
+    4:     <div class="cover-img">
+    5:       <%= link_to user_photos_path(user) do %>
+    6:         <%= image_tag user.cover_url, alt: "Cover Photo" %>
+    7:       <% end %>
+    8:     </div>
+  
+app/views/users/shared/_cover.html.erb:5:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227430742400'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227430284320'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (73.8ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227378006620 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.9ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:06:24 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (14.7ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 4.6ms)
+
+
+  
+SyntaxError (/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:27: syntax error, unexpected '<'
+            <dt>College</dt>
+             ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:28: unknown regexp options - dd
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:29: syntax error, unexpected '<'
+            <dt>Hometown</dt>
+             ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:30: unknown regexp options - dd
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:31: syntax error, unexpected '<'
+            <dt>Location</dt>
+             ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:32: unknown regexp options - dd
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:33: syntax error, unexpected '<'
+          </dl>
+           ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:35: unknown regexp option - h
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:35: syntax error, unexpected tINTEGER, expecting ')'
+   <h3>Contact Information</h3>
+                              ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:37: syntax error, unexpected '<'
+            <dt>Email</dt>
+             ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:38: unknown regexp options - dd
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:39: syntax error, unexpected '<'
+            <dt>Telephone</dt>
+             ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:40: unknown regexp options - dd
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:41: syntax error, unexpected '<'
+          </dl>
+           ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:42: unknown regexp options - dv
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:44: syntax error, unexpected '<'
+        <!-- Right Column -->
+         ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:44: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+        <!-- Right Column -->
+                         ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:44: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:46: syntax error, unexpected '<'
+          <h3>Words to Live By</h3>
+           ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:46: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+          <h3>Words to Live By</h3>
+                      ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:47: unknown regexp option - p
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:48: syntax error, unexpected '<'
+          <h3>About Me</h3>
+           ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:48: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+          <h3>About Me</h3>
+                      ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:49: unknown regexp option - p
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:50: syntax error, unexpected '<'
+        </div>
+         ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:52: unknown regexp options - ct
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:53: syntax error, unexpected '<'
+    </div><!-- end row -->
+     ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:55: unknown regexp option - a
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:57: syntax error, unexpected '<'
+</div>
+ ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/show.html.erb:57: unterminated regexp meets end of file):
+  
+app/views/users/show.html.erb:27: syntax error, unexpected '<'
+app/views/users/show.html.erb:28: unknown regexp options - dd
+app/views/users/show.html.erb:29: syntax error, unexpected '<'
+app/views/users/show.html.erb:30: unknown regexp options - dd
+app/views/users/show.html.erb:31: syntax error, unexpected '<'
+app/views/users/show.html.erb:32: unknown regexp options - dd
+app/views/users/show.html.erb:33: syntax error, unexpected '<'
+app/views/users/show.html.erb:35: unknown regexp option - h
+app/views/users/show.html.erb:35: syntax error, unexpected tINTEGER, expecting ')'
+app/views/users/show.html.erb:37: syntax error, unexpected '<'
+app/views/users/show.html.erb:38: unknown regexp options - dd
+app/views/users/show.html.erb:39: syntax error, unexpected '<'
+app/views/users/show.html.erb:40: unknown regexp options - dd
+app/views/users/show.html.erb:41: syntax error, unexpected '<'
+app/views/users/show.html.erb:42: unknown regexp options - dv
+app/views/users/show.html.erb:44: syntax error, unexpected '<'
+app/views/users/show.html.erb:44: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+app/views/users/show.html.erb:44: syntax error, unexpected '\n', expecting keyword_do_LAMBDA or tLAMBEG
+app/views/users/show.html.erb:46: syntax error, unexpected '<'
+app/views/users/show.html.erb:46: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/users/show.html.erb:47: unknown regexp option - p
+app/views/users/show.html.erb:48: syntax error, unexpected '<'
+app/views/users/show.html.erb:48: syntax error, unexpected tCONSTANT, expecting keyword_do or '{' or '('
+app/views/users/show.html.erb:49: unknown regexp option - p
+app/views/users/show.html.erb:50: syntax error, unexpected '<'
+app/views/users/show.html.erb:52: unknown regexp options - ct
+app/views/users/show.html.erb:53: syntax error, unexpected '<'
+app/views/users/show.html.erb:55: unknown regexp option - a
+app/views/users/show.html.erb:57: syntax error, unexpected '<'
+app/views/users/show.html.erb:57: unterminated regexp meets end of file
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227406954740 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.3ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:08:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (18.0ms)
+  Rendered users/show.html.erb within layouts/application (36.2ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.9ms)
+
+
+  
+SyntaxError (/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:15: unknown regexp option - h
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:15: syntax error, unexpected tINTEGER, expecting keyword_end
+utput_buffer.safe_append='</h1>
+                              ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:17: unknown regexp options - dv
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:19: syntax error, unexpected '<'
+  <div class="row">
+   ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:20: syntax error, unexpected '<'
+    <nav id="main-nav">
+     ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:21: syntax error, unexpected '<'
+      <ul class="nav">
+       ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:26: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+        -->'.freeze;@output_buffer.append=
+            ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:30: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+        -->'.freeze;@output_buffer.append=
+            ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:39: unknown regexp options - all
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:44: unknown regexp options - av
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:45: syntax error, unexpected '<'
+  </div>
+   ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:46: unknown regexp options - ct
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:47: unterminated string meets end of file
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/users/shared/_cover.html.erb:15: unknown regexp option - h
+app/views/users/shared/_cover.html.erb:15: syntax error, unexpected tINTEGER, expecting keyword_end
+app/views/users/shared/_cover.html.erb:17: unknown regexp options - dv
+app/views/users/shared/_cover.html.erb:19: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:20: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:21: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:26: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+app/views/users/shared/_cover.html.erb:30: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+app/views/users/shared/_cover.html.erb:39: unknown regexp options - all
+app/views/users/shared/_cover.html.erb:44: unknown regexp options - av
+app/views/users/shared/_cover.html.erb:45: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:46: unknown regexp options - ct
+app/views/users/shared/_cover.html.erb:47: unterminated string meets end of file
+app/views/users/shared/_cover.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227443226280'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227413235740 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (130.4ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:09:09 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (1.3ms)
+  Rendered users/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.1ms)
+
+
+  
+SyntaxError (/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:15: unknown regexp option - h
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:15: syntax error, unexpected tINTEGER, expecting keyword_end
+utput_buffer.safe_append='</h1>
+                              ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:17: unknown regexp options - dv
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:19: syntax error, unexpected '<'
+  <div class="row">
+   ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:20: syntax error, unexpected '<'
+    <nav id="main-nav">
+     ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:21: syntax error, unexpected '<'
+      <ul class="nav">
+       ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:26: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+        -->'.freeze;@output_buffer.append=
+            ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:30: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+        -->'.freeze;@output_buffer.append=
+            ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:39: unknown regexp options - all
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:44: unknown regexp options - av
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:45: syntax error, unexpected '<'
+  </div>
+   ^
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:46: unknown regexp options - ct
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:47: unterminated string meets end of file
+/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/shared/_cover.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/views/users/shared/_cover.html.erb:15: unknown regexp option - h
+app/views/users/shared/_cover.html.erb:15: syntax error, unexpected tINTEGER, expecting keyword_end
+app/views/users/shared/_cover.html.erb:17: unknown regexp options - dv
+app/views/users/shared/_cover.html.erb:19: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:20: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:21: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:26: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+app/views/users/shared/_cover.html.erb:30: syntax error, unexpected tSTRING_BEG, expecting keyword_do_LAMBDA or tLAMBEG
+app/views/users/shared/_cover.html.erb:39: unknown regexp options - all
+app/views/users/shared/_cover.html.erb:44: unknown regexp options - av
+app/views/users/shared/_cover.html.erb:45: syntax error, unexpected '<'
+app/views/users/shared/_cover.html.erb:46: unknown regexp options - ct
+app/views/users/shared/_cover.html.erb:47: unterminated string meets end of file
+app/views/users/shared/_cover.html.erb:47: syntax error, unexpected end-of-input, expecting keyword_end
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227443519500'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227413483240 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (125.6ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:10:43 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (8.1ms)
+  Rendered users/show.html.erb within layouts/application (10.2ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<User:0x00007fbe3004eac0>):
+    2:   <div id="cover" class="row">
+    3:     <!-- Cover Image -->
+    4:     <div class="cover-img">
+    5:       <%= gravatar_for @user %>
+    6:     </div>
+    7:     <!-- Profile Image -->
+    8:     <div class="profile-img">
+  
+app/helpers/users_helper.rb:6:in `gravatar_for'
+app/views/users/shared/_cover.html.erb:5:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227413007820'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227413068880'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.4ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227434918680 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.4ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:11:13 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (32.2ms)
+  Rendered users/show.html.erb within layouts/application (34.4ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `user_photos_path' for #<#<Class:0x00007fbe2ab507f8>:0x00007fbe2ab3ad90>
+Did you mean?  user_path):
+     6:     </div>
+     7:     <!-- Profile Image -->
+     8:     <div class="profile-img">
+     9:       <!--<%= link_to user_photos_path(user) do %>
+    10:         <%= image_tag user.avatar_url, alt: "Profile Picture" %>
+    11:       <% end %>-->
+    12:     </div>
+  
+app/views/users/shared/_cover.html.erb:9:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227406184140'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227368528100'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.2ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227406779340 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (129.7ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:12:21 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (14.9ms)
+  Rendered users/show.html.erb within layouts/application (17.1ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `avatar_url' for #<User:0x00007fbe32ba12b8>):
+     7:     <!-- Profile Image -->
+     8:     <div class="profile-img">
+     9:       <%= link_to user_path(user) do %>
+    10:         <%= image_tag user.avatar_url, alt: "Profile Picture" %>
+    11:       <% end %>
+    12:     </div>
+    13:     <!-- Cover Name -->
+  
+app/views/users/shared/_cover.html.erb:10:in `block in _app_views_users_shared__cover_html_erb__1437177974928075523_70227406942340'
+app/views/users/shared/_cover.html.erb:9:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227406942340'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227435782220'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.9ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227436787220 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (129.1ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:12:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (29.9ms)
+  Rendered users/show.html.erb within layouts/application (32.1ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `nav_link_class' for #<#<Class:0x00007fbe2ab507f8>:0x00007fbe32cd3c30>):
+    20:     <nav id="main-nav">
+    21:       <ul class="nav">
+    22:         <%= content_tag :li,
+    23:             class: nav_link_class(user_path(user)) do %>
+    24:           <%= link_to "Timeline", user_path(user) %>
+    25:         <% end %><!--
+    26:         --><%= content_tag :li,
+  
+app/views/users/shared/_cover.html.erb:23:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227436362680'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227436421940'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.0ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227442352180 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.0ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:15:21 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (21.5ms)
+  Rendered users/show.html.erb within layouts/application (23.8ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `nav_link' for #<#<Class:0x00007fbe2ab507f8>:0x00007fbe32f66420>):
+    20:     <nav id="main-nav">
+    21:       <ul class="nav">
+    22:         <%= content_tag :li,
+    23:             class: nav_link(user_path(user)) do %>
+    24:           <%= link_to "Timeline", user_path(user) %>
+    25:         <% end %><!--
+    26:         --><%= content_tag :li,
+  
+app/views/users/shared/_cover.html.erb:23:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227437711240'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227437762300'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (105.5ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227382020980 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (149.3ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:16:58 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (30.2ms)
+  Rendered users/show.html.erb within layouts/application (33.4ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `nav_link' for #<#<Class:0x00007fbe2ab507f8>:0x00007fbe30095a88>):
+    20:     <nav id="main-nav">
+    21:       <ul class="navbar_nav">
+    22:         <%= content_tag :li,
+    23:             class: nav_link do %>
+    24:           <%= link_to "Timeline", user_path(user) %>
+    25:         <% end %><!--
+    26:         --><%= content_tag :li,
+  
+app/views/users/shared/_cover.html.erb:23:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227413164180'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227413217860'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.6ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227434086240 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (148.9ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:17:12 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (23.9ms)
+  Rendered users/show.html.erb within layouts/application (27.0ms)
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `nav_link' for #<#<Class:0x00007fbe2ab507f8>:0x00007fbe2bd74880>):
+    24:           <%= link_to "Timeline", user_path(user) %>
+    25:         <% end %><!--
+    26:         --><%= content_tag :li,
+    27:                class: nav_link(user_path(user)) do %>
+    28:           <%= link_to "About", user_path(user) %>
+    29:         <% end %><!--
+    30:         --><%= content_tag :li,
+  
+app/views/users/shared/_cover.html.erb:27:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227377729720'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227378037820'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (114.2ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227435963400 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (153.1ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:17:46 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (37.6ms)
+  Rendered users/show.html.erb within layouts/application (40.1ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `render_profile_or_friend_link' for #<#<Class:0x00007fbe2ab507f8>:0x00007fbe2f44cce0>):
+    40:           <% end %>
+    41:         <% end %>
+    42:       </ul>
+    43:       <!--<%= render_profile_or_friend_link(user) %>-->
+    44:     </nav>
+    45:   </div>
+    46: </section>
+  
+app/views/users/shared/_cover.html.erb:43:in `_app_views_users_shared__cover_html_erb__1437177974928075523_70227435848160'
+app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___4122662524284797982_70227406777200'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.7ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227437230280 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (129.7ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:18:24 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/show.html.erb within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `birthday' for nil:NilClass):
+    23:           <h3>Basic Information</h3>
+    24:           <dl class="about-list">
+    25:             <dt>Birthday</dt>
+    26:             <!--<dd><%= out date_to_string(@profile.birthday) %></dd>-->
+    27:             <dt>College</dt>
+    28:             <!--<dd><%= out @profile.college %></dd>-->
+    29:             <dt>Hometown</dt>
+  
+app/views/users/show.html.erb:26:in `_app_views_users_show_html_erb___4122662524284797982_70227436787180'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.3ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227413188300 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (134.2ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:18:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.2ms)
+  Rendered users/show.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `birthday' for nil:NilClass):
+    23:           <h3>Basic Information</h3>
+    24:           <dl class="about-list">
+    25:             <dt>Birthday</dt>
+    26:             <!--<dd><% out date_to_string(@profile.birthday) %></dd>-->
+    27:             <dt>College</dt>
+    28:             <!--<dd><%= out @profile.college %></dd>-->
+    29:             <dt>Hometown</dt>
+  
+app/views/users/show.html.erb:26:in `_app_views_users_show_html_erb___4122662524284797982_70227443335620'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.8ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227406390620 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (131.7ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:18:55 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.4ms)
+  Rendered users/show.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `college' for nil:NilClass):
+    25:             <dt>Birthday</dt>
+    26:             <!--<dd>< out date_to_string(@profile.birthday) %></dd>-->
+    27:             <dt>College</dt>
+    28:             <!--<dd><%= out @profile.college %></dd>-->
+    29:             <dt>Hometown</dt>
+    30:             <!--<dd><%= out @profile.hometown %></dd>-->
+    31:             <dt>Location</dt>
+  
+app/views/users/show.html.erb:28:in `_app_views_users_show_html_erb___4122662524284797982_70227435228560'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (71.5ms)
+DEPRECATION WARNING: #original_exception is deprecated. Use #cause instead. (called from block in render_exception_with_web_console at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/extensions.rb:16)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227430673440 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.3ms)
+Started GET "/users/167" for ::1 at 2017-11-06 11:19:31 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"167"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 167], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.3ms)
+  Rendered users/show.html.erb within layouts/application (5.5ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+Completed 200 OK in 135ms (Views: 130.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/Jean-Claude%20Van%20Damne" for ::1 at 2017-11-06 11:19:31 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/Jean-Claude%20Van%20Damne"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/Chienchien/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/Chienchien/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/Chienchien/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (5.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (292.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (390.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227406352760 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (58.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (128.4ms)
+Started GET "/?utf8=%E2%9C%93&search=" for ::1 at 2017-11-06 11:25:08 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.3ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+Completed 200 OK in 219ms (Views: 216.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/173" for ::1 at 2017-11-06 11:25:10 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"173"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 173], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (66.2ms)
+  Rendered users/show.html.erb within layouts/application (68.6ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 107ms (Views: 102.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/norris%20chuck" for ::1 at 2017-11-06 11:25:10 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/images/norris%20chuck"):
+  
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+rack (2.0.3) lib/rack/handler/webrick.rb:86:in `service'
+/Users/Chienchien/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:140:in `service'
+/Users/Chienchien/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/httpserver.rb:96:in `run'
+/Users/Chienchien/.rvm/rubies/ruby-2.4.2/lib/ruby/2.4.0/webrick/server.rb:290:in `block in start_thread'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb [18 times] (4.8ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (97.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb___2924655695056989506_70227442387980 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.5ms)

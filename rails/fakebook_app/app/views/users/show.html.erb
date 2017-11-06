@@ -1,33 +1,57 @@
 <div class="container">
 
-  <%= render partial: "shared/cover", :locals => { user: @user } %>
+  <%= render partial: "users/shared/cover", :locals => { user: @user } %>
 
-  <main id="timeline">
+  <main id="profile">
+    <!-- About Header -->
     <div class="row">
+      <div class="box box-header header-title col-xs-12">
+        <header>
+          <h2>About</h2>
+            <%= link_to "Edit Profile", user_path(@user),
+                class: "btn btn-small btn-primary right" %>
+        </header>
+      </div>
+    </div><!-- end row -->
 
-      <!-- Right Column -->
-      <div class="col-sm-7 col-sm-push-5 col-md-8 col-md-push-4">
-        <!-- Create Post -->
-        <% if @new_post %>
-          <%= render partial: "posts/new",
-              :locals => { user: @user, post: @new_post } %>
-        <% end %>
-        <!-- Posts -->
-        <div id="posts-container">
-          <%= render @posts %>
+    <!-- About Body -->
+    <div class="row">
+      <section class="box box-body padding-top padding-bottom col-xs-12">
+
+        <!-- Left Column -->
+        <div class="col-md-5">
+          <h3>Basic Information</h3>
+          <dl class="about-list">
+            <dt>Birthday</dt>
+            <!--<dd>< out date_to_string(@profile.birthday) %></dd>-->
+            <dt>College</dt>
+            <!--<dd>< out @profile.college %></dd>-->
+            <dt>Hometown</dt>
+            <!--<dd>< out @profile.hometown %></dd>-->
+            <dt>Location</dt>
+            <!--<dd>< out @profile.location %></dd>-->
+          </dl>
+
+          <h3>Contact Information</h3>
+          <dl class="about-list">
+            <dt>Email</dt>
+            <!--<dd>< out @profile.user.email %></dd>-->
+            <dt>Telephone</dt>
+            <!--<dd>< out @profile.phone %></dd>-->
+          </dl>
         </div>
-      </div>
 
-      <!-- Left Column -->
-      <div class="col-sm-5 col-sm-pull-7 col-md-4 col-md-pull-8 col-padding">
-        <%= render partial: "posts/side_sections",
-                            :locals => { user: @user,
-                                         profile: @user.profile,
-                                         photos: @user.side_photos,
-                                         friends: @user.side_friends } %>
-      </div>
+        <!-- Right Column -->
+        <div class="col-md-7">
+          <h3>Words to Live By</h3>
+          <!--<p>< out @profile.tagline %></p>-->
+          <h3>About Me</h3>
+          <!--<p>< out @profile.about %></p>-->
+        </div>
 
-    </div>
+      </section>
+    </div><!-- end row -->
+
   </main>
 
 </div>

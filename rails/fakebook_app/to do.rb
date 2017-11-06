@@ -10,4 +10,4 @@ images root page
 navbar image css
 fix navbar & login styles
 fakebook in navbar --> send to profile current user
-glyphicon in rails 5 ?
+user_profile --> do something nice
