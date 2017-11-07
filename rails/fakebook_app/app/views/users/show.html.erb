@@ -3,13 +3,25 @@
   <%= render partial: "users/shared/cover", :locals => { user: @user } %>
 
   <main id="profile">
+    <!-- Photo Header -->
+    <div class="box box-header header-title row">
+      <header>
+        <h2>Photo Profile</h2>
+          <%= form_for current_user do |f| %>
+            <div class="btn btn-small btn-primary right">
+              <%= f.file_field :picture %>
+            </div>
+          <% end %>
+      </header>
+    </div><!-- end row -->
+
     <!-- About Header -->
     <div class="row">
       <div class="box box-header header-title col-xs-12">
         <header>
           <h2>About</h2>
             <%= link_to "Edit Profile", user_path(@user),
-                class: "btn btn-small btn-primary right" %>
+                 class: "btn btn-small btn-primary right" %>
         </header>
       </div>
     </div><!-- end row -->

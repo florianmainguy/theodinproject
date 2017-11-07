@@ -10,10 +10,11 @@ class UsersController < ApplicationController
       @users = User.search_by_full_name(user_search)
     else
       @users = User.search(user_search[0])
-    end
+    end 
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    #@user = User.find(params[:id])
   end
 end
