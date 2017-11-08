@@ -15,12 +15,15 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    #@user = User.find(params[:id])
+  end
+
+  def photo
+    @user = current_user
   end
 
   private
 
     def user_params
-      params.require(:user).permit(:content, :picture)
+      params.require(:user).permit(:content)
     end
 end

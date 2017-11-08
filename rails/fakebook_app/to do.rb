@@ -11,4 +11,6 @@ navbar image css
 fix navbar & login styles
 fakebook in navbar --> send to profile current user
 user_profile --> do something nice
-  profile pic uploader --> where does it go when upload ?
+vérifier que on ne peut pas delete photo si pas la notre
+mettre une photo de default si pas de photo
+mise en page photos

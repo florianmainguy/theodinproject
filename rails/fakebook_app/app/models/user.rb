@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  mount_uploader :cover, CoverUploader
   mount_uploader :picture, PictureUploader
+ 
 
   before_save { self.email = email.downcase }
 

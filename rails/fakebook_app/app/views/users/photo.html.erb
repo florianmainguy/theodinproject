@@ -1,0 +1,56 @@
+<div class="container">
+
+  <%= render partial: "users/shared/cover" %>
+
+  <main id="photos">
+    <!-- Photo Profile Header -->
+    <div class="box box-header header-title row">
+      <header>
+        <h2>Photo Profile</h2>
+      </header>
+    </div><!-- end row -->
+
+    <!-- Photo Profile Body -->
+    <div class="row box padding-bottom box-body">
+      <div class="padding-top col-xs-8">
+        <%= image_tag(@user.picture_url, alt: "Profile Picture", class: "box") if @user.picture? %>
+      </div>
+
+      <div class="col-xs-4">
+        <h4 class="margin-top">Upload a Photo:</h4>
+        <%= form_for(@user, url: registration_path(@user)) do |f| %>
+          <div class="form-group">
+            <%= f.file_field :picture, class:"form_control" %>
+            <%= f.submit "Upload", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div><!-- end row -->
+
+    <!-- Photo Cover Header -->
+    <div class="box box-header header-title row">
+      <header>
+        <h2>Photo Cover</h2>
+      </header>
+    </div><!-- end row -->
+
+    <!-- Photo Cover Body -->
+    <div class="row box padding-bottom box-body">
+      <div class="padding-top col-xs-8">
+        <%= image_tag(@user.cover_url, alt: "Cover Picture", class: "box") if @user.cover? %>
+      </div>
+
+      <div class="col-xs-4">
+        <h4 class="margin-top">Upload a Photo:</h4>
+        <%= form_for(@user, url: registration_path(@user)) do |f| %>
+          <div class="form-group">
+            <%= f.file_field :cover, class:"form_control" %>
+            <%= f.submit "Upload", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div><!-- end row -->
+
+  </main>
+
+</div>

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users, controllers: { registrations: 'registrations' }
-  #root 'devise/sessions#new'
+  
   resources :users, only: [:show]
+
+  get '/users/:id/photos', to: 'users#photo', as: 'photo'
 
   devise_scope :user do
     authenticated :user do
