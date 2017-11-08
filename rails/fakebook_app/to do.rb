@@ -11,3 +11,4 @@ navbar image css
 fix navbar & login styles
 fakebook in navbar --> send to profile current user
 user_profile --> do something nice
+  profile pic uploader --> where does it go when upload ?
