@@ -1,25 +1,11 @@
 <div class="container">
 
-  <%= render partial: "users/shared/cover", :locals => { user: @user } %>
+  <%= render partial: "users/shared/cover" %>
 
   <main id="profile">
-    <!-- Photo Header -->
-    <div class="box box-header header-title row">
-      <header>
-        <h2>Photo Profile</h2>
-          <%= form_for(@user, as: @user_name, url: registration_path(@user), html: {:multipart => true}) do |f| %>
-            <div class="btn btn-small btn-primary right">
-              <%= f.file_field :picture %>
-              <%= f.hidden_field :picture_cache %>
-              <%= f.submit "Update", class: "btn btn-primary" %>
-            </div>
-          <% end %>
-      </header>
-    </div><!-- end row -->
-
     <!-- About Header -->
     <div class="row">
-      <div class="box box-header header-title col-xs-12">
+      <div class="box box-header header-title col">
         <header>
           <h2>About</h2>
             <%= link_to "Edit Profile", user_path(@user),
@@ -30,7 +16,7 @@
 
     <!-- About Body -->
     <div class="row">
-      <section class="box box-body padding-top padding-bottom col-xs-12">
+      <section class="box box-body padding-top padding-bottom col">
 
         <!-- Left Column -->
         <div class="col-md-5">

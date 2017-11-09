@@ -1,36 +1,30 @@
 <!-- Navbar -->
-<nav id="top-nav" class="navbar navbar-expand-lg navbar-light">
+<nav id="top-nav" class="navbar navbar-expand-md">
   <div class="container">
-
-    <!-- Burger Button -->
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
     <div class="navbar-brand">
       <%= link_to authenticated_root_path(current_user) do %>
         <span class="nav-brand-word">Fakebook</span>
       <% end %>
-    </div><!-- end navbar-header -->
+    </div>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- end navbar-header -->
 
     <!-- Collapsible Nav -->
     <div id="navbarSupportedContent" class="collapse navbar-collapse">
-
       <!-- Search Bar -->
-      <%= form_tag authenticated_root_path, :method => :get, class: "navbar-form navbar-left" do %>
+      <%= form_tag authenticated_root_path, :method => :get, class: "form-inline" do %>
         <div class="input-group">
           <%= search_field_tag(:search, params[:search], class:"form-control", placeholder:"Search") %>
           <div class="input-group-btn">
             <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
           </div>
         </div>
-      <% end %><!-- end search bar -->
-
+      <% end %>
       <!-- Requests, Username, and Sign Out Links -->
-      <ul class="nav navbar-nav navbar-right">
-
-        <!-- Pending requests -->
-
+      <ul class="navbar-nav ml-auto">
         <li class="nav-element">
           <%= link_to authenticated_root_path(current_user) do %>
             <span class="fa fa-user nav-icon"></span>
@@ -39,7 +33,7 @@
         </li>
         <li class="nav-element">
           <%= link_to destroy_user_session_path, :method => :delete do %>
-            <span class="fa fa-log-out nav-icon"></span>
+            <span class="fa fa-sign-out nav-icon"></span>
             Sign Out
           <% end %>
         </li>
