@@ -13,7 +13,7 @@
     <!-- end navbar-header -->
 
     <!-- Collapsible Nav -->
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <div id="navbarSupportedContent" class="collapse navbar-collapse my-0">
       <!-- Search Bar -->
       <%= form_tag authenticated_root_path, :method => :get, class: "form-inline" do %>
         <div class="input-group">
@@ -24,7 +24,7 @@
         </div>
       <% end %>
       <!-- Requests, Username, and Sign Out Links -->
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav ml-auto my-0">
         <li class="nav-element">
           <%= link_to authenticated_root_path(current_user) do %>
             <span class="fa fa-user nav-icon"></span>

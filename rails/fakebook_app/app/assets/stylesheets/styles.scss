@@ -441,6 +441,8 @@ a {
 
       &:hover {
         background-color: $dark-madison;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 
       &:focus {
@@ -451,6 +453,11 @@ a {
         background-color: $dark-madison;
       }
     }
+    @media (hover:none) {
+    a:hover {
+      background:none;
+    }
+  }
   }
 
   @media screen and (max-width: 767px) {
