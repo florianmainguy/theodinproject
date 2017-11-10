@@ -15,3 +15,4 @@ vérifier que on ne peut pas delete photo si pas la notre
 mettre une photo de default si pas de photo
 mise en page photos
 nav-element --> hover full height
+"remember me" does it work ?

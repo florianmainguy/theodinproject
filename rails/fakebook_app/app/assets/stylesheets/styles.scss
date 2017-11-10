@@ -421,6 +421,9 @@ a {
     }
   }
 
+  .navbar-search {
+    padding-top: 0;
+  }
   .icon-bar {
     background-color: white;
     
@@ -443,6 +446,7 @@ a {
         background-color: $dark-madison;
         padding-top: 20px;
         padding-bottom: 20px;
+        text-decoration: none;
       }
 
       &:focus {
@@ -785,7 +789,7 @@ a {
   color: #fff;
   position: absolute;
   width: 1000px;
-  top: 3px;
+  top: px;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -807,7 +811,7 @@ a {
 .login-form {
   font-size: .8em;
   border-collapse: separate;
-  border-spacing: 15px 4px;
+  border-spacing: 15px 3px;
 
   #remember_me {
     width: 11px;

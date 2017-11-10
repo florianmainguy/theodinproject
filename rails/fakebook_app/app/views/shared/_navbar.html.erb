@@ -13,13 +13,13 @@
     <!-- end navbar-header -->
 
     <!-- Collapsible Nav -->
-    <div id="navbarSupportedContent" class="collapse navbar-collapse my-0">
+    <div id="navbarSupportedContent" class="collapse navbar-collapse">
       <!-- Search Bar -->
       <%= form_tag authenticated_root_path, :method => :get, class: "form-inline" do %>
         <div class="input-group">
           <%= search_field_tag(:search, params[:search], class:"form-control", placeholder:"Search") %>
           <div class="input-group-btn">
-            <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+            <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
           </div>
         </div>
       <% end %>
