@@ -608,13 +608,12 @@ a {
 
   .cover-img {
     position: relative;
-    margin-top: -1px;
-    height: 300px;
     overflow: hidden;
-    margin-right: -15px;
+    height: 300px;
+    width: 100%;
 
     img {
-      height: 100%;
+      min-height: 300px;
     }
   }
 
