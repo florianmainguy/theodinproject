@@ -30223,3 +30223,226 @@ Completed 200 OK in 3140ms (Views: 3138.8ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/application.self-10a5a56db5a9395b08339c3320d99c1b45b3ee1fdb35d83280f0f5bfbe979203.css?body=1" for ::1 at 2017-11-12 08:34:14 +0000
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+Started GET "/" for ::1 at 2017-11-12 08:45:26 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (317.0ms)
+  Rendered users/show.html.erb within layouts/application (322.6ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 455ms (Views: 428.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 08:47:13 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (4.0ms)
+  Rendered users/show.html.erb within layouts/application (6.0ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 45ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 08:50:43 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.7ms)
+  Rendered users/show.html.erb within layouts/application (4.7ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+Completed 200 OK in 55ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 08:53:50 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (4.7ms)
+  Rendered users/show.html.erb within layouts/application (7.2ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 09:07:19 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.8ms)
+  Rendered users/show.html.erb within layouts/application (6.2ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 4943ms (Views: 4942.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-208352a8c3db17b8239a859b06717797c31cb77ac8c869464682ecb62838e9fc.css?body=1" for ::1 at 2017-11-12 09:07:24 +0000
+Started GET "/" for ::1 at 2017-11-12 09:09:33 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (4.2ms)
+  Rendered users/show.html.erb within layouts/application (6.7ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 09:15:45 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.4ms)
+  Rendered users/show.html.erb within layouts/application (5.5ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+Completed 200 OK in 3187ms (Views: 3185.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-eb425b2585d1dc294aba2df23d5b61ea2a3638327cf7435db42ff39ab76a10ab.css?body=1" for ::1 at 2017-11-12 09:15:48 +0000
+Started GET "/" for ::1 at 2017-11-12 09:17:28 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.2ms)
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 3131ms (Views: 3129.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-0d982ec2a25e0acd36503ff728be39caa056b7c5136013f0e76d8975e04ecfbb.css?body=1" for ::1 at 2017-11-12 09:17:31 +0000
+Started GET "/" for ::1 at 2017-11-12 09:22:51 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.7ms)
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 3149ms (Views: 3147.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-8f240acf535cfc5c35522551ae5d4eb4ff879533d2ff584359f167f795cdff4e.css?body=1" for ::1 at 2017-11-12 09:22:55 +0000
+Started GET "/" for ::1 at 2017-11-12 09:23:46 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/show.html.erb within layouts/application (4.8ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 09:26:19 +0000
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.4ms)
+  Rendered users/show.html.erb within layouts/application (6.1ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 43ms (Views: 41.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 09:31:15 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.2ms)
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 09:36:44 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.6ms)
+  Rendered users/show.html.erb within layouts/application (4.6ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 40ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 09:41:46 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.7ms)
+  Rendered users/show.html.erb within layouts/application (4.7ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 3242ms (Views: 3240.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e6c76c59cbd7e4873165e5b8e4fbd1b3170981926d27668650025509fe8a60e8.css?body=1" for ::1 at 2017-11-12 09:41:50 +0000
+Started GET "/" for ::1 at 2017-11-12 09:44:58 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.7ms)
+  Rendered users/show.html.erb within layouts/application (4.7ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 3171ms (Views: 3169.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b2760c16113e8c482a040773eb7fcfaf99a828c19997dafe33af54880d7ca212.css?body=1" for ::1 at 2017-11-12 09:45:01 +0000
+Started GET "/" for ::1 at 2017-11-12 09:47:01 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-12 09:48:52 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (17.6ms)
+  Rendered users/show.html.erb within layouts/application (36.6ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+Completed 200 OK in 4648ms (Views: 4634.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-ce5e5453c03b8c7357a450ef305daffc1d85ee2ae3e5a2cef7f556c4d7cdb817.css?body=1" for ::1 at 2017-11-12 09:48:57 +0000
+Started GET "/" for ::1 at 2017-11-12 09:49:38 +0000
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.4ms)
+  Rendered users/show.html.erb within layouts/application (5.9ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 3224ms (Views: 3222.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-ead90b69aad1c4268110d10ba6695f6617849d002f883a862661b7b7d5d68c04.css?body=1" for ::1 at 2017-11-12 09:49:41 +0000
+Started GET "/" for ::1 at 2017-11-12 09:52:05 +0000
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.7ms)
+  Rendered users/show.html.erb within layouts/application (5.8ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 3340ms (Views: 3338.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-aed9c05b2370e5dfe88ed82e099569febd8c052ea528f0ccc91b7f722be19d47.css?body=1" for ::1 at 2017-11-12 09:52:09 +0000
+Started GET "/" for ::1 at 2017-11-12 09:53:54 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/show.html.erb within layouts/application (4.9ms)
+  Rendered shared/_navbar.html.erb (2.1ms)
+Completed 200 OK in 3261ms (Views: 3258.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-60726bffa8381228b50adfb44ba66551f2961d08b03a9652c0d6063a3040c956.css?body=1" for ::1 at 2017-11-12 09:53:57 +0000
+Started GET "/" for ::1 at 2017-11-12 09:55:23 +0000
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/show.html.erb within layouts/application (5.1ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 3191ms (Views: 3189.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2597d2e7a711de9cc86bfe7fd4ccde77a62771e3b499ba942d7f0f58f0bb59d4.css?body=1" for ::1 at 2017-11-12 09:55:26 +0000

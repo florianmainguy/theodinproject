@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav id="top-nav" class="navbar navbar-expand-md">
+<nav id="top-nav" class="navbar navbar-expand-md navbar-dark">
   <div class="container">
 
     <div class="navbar-brand">
@@ -8,23 +8,23 @@
       <% end %>
     </div>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon navbar-toggle"></span>
     </button>
     <!-- end navbar-header -->
 
     <!-- Collapsible Nav -->
-    <div id="navbarSupportedContent" class="collapse navbar-collapse">
+    <div id="navbarSupportedContent" class="collapse navbar-collapse navbar-collapse-spacing">
       <!-- Search Bar -->
       <%= form_tag authenticated_root_path, :method => :get, class: "form-inline" do %>
-        <div class="input-group">
+        <div class="input-group navbar-search">
           <%= search_field_tag(:search, params[:search], class:"form-control", placeholder:"Search") %>
           <div class="input-group-btn">
-            <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
+            <button class="btn btn-light btn-search" type="submit"><i class="fa fa-search"></i></button>
           </div>
         </div>
       <% end %>
       <!-- Requests, Username, and Sign Out Links -->
-      <ul class="navbar-nav ml-auto my-0">
+      <ul class="navbar-nav ml-auto">
         <li class="nav-element">
           <%= link_to authenticated_root_path(current_user) do %>
             <span class="fa fa-user nav-icon"></span>
