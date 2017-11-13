@@ -30446,3 +30446,631 @@ Completed 200 OK in 3191ms (Views: 3189.2ms | ActiveRecord: 0.0ms)
 
 
 Started GET "/assets/application.self-2597d2e7a711de9cc86bfe7fd4ccde77a62771e3b499ba942d7f0f58f0bb59d4.css?body=1" for ::1 at 2017-11-12 09:55:26 +0000
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+Started GET "/" for ::1 at 2017-11-13 06:24:21 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2371.5ms)
+  Rendered users/show.html.erb within layouts/application (2401.5ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 2604ms (Views: 2586.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/missing-cover-3a45d83e9c925f58ec9837aa637c742e1b7471585d35e55327529e5ed3a9644e.jpg" for ::1 at 2017-11-13 06:24:24 +0000
+Started GET "/assets/application.self-2597d2e7a711de9cc86bfe7fd4ccde77a62771e3b499ba942d7f0f58f0bb59d4.css?body=1" for ::1 at 2017-11-13 06:24:25 +0000
+Started GET "/assets/missing-picture-c65cab02b697525b023b813d4751d8e0020cdf8e5c7167aa23f158fabe882023.png" for ::1 at 2017-11-13 06:24:25 +0000
+Started GET "/" for ::1 at 2017-11-13 06:24:44 +0000
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.6ms)
+  Rendered users/show.html.erb within layouts/application (4.6ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 43ms (Views: 41.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-11-13 06:24:59 +0000
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+Processing by UsersController#show as HTML
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.5ms)
+  Rendered users/show.html.erb within layouts/application (4.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/17/photos" for ::1 at 2017-11-13 06:27:24 +0000
+Processing by UsersController#photo as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/photo.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.6ms)
+  Rendered users/photo.html.erb within layouts/application (81.9ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 155ms (Views: 114.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-13 06:30:29 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.7ms)
+  Rendered users/show.html.erb within layouts/application (5.0ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 48ms (Views: 44.1ms | ActiveRecord: 0.5ms)
+
+
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3352743236652298020);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddAboutToUsers (20171113063143)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (113.7ms)[0m  [1m[35mALTER TABLE "users" ADD "about" character varying[0m
+  [1m[35mSQL (51.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171113063143"]]
+  [1m[35m (16.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (30.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3352743236652298020)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+Started GET "/users/17" for ::1 at 2017-11-13 06:53:48 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (225.7ms)
+  Rendered users/show.html.erb within layouts/application (230.8ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 363ms (Views: 325.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-13 06:53:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.1ms)
+  Rendered users/show.html.erb within layouts/application (5.3ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 43ms (Views: 39.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 06:53:59 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.7ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (820.8ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 905ms (Views: 894.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 06:57:52 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (21.0ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 91ms (Views: 89.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 06:58:35 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.1ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.1ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:05:17 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.1ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 92ms (Views: 89.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:10:53 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (4.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (25.5ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 95ms (Views: 92.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:12:08 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (8.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (27.3ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 102ms (Views: 100.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:12:26 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.2ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 86.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:12:56 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.3ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+Completed 200 OK in 89ms (Views: 87.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:13:48 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (21.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 86.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:15:17 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (25.6ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 98ms (Views: 96.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:15:58 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.1ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (22.4ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 89ms (Views: 87.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:16:38 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 92ms (Views: 90.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:17:07 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 94ms (Views: 91.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:20:33 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.1ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 94ms (Views: 92.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:21:49 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (25.3ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 101ms (Views: 98.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:25:14 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.3ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 91ms (Views: 89.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:25:30 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 99ms (Views: 97.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:25:45 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 95ms (Views: 93.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:26:17 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.2ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 93ms (Views: 90.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:26:37 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.5ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 99ms (Views: 97.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:28:28 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.3ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.8ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 90ms (Views: 87.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:29:30 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (22.2ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 92ms (Views: 90.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:30:22 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (22.3ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 91ms (Views: 88.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:30:30 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.3ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 91ms (Views: 88.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:31:02 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.6ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 100ms (Views: 97.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:31:16 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.0ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 95ms (Views: 92.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:33:58 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (22.4ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 90ms (Views: 88.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:34:43 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.1ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.2ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 96ms (Views: 94.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:35:10 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.4ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.2ms)
+  Rendered shared/_navbar.html.erb (6.6ms)
+Completed 200 OK in 107ms (Views: 104.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:35:35 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.4ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 98ms (Views: 96.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:36:57 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (21.9ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 90ms (Views: 87.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:37:29 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 97ms (Views: 95.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:43:25 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.7ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (21.8ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 93ms (Views: 91.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:43:38 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.8ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 96ms (Views: 94.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:46:58 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/registrations/edit.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/views/users/registrations/edit.html.erb:50: syntax error, unexpected '='
+=( f.text_field :about, class="about-field" );@output_buffer
+                              ^):
+  
+app/views/users/registrations/edit.html.erb:50: syntax error, unexpected '='
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (79.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__2555972193880426643_70114587118620 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (84.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (167.0ms)
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:47:20 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.5ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (31.0ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 5131ms (Views: 5129.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-0017d1180c11e74b47a0b40a932b476fd4c60ac9dce00f5a2a548fd45ad136af.css?body=1" for ::1 at 2017-11-13 07:47:26 +0000
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:48:43 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.7ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+Completed 200 OK in 3294ms (Views: 3291.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-c4da9b25de6c192b50ed948316fde56cee7ce3c1d68e7c3bcb8a4459375bdd5a.css?body=1" for ::1 at 2017-11-13 07:48:46 +0000
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:49:30 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.1ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 97ms (Views: 94.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:49:58 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.1ms)
+  Rendered shared/_navbar.html.erb (13.5ms)
+Completed 200 OK in 108ms (Views: 106.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:50:17 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.1ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 95ms (Views: 93.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:50:24 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (25.5ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 97ms (Views: 94.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:50:30 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.2ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 94ms (Views: 91.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:50:35 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 93ms (Views: 90.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:51:10 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.3ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 95ms (Views: 92.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:51:26 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.1ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.8ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 99ms (Views: 97.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:51:33 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.8ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 93ms (Views: 91.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:52:34 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (2.9ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (22.4ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 3154ms (Views: 3151.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.self-ad4a63763cd22badcfbe31c506bd0f3222ca7659dcc71a83305ca5c930775cc0.css?body=1" for ::1 at 2017-11-13 07:52:37 +0000
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:55:01 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.2ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (23.6ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 104ms (Views: 101.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-13 07:59:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (3.3ms)
+  Rendered users/show.html.erb within layouts/application (5.6ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 47ms (Views: 41.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit.17" for ::1 at 2017-11-13 07:59:55 +0000
+Processing by RegistrationsController#edit as 
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/registrations/edit.html.erb within layouts/application
+  Rendered users/shared/_cover.html.erb (4.0ms)
+  Rendered users/registrations/edit.html.erb within layouts/application (24.1ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 94ms (Views: 92.4ms | ActiveRecord: 0.4ms)
+
+

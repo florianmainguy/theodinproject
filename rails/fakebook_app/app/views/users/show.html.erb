@@ -8,7 +8,7 @@
       <div class="box box-header header-title col">
         <header>
           <h2>About</h2>
-            <%= link_to "Edit Profile", user_path(@user),
+            <%= link_to "Edit Profile", edit_user_registration_path(@user),
                  class: "btn btn-small btn-primary right" %>
         </header>
       </div>
@@ -20,33 +20,21 @@
 
         <!-- Left Column -->
         <div class="col-md-5">
-          <h3>Basic Information</h3>
+          <h3>User Information</h3>
           <dl class="about-list">
-            <dt>Birthday</dt>
-            <!--<dd>< out date_to_string(@profile.birthday) %></dd>-->
-            <dt>College</dt>
-            <!--<dd>< out @profile.college %></dd>-->
-            <dt>Hometown</dt>
-            <!--<dd>< out @profile.hometown %></dd>-->
-            <dt>Location</dt>
-            <!--<dd>< out @profile.location %></dd>-->
-          </dl>
-
-          <h3>Contact Information</h3>
-          <dl class="about-list">
+            <dt>First Name</dt>
+            <dd><%= @user.first_name %></dd>
+            <dt>Last Name</dt>
+            <dd><%= @user.last_name %></dd>
             <dt>Email</dt>
-            <!--<dd>< out @profile.user.email %></dd>-->
-            <dt>Telephone</dt>
-            <!--<dd>< out @profile.phone %></dd>-->
+            <dd><%= @user.email %></dd>
           </dl>
         </div>
 
         <!-- Right Column -->
         <div class="col-md-7">
-          <h3>Words to Live By</h3>
-          <!--<p>< out @profile.tagline %></p>-->
           <h3>About Me</h3>
-          <!--<p>< out @profile.about %></p>-->
+          <p><%= @user.about %></p>
         </div>
 
       </section>

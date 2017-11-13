@@ -7,7 +7,6 @@ class User < ApplicationRecord
   mount_uploader :cover, CoverUploader
   mount_uploader :picture, PictureUploader
  
-
   before_save { self.email = email.downcase }
 
   def full_name

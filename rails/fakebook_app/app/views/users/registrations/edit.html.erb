@@ -1,43 +1,68 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
+  <%= render partial: "users/shared/cover" %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+  <main id="profile">
+    <!-- About Header -->
+    <div class="row">
+      <div class="box box-header header-title col">
+        <header>
+          <h2>About</h2>
+            <%= link_to "Back", :back,
+                 class: "btn btn-small btn-primary right" %>
+        </header>
+      </div>
+    </div><!-- end row -->
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <!-- About Body -->
+    <div class="row">
+      <section class="box box-body padding-top padding-bottom col">
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+          <div class="col">
+            <h3>User Information</h3><br />
+            <dl class="about-list">
+              <dt><%= f.label :first_name %></dt>
+              <dd><%= f.text_field :first_name, autofocus: true %></dd>
+              <dt><%= f.label :last_name %></dt>
+              <dd><%= f.text_field :last_name %></dd>
+              <dt>Email</dt>
+              <dd><%= f.email_field :email %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                <% end %></dd>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+              <dt><%= f.label :password %></dt>
+              <dd><%= f.password_field :password, autocomplete: "off" %><i> &nbsp;(leave blank if you don't want to change it)</i>
+                <% if @minimum_password_length %><br />
+                  <em><%= @minimum_password_length %> characters minimum</em>
+                <% end %></dd>
+              <dt><%= f.label :password_confirmation %></dt>
+              <dd><i>&nbsp;&nbsp;</i><%= f.password_field :password_confirmation, autocomplete: "off" %></dd>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+              <dt><%= f.label :current_password %></dt>
+              <dd><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</i><%= f.password_field :current_password, autocomplete: "off" %><i> &nbsp;(we need your current password to confirm your changes)</i></dd>
 
-<h3>Cancel my account</h3>
+              <dt><%= f.label :about %></dt>
+              <dd><%= f.text_field :about, class: "about-field" %></dd>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+              <div class="actions">
+                <%= f.submit "Update" %>
+              </div>
+            </dl>
+          </div>
 
-<%= link_to "Back", :back %>
+          
+        <% end %>
+
+        <h3>Cancel my account</h3>
+
+        <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      </section>
+    </div><!-- end row -->
+
+  </main>
+
+</div>
