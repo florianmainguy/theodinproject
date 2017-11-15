@@ -6,3 +6,7 @@
 2017-11-10 07:02:28.054 GMT [1338] LOG:  database system is ready to accept connections
 2017-11-10 07:02:39.873 GMT [1347] FATAL:  database "fakebook_postgresql_dev" does not exist
 2017-11-10 07:03:13.620 GMT [1352] FATAL:  database "fakebook_postgresql_dev" does not exist
+2017-11-14 20:37:35.052 GMT [1338] LOG:  received smart shutdown request
+2017-11-14 20:37:35.112 GMT [1338] LOG:  worker process: logical replication launcher (PID 1345) exited with exit code 1
+2017-11-14 20:37:35.112 GMT [1340] LOG:  shutting down
+2017-11-14 20:37:35.307 GMT [1338] LOG:  database system is shut down

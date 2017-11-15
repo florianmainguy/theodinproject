@@ -17,3 +17,4 @@ mise en page photos
 nav-element --> hover full height
 "remember me" does it work ?
 can't see update fields when in smartphone mode
+col-md.. doivent etre dans row ??
