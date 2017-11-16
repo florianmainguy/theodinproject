@@ -47,30 +47,6 @@
                     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
                   <% end %></div>
               </div>
-                
-              <div class="form-group">
-                <div class="col-md-3 control-label">
-                  <%= f.label :password %></div>
-                <div class="col-md-9">
-                  <%= f.password_field :password, autocomplete: "off", class:"form-control" %><i>(leave blank if you don't want to change it)</i>
-                  <% if @minimum_password_length %><br />
-                    <em><%= @minimum_password_length %> characters minimum</em>
-                  <% end %></div>
-              </div>
-                
-              <div class="form-group">
-                <div class="col-md-3 control-label">
-                  <%= f.label :password_confirmation %></div>
-                <div class="col-md-9">
-                  <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %></div>
-              </div> 
-
-              <div class="form-group">
-                <div class="col-md-3 control-label">
-                  <%= f.label :current_password %></div>
-                <div class="col-md-9">
-                  <%= f.password_field :current_password, autocomplete: "off", class:"form-control" %><i>(we need your current password to confirm your changes)</i></div>
-              </div> 
 
               <div class="form-group">
                 <div class="col-md-3 control-label">
