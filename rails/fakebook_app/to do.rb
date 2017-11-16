@@ -16,5 +16,4 @@ mettre une photo de default si pas de photo
 mise en page photos
 nav-element --> hover full height
 "remember me" does it work ?
-can't see update fields when in smartphone mode
-change layout in about me
+

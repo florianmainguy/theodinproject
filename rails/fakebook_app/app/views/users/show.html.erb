@@ -18,8 +18,7 @@
     <div class="row">
       <section class="box box-body padding-top padding-bottom col">
 
-        <!-- Left Column -->
-        <div class="col-md-5">
+        <div class="col">
           <h3>User Information</h3>
           <dl class="about-list">
             <dt>First Name</dt>
@@ -28,13 +27,9 @@
             <dd><%= @user.last_name %></dd>
             <dt>Email</dt>
             <dd><%= @user.email %></dd>
+            <dt>About Me</dt>
+            <dd><%= @user.about %></dd>
           </dl>
-        </div>
-
-        <!-- Right Column -->
-        <div class="col-md-7">
-          <h3>About Me</h3>
-          <p><%= @user.about %></p>
         </div>
 
       </section>
