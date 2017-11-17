@@ -9,6 +9,11 @@ class User < ApplicationRecord
  
   before_save { self.email = email.downcase }
 
+  has_many :friend_requests, dependent: :destroy
+  has_many :pending_friends, through: :friend_requests, source: :friend
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
+
   def full_name
     "#{first_name} #{last_name}"
   end
@@ -23,5 +28,9 @@ class User < ApplicationRecord
 
   def self.search_by_full_name(names) 
     where('first_name ILIKE ? and last_name ILIKE ?', "%#{names[0]}%", "%#{names[1]}%")
+  end
+
+  def remove_friend(friend)
+    current_user.friends.destroy(friend)
   end
 end
