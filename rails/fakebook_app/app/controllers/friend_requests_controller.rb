@@ -1,14 +1,16 @@
 class FriendRequestsController < ApplicationController
-  before_action :set_friend_request, except: [:index, :create]
+  before_action :set_friend_request, except: [:index, :create, :destroy]
 
   def create
-    friend = User.find(params[:friend_id])
+    friend = User.find(params[:id])
     @friend_request = current_user.friend_requests.new(friend: friend)
 
     if @friend_request.save
-      render :show, status: :created, location: @friend_request
+      flash[:success] = "Friend request sent"
+      redirect_back(fallback_location: current_user)
     else
-      render json: @friend_request.errors, status: :unprocessable_entity
+      flash[:success] = "Couldn't send friend request"
+      redirect_back(fallback_location: current_user)
     end
   end
   
@@ -18,6 +20,8 @@ class FriendRequestsController < ApplicationController
   end
 
   def destroy
+    friend = User.find(params[:id])
+    @friend_request = current_user.friend_requests.find_by(:friend_id, friend.id)
     @friend_request.destroy
     head :no_content
   end

@@ -9,7 +9,7 @@
         <header>
           <h2>About</h2>
             <%= link_to "Edit Profile", edit_user_registration_path(@user),
-                 class: "btn btn-small btn-primary right" %>
+                 class: "btn btn-small btn-primary right" if @user==current_user %>
         </header>
       </div>
     </div><!-- end row -->

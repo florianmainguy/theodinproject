@@ -22,7 +22,7 @@ class User < ApplicationRecord
     if user_name
       where('first_name ILIKE ? or last_name ILIKE ?', "%#{user_name}%", "%#{user_name}%")
     else
-      all
+      User.all
     end
   end
 
@@ -32,5 +32,13 @@ class User < ApplicationRecord
 
   def remove_friend(friend)
     current_user.friends.destroy(friend)
+  end
+
+  def is_friend_with?(user)
+    self.friends.exists?(user.id)
+  end
+
+  def has_asked_to_be_friend_with?(user)
+    self.pending_friends.exists?(user.id)
   end
 end
