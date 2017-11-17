@@ -31,7 +31,11 @@ class User < ApplicationRecord
   end
 
   def remove_friend(friend)
-    current_user.friends.destroy(friend)
+    self.friends.destroy(friend)
+  end
+
+  def remove_request(friend)
+    self.friend_requests.destroy(friend)
   end
 
   def is_friend_with?(user)

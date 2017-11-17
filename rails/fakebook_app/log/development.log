@@ -39613,3 +39613,1553 @@ DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please ch
   Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
   Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
   Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.3ms)
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+Started GET "/users/7" for ::1 at 2017-11-17 18:11:33 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (279.4ms)
+  Rendered users/show.html.erb within layouts/application (282.8ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+Completed 200 OK in 378ms (Views: 338.0ms | ActiveRecord: 8.2ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:11:36 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iQ1mVfVaPq6BiPLwSB1POixsj6mbdbU7MAviVU13Be9JzcQfjxMSMpzBS6hmjj3+jSsexkP52eciTNB+uxHD9A==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/friend_requests_controller.rb:22:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154324611460 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (665.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (753.9ms)
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:16:51 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iQ1mVfVaPq6BiPLwSB1POixsj6mbdbU7MAviVU13Be9JzcQfjxMSMpzBS6hmjj3+jSsexkP52eciTNB+uxHD9A==", "id"=>"7"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 3.8ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/friend_requests_controller.rb:23:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (71.1ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154318519760 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (137.6ms)
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:20:24 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iQ1mVfVaPq6BiPLwSB1POixsj6mbdbU7MAviVU13Be9JzcQfjxMSMpzBS6hmjj3+jSsexkP52eciTNB+uxHD9A==", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 1]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 90ms (ActiveRecord: 22.6ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:20:30 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iQ1mVfVaPq6BiPLwSB1POixsj6mbdbU7MAviVU13Be9JzcQfjxMSMpzBS6hmjj3+jSsexkP52eciTNB+uxHD9A==", "id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/friend_requests_controller.rb:24:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154325311980 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (56.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.1ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:27:25 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (20.9ms)
+  Rendered users/show.html.erb within layouts/application (22.9ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 85ms (Views: 56.4ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:27:27 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZOpMrhJbAhsK48CZJVeEfJYNHsUfDXh86m37ivcbt2akKu7kaBIuhxeqecELxPa4N0qPqseBFKD4KsmhAX1xfQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:27:27.607225"], ["updated_at", "2017-11-17 18:27:27.607225"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 20ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:27:27 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (9.0ms)
+  Rendered users/show.html.erb within layouts/application (11.2ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 63ms (Views: 56.9ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:27:29 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HbcwRuuTl9xnOkW55Gcn5dUF7mJSxFZvwfc3vBczdXHdd5IMkdq7QHpz/OHK9FUhdEJ/DYpIOrPTsAWX4VWzag==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.6ms)
+
+
+  
+ArgumentError (missing keyword: fallback_location):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154318107000 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.4ms)
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:27:49 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HbcwRuuTl9xnOkW55Gcn5dUF7mJSxFZvwfc3vBczdXHdd5IMkdq7QHpz/OHK9FUhdEJ/DYpIOrPTsAWX4VWzag==", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 4.4ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/friend_requests_controller.rb:24:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (65.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154290144260 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (55.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (123.6ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:27:53 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (16.6ms)
+  Rendered users/show.html.erb within layouts/application (18.7ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+Completed 200 OK in 63ms (Views: 57.3ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:27:54 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y3YYmUmzFWFQLRJWGS1j3j2q+FV5H/btpn7q3oObhpqjtrrTM/o5/U1kqw43vhEanO1pOqGTmjG0Odj1df1AgQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:27:54.803514"], ["updated_at", "2017-11-17 18:27:54.803514"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 21ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:27:54 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (16.0ms)
+  Rendered users/show.html.erb within layouts/application (18.5ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 66ms (Views: 60.7ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:27:55 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8W+f470m3vL8ayLrrV2uHcodIapJ3yKeutx64Q1kI1kxrz2px2/ybuEim7ODztzZa1qwxZFTTkKom0jK+wLlQg==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.8ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154327380100 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (134.4ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:34:03 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (21.5ms)
+  Rendered users/show.html.erb within layouts/application (23.5ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 83ms (Views: 56.9ms | ActiveRecord: 6.1ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:34:04 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"nDq1zEmSQUBFJoPUbZIQ8rrOQ3AfDPGEJgz5aInZU2Bc+heGM9tt3FhvOoxDAWI2G4nSH8eAnVg0S8tDf7+Vew==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:34:04.539355"], ["updated_at", "2017-11-17 18:34:04.539355"]]
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 51ms (ActiveRecord: 34.1ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:34:04 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.5ms)
+  Rendered users/show.html.erb within layouts/application (10.2ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 53ms (Views: 48.5ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:34:05 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k5/fagANOzi4V9Xt7IUGl2+vvrTQMLIk5RU9K26EqftTX30gekQXpKUebLXCFnRTzugv2wi83vj3Ug8AmOJv4A==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 4]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (10.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (86.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154330316220 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (68.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (1.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (151.0ms)
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:38:09 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"k5/fagANOzi4V9Xt7IUGl2+vvrTQMLIk5RU9K26EqftTX30gekQXpKUebLXCFnRTzugv2wi83vj3Ug8AmOJv4A==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 5.7ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/friend_requests_controller.rb:24:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154318204260 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (140.6ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:38:13 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (19.1ms)
+  Rendered users/show.html.erb within layouts/application (22.0ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 64ms (Views: 58.0ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:38:15 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"CLNZov3xsvcWapb1PzWF2eTQvZbEd+Os5sTcfIobTHjIc/voh7ieawsjL60RpvcdRZcs+Rz7j3D0g+5XfH2KYw==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:38:15.237751"], ["updated_at", "2017-11-17 18:38:15.237751"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 29ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:38:15 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.1ms)
+  Rendered users/show.html.erb within layouts/application (10.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 54ms (Views: 49.4ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:38:17 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JVLfalvo23lIvyN2oSXkia3NUjz3sP4Am+cfqhRzyjLlkn0gIaH35VX2mi6PtpZNDIrDUy88ktyJoC2B4hUMKQ==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.5ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 5]]
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 31.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154297664840 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (59.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (135.4ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:39:23 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (23.6ms)
+  Rendered users/show.html.erb within layouts/application (26.0ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+Completed 200 OK in 89ms (Views: 59.7ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:39:25 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"KcCCaU5Cg8HzXhdDz55N5bmWiUXbBxF3PsIfxOHendzpACAjNAuvXe4XrhvhDT8hGNEYKgOLfasshS3vF7hbxw==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:39:25.068420"], ["updated_at", "2017-11-17 18:39:25.068420"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 20ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:39:25 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.1ms)
+  Rendered users/show.html.erb within layouts/application (10.4ms)
+  Rendered shared/_navbar.html.erb (9.0ms)
+Completed 200 OK in 61ms (Views: 55.2ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:39:26 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uFaGAFuZojq7QbcqQzTMZ0e/9WQjaBj8vZX6i7JnQDZ4liRKIdCOpqYIDnJtp76j5vhkC/vkdCCv0sigRAGGLQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:40:01 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.2ms)
+  Rendered users/show.html.erb within layouts/application (10.3ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:40:03 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"CRVHC/RHbfDSO+xp0gG6XFlbQ7PzHfUQna6vFUs0M9zJ1eVBjg5BbM9yVTH8ksiY+BzS3CuRmcyP6Z0+vVL1xw==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:40:03.718554"], ["updated_at", "2017-11-17 18:40:03.718554"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 12ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:40:03 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (9.4ms)
+  Rendered users/show.html.erb within layouts/application (11.9ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 83ms (Views: 78.5ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:40:05 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j2v5RrdImJX2oFnJPrfGfIjj/8xb8KFb/dztmGQfygpPq1sMzQG0Cevp4JEQJLS4KaRuo4N8zYfvm9+zknkMEQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.5ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:42:21 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (22.9ms)
+  Rendered users/show.html.erb within layouts/application (25.0ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+Completed 200 OK in 103ms (Views: 57.5ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:42:22 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"92x4ZL5cipCj0vfocoI5gSq4YN0Sf2tv/pMqQwTpfCQ3rNouxBWmDL6bTrBcEUtFi//xssrzB7Ps1Bho8o+6Pw==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:42:22.408013"], ["updated_at", "2017-11-17 18:42:22.408013"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 18ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:42:22 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.4ms)
+  Rendered users/show.html.erb within layouts/application (8.7ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 53ms (Views: 48.3ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:42:23 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"REkLmj70QiLdvNX8vMPfRXyXCH6d/A5OZbY31bnt2pqEianQRL1uvsD1bKSSUK2B3dCZEUVwYpJ38QX+T4scgQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 8]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.6ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154326464140 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (136.6ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:44:18 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (22.2ms)
+  Rendered users/show.html.erb within layouts/application (24.4ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 59.8ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:44:19 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"0gNGXn8bbcWdtWJfii5FKv34M7aWa9dx5OHzAsC7X6gSw+QUBVJBWYD82wekvTfuXL+i2U7nu632psEpNt2Zsw==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:44:19.743053"], ["updated_at", "2017-11-17 18:44:19.743053"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 19ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:44:19 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.7ms)
+  Rendered users/show.html.erb within layouts/application (9.9ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 54ms (Views: 48.9ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:44:20 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vCMKyiQTLmMHUASaaPNEV/ynxI835Ysw3QXrvWYcHtZ846iAXloC/xoZvcJGYDaTXeBV4O9p5+zPQtmWkHrYzQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 9]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154326861140 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (145.9ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:44:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (23.2ms)
+  Rendered users/show.html.erb within layouts/application (25.3ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+Completed 200 OK in 88ms (Views: 61.1ms | ActiveRecord: 6.4ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:44:51 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"5AS+Tl8rKpEJdBZTPqpko3twJ3S8Hxc2szVbO0o1ZkwkxBwEJWIGDRQ9rwsQORZn2je2G2STe+qhcmkQvFOgVw==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:44:51.113483"], ["updated_at", "2017-11-17 18:44:51.113483"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 20ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:44:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.4ms)
+  Rendered users/show.html.erb within layouts/application (8.7ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 53ms (Views: 48.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:44:52 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oNYCW32ZN1paFOpO8wg2LKiv/aptqhJHTDaTaZ6QNV9gFqARB9AbxkddUxbdm0ToCehsxbUmfptecaFCaPbzRA==", "id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 10]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.8ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154327854780 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (141.4ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:48:46 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (23.4ms)
+  Rendered users/show.html.erb within layouts/application (25.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 88ms (Views: 58.8ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:48:48 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"cyObmLpSINhPIwwQeMjXBWwwytiaup9yAUvt9TPw8Zqz4znSwBsMRFJqtUhWW6XBzXdbt0I2864TDN/exZY3gQ==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:48:48.161041"], ["updated_at", "2017-11-17 18:48:48.161041"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 21ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:48:48 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.0ms)
+  Rendered users/show.html.erb within layouts/application (10.4ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+Completed 200 OK in 55ms (Views: 49.5ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:48:49 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"27QiuJGr+MQxaKSbslaw2Gm+0Pw222uEQhYMBdzNbE4bdIDy6+LUWCwhHcOcxcIcyPlBk+5XB1hQUT4uKquqVQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 11]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 12ms (ActiveRecord: 2.7ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:48:54 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"27QiuJGr+MQxaKSbslaw2Gm+0Pw222uEQhYMBdzNbE4bdIDy6+LUWCwhHcOcxcIcyPlBk+5XB1hQUT4uKquqVQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.5ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.9ms)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/friend_requests_controller.rb:24:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.0ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154349092740 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (141.4ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:48:58 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.4ms)
+  Rendered users/show.html.erb within layouts/application (8.5ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:49:00 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"wW9ntWxdovg5bYESD5y78fyyYv62X+Jc506PxsNJoVQBr8X/FhSOZCQkOEohD8k1XfXzkW7TjoD1Cb3tNS9nTw==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:49:00.178467"], ["updated_at", "2017-11-17 18:49:00.178467"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 10ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:49:00 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.2ms)
+  Rendered users/show.html.erb within layouts/application (9.7ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+Completed 200 OK in 55ms (Views: 50.3ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:49:01 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"u3jGeEMaCss2LaCekKuiijWrWTyivji5QwrAP+5FNJR7uGQyOVMmVytkGca+ONBOlOzIU3oyVGVRTfIUGCPyjw==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 12]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mFriendRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:49:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (21.6ms)
+  Rendered users/show.html.erb within layouts/application (23.8ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 94ms (Views: 58.6ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:50:01 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"OrI+KUHtvJQ8oARYCyXeFRR9wB8QjfodoSwv/I2PiGD6cpxjO6SQCCHpvQAltqzRtTpRcMgBlsGzax3Xe+lOew==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:50:01.330024"], ["updated_at", "2017-11-17 18:50:01.330024"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 21ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:50:01 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.3ms)
+  Rendered users/show.html.erb within layouts/application (9.9ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 54ms (Views: 49.5ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:50:02 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qdg4ACsRIsYD2E0Y8AeeUkqywn+5pGvVbEJvnSjCyElpGJpKUVgOWh6R9EDelOyW6/VTEGEoBwl+BV223qQOUg==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 13]]
+  [1m[35m (17.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 18.4ms)
+
+
+  
+NoMethodError (undefined method `exists?' for #<FriendRequest:0x00007f9c2a3fab38>):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.9ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154290752840 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (62.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.5ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:52:39 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (21.0ms)
+  Rendered users/show.html.erb within layouts/application (23.4ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+Completed 200 OK in 87ms (Views: 59.4ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:52:40 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"mV7RUUKGRVxmJZL8lWKcFk5ERBKOd0TTpcNwNvgUD3ZZnnMbOM9pwHtsK6S78e7S7wPVfVb7KA+3hEIdDnLJbQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:52:40.992011"], ["updated_at", "2017-11-17 18:52:40.992011"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 20ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:52:40 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (9.2ms)
+  Rendered users/show.html.erb within layouts/application (11.7ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 70ms (Views: 64.6ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:52:41 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4gIk3H8cSykcQNyzc4cLEbuDmqJ4qrbv5MLKMuKn8mYiwoaWBVVntQEJZetdFHnVGsQLzaAm2jP2hfgZFME0fQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.7ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<User:0x00007f9c2a629b98>
+Did you mean?  current_password):
+  
+app/models/user.rb:38:in `remove_request'
+app/controllers/friend_requests_controller.rb:24:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (70.4ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154325222560 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (63.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (138.8ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:54:03 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (19.8ms)
+  Rendered users/show.html.erb within layouts/application (21.9ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 82ms (Views: 56.0ms | ActiveRecord: 5.6ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:54:06 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aOXKCFiQ4pPwWVfwV7PgdOEi+fZOJD23dv5X1wYhxBKoJWhCItnOD+0Q7qh5IJKwQGVomZaoUWtkuWX88EcCCQ==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 14]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 12ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:54:11 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.8ms)
+  Rendered users/show.html.erb within layouts/application (9.0ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:54:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (22.7ms)
+  Rendered users/show.html.erb within layouts/application (24.9ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 94ms (Views: 66.7ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:54:50 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"Z+/VMgKfHbGmR61NmzB11hUFN3gvRr/vywaeOXsX9HqnL3d4eNYxLbsOFBW1owcStEKmF/fK0zPZQawSjXEyYQ==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:54:50.979950"], ["updated_at", "2017-11-17 18:54:50.979950"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 19ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:54:50 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.4ms)
+  Rendered users/show.html.erb within layouts/application (11.1ms)
+  Rendered shared/_navbar.html.erb (2.6ms)
+Completed 200 OK in 59ms (Views: 53.1ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:54:51 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"C8D8kbEtIKIu7J4weJqt9mJu1mCRGVCaftLaFck6OPjLAF7by2QMPjOlJ2hWCd8ywylHD0mVPEZsleg+P1z+4w==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 15]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.7ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/friend_requests_controller.rb:26:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.6ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154291217420 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (61.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (140.2ms)
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:54:59 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"C8D8kbEtIKIu7J4weJqt9mJu1mCRGVCaftLaFck6OPjLAF7by2QMPjOlJ2hWCd8ywylHD0mVPEZsleg+P1z+4w==", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 4.4ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (FriendRequest(#70154324628740) expected, got NilClass(#70154277273360)):
+  
+app/models/user.rb:38:in `remove_request'
+app/controllers/friend_requests_controller.rb:24:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.0ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (74.3ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154296438740 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (70.8ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (145.9ms)
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:55:04 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"C8D8kbEtIKIu7J4weJqt9mJu1mCRGVCaftLaFck6OPjLAF7by2QMPjOlJ2hWCd8ywylHD0mVPEZsleg+P1z+4w==", "id"=>"7"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (FriendRequest(#70154324628740) expected, got NilClass(#70154277273360)):
+  
+app/models/user.rb:38:in `remove_request'
+app/controllers/friend_requests_controller.rb:24:in `destroy'
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/actionpack-5.0.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.7ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::HTML` to `Mime[:html]`. (called from acceptable_content_type? at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/middleware.rb:58)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+DEPRECATION WARNING: Accessing mime types via constants is deprecated. Please change `Mime::WEB_CONSOLE_V2` to `Mime[:web_console_v2]`. (called from ___sers__hienchien__rvm_gems_ruby_______gems_web_console_______lib_web_console_templates_console_js_erb__3583691814850532753_70154326301980 at /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb:491)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (60.5ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendering /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/Chienchien/.rvm/gems/ruby-2.4.2/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (139.2ms)
+Started GET "/users/7" for ::1 at 2017-11-17 18:55:07 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (19.2ms)
+  Rendered users/show.html.erb within layouts/application (21.8ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+Completed 200 OK in 64ms (Views: 57.1ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:55:08 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"54rSAcGIbH+hcqKwVuVsx45pbLVXVYhkH2ktw5bAwS8nSnBLu8FA47w7G+h4dh4DLy792o/Z5LgNLh/oYKYHNA==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:55:08.734086"], ["updated_at", "2017-11-17 18:55:08.734086"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 20ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:55:08 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.1ms)
+  Rendered users/show.html.erb within layouts/application (10.5ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+Completed 200 OK in 59ms (Views: 52.1ms | ActiveRecord: 2.0ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:55:09 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"EtzSwQfTcft09oNXzfz+qyc/S/bvtGXyrNX3EjJuIbvSHHCLfZpdZ2m/Og/jb4xvhnjamTc4CS6+ksU5xAjnoA==", "id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 16]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:55:09 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.2ms)
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 53ms (Views: 48.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/friend_requests?id=7" for ::1 at 2017-11-17 18:55:18 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"CF2EstWGCwsEQsqMIR45W5a2SG9eEjSEh+y3r2yS/hDInSb4r88nlxkLc9QPjUufN/HZAIaeWFiVq4WEmvQ4Cw==", "id"=>"7"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 7], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 7], ["created_at", "2017-11-17 18:55:18.469532"], ["updated_at", "2017-11-17 18:55:18.469532"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 12ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:55:18 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.0ms)
+  Rendered users/show.html.erb within layouts/application (10.4ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+Completed 200 OK in 57ms (Views: 51.5ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/friend_requests/7" for ::1 at 2017-11-17 18:55:19 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9KiBXxZY4Mxc2phR4QnQlN7evHefzSK6WEGfwCslbxU0aCMVbBHMUEGTIQnPmqJQf5ktGEdBTmZKBq3r3UOpDg==", "id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.5ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 17]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/7" for ::1 at 2017-11-17 18:55:19 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 7], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (20.3ms)
+  Rendered users/show.html.erb within layouts/application (22.8ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 68ms (Views: 62.5ms | ActiveRecord: 1.8ms)
+
+

@@ -17,3 +17,5 @@ mise en page photos
 nav-element --> hover full height
 "remember me" does it work ?
 new user registration bug
+flash errors layout
+check unfriend

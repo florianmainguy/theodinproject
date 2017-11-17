@@ -20,10 +20,10 @@ class FriendRequestsController < ApplicationController
   end
 
   def destroy
-    friend = User.find(params[:id])
-    @friend_request = current_user.friend_requests.find_by(:friend_id, friend.id)
-    @friend_request.destroy
-    head :no_content
+    @friend_request = current_user.friend_requests.find_by(friend_id: params[:id])
+    current_user.remove_request(@friend_request)
+    flash[:success] = "Friend request deleted"
+    redirect_back(fallback_location: current_user)
   end
 
   def update
