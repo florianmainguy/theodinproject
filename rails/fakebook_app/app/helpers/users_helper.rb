@@ -11,7 +11,7 @@ module UsersHelper
                           id: "profile-link", class: "btn btn-primary right"
     else
       if current_user.has_asked_to_be_friend_with?(user)
-        link_to "Cancel friend request", friend_request_path(user), :method => :delete,
+        link_to "Cancel request", friend_request_path(user), :method => :delete,
                               id: "profile-link", class: "btn btn-primary right"
       else
         link_to "Add friend", friend_requests_path(:id => user.id), :method => :post,

@@ -694,6 +694,7 @@ a {
         a {
           color: white;
           background-color: $madison;
+          text-decoration: none;
         }
       }
     }
@@ -711,14 +712,14 @@ a {
   }
 
   @media screen and (max-width: 767px) {
-    ul li {
-      display: block;
+    ul {
+      flex-direction: column;
     }
 
     #profile-link {
       top: 50px;
-      left: 18px;
-      width: 100px;
+      left: 20px;
+      width: 120px;
     }
   }
 }
