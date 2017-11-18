@@ -41163,3 +41163,700 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 68ms (Views: 62.5ms | ActiveRecord: 1.8ms)
 
 
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /Users/Chienchien/git/the_odin_project/rails/fakebook_app/app/models/application_record.rb:2)
+Started GET "/users?utf8=%E2%9C%93&search=" for ::1 at 2017-11-18 06:17:39 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Parameters: {"utf8"=>"✓", "search"=>""}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (21.8ms)
+  Rendered shared/_navbar.html.erb (1.9ms)
+Completed 200 OK in 882ms (Views: 794.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:17:44 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (120.1ms)
+  Rendered users/show.html.erb within layouts/application (129.1ms)
+  Rendered shared/_navbar.html.erb (2.0ms)
+Completed 200 OK in 222ms (Views: 190.2ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 06:17:45 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"uZChn9CKo+dLoHQT9jTlxmxL6OVVSBKVShQc1gdUIZh5UAPVqsOPe1bpzUvYp5cCzQx5io3EfklYUy798TLngw==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (18.6ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 06:17:45.961664"], ["updated_at", "2017-11-18 06:17:45.961664"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 64ms (ActiveRecord: 22.5ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:17:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.0ms)
+  Rendered users/show.html.erb within layouts/application (10.1ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+Completed 200 OK in 56ms (Views: 48.3ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 06:17:48 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qYG1wflSEqmnn1oxBUrYbbASo32Q69De3I0qAsYSakNpQReLgxs+NbrW42kr2aqpEVUyEkhnvALOyhgpMHSsWA==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 18]]
+  [1m[35m (15.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 22ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:17:48 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.1ms)
+  Rendered users/show.html.erb within layouts/application (10.7ms)
+  Rendered shared/_navbar.html.erb (1.4ms)
+Completed 200 OK in 56ms (Views: 51.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 06:17:50 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"ghQct9TGmSGEWeTRQmgzs6OKj6hmtnUaUytJEU0rZe5C1L79ro+1vZkQXYls+0F3As0ex746GcZBbHs6u02j9Q==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 06:17:50.743524"], ["updated_at", "2017-11-18 06:17:50.743524"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 12ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:17:50 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.3ms)
+  Rendered users/show.html.erb within layouts/application (10.5ms)
+  Rendered shared/_navbar.html.erb (8.2ms)
+Completed 200 OK in 69ms (Views: 61.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:54:50 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.1ms)
+  Rendered users/show.html.erb within layouts/application (8.3ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 6910ms (Views: 6905.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/flash.self-6cb3da4b5f04d291189f29f53eafc7746a60c885d580a6d60d73b7b3530d332b.js?body=1" for ::1 at 2017-11-18 06:54:57 +0000
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 06:54:59 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bQmi8jIbPK4M3RjFotEJ05/fiTdOGaZPrx+vaNV0lkStyQC4SFIQMhGUoZ2MQnsXPpgYWJaVypO9WJ1DIxJQXw==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 19]]
+  [1m[35m (177.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 183ms (ActiveRecord: 178.1ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:54:59 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.7ms)
+  Rendered users/show.html.erb within layouts/application (9.9ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+Completed 200 OK in 51ms (Views: 44.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:57:42 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (5.8ms)
+  Rendered users/show.html.erb within layouts/application (8.0ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 06:57:47 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"2LuvfeHz6+01qjw47zm7kxpKOw1b7fjHJsIjUwrlNC0Yew03m7rHcSjjhWDBqslXuw2qYoNhlBs0hRF4/IPyNg==", "id"=>"17"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 06:57:47.024305"], ["updated_at", "2017-11-18 06:57:47.024305"]]
+  [1m[35m (15.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 28ms (ActiveRecord: 18.3ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 06:57:47 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.2ms)
+  Rendered users/show.html.erb within layouts/application (10.5ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:08:26 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"My+Rdr9+GE/RdPx+Lsv6m3mridQJd7rPPW8XD3wqKp7z7zM8xTc008w9RSYAWIhf2OwYu9H71hMvKCUkikzshQ==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 20]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 7ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:08:26 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.1ms)
+  Rendered users/show.html.erb within layouts/application (8.2ms)
+  Rendered shared/_navbar.html.erb (1.1ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 50ms (Views: 45.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:08:32 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"4HuKKj1dk3B5NckwStMPA+0wqEawTC1yMiuCT69EMIAguyhgRxS/7GR8cGhkQH3HTHc5KWjAQa4gbLBkWSL2mw==", "id"=>"17"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:08:32.440026"], ["updated_at", "2017-11-18 07:08:32.440026"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 10ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:08:32 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.6ms)
+  Rendered users/show.html.erb within layouts/application (9.3ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:08:36 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gh3lL0DQjQjMMmMf6SXB6/+RPxr/38/bD9CRx1KQOp1C3UdlOpmhlNF72kfHtrMvXtaudSdTowcdl6PspPb8hg==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 21]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:08:36 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (13.3ms)
+  Rendered users/show.html.erb within layouts/application (16.0ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 64ms (Views: 59.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:08:42 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"xjVP7RoGH7ifKKlz7WfaqGSE61ysspd70H0VrOWUOMYG9e2nYE8zJIJhECvD9KhsxcN6M3Q++6fCOieHE/L+3Q==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:08:42.320579"], ["updated_at", "2017-11-18 07:08:42.320579"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 12ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:08:42 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (10.7ms)
+  Rendered users/show.html.erb within layouts/application (13.7ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 59ms (Views: 53.7ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:08:47 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DEQ1myZPGRQQZVDpy9sdz29h/0UtrkvzGm51yGg81dXMhJfRXAY1iA0s6bHlSG8LziZuKvUiJy8IKUfjnloTzg==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 22]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:08:47 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.9ms)
+  Rendered users/show.html.erb within layouts/application (10.2ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 46.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:08:51 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"8BsHXog9Pu3DIlMWRo3LD7jw/IzTu/SH/P6kUzj6ZbQw26UU8nQScd5r6k5oHrnLGbdt4ws3mFvuuZZ4zpyjrw==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:08:51.289686"], ["updated_at", "2017-11-18 07:08:51.289686"]]
+  [1m[35m (10.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 22ms (ActiveRecord: 12.2ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:08:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.5ms)
+  Rendered users/show.html.erb within layouts/application (8.6ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 53ms (Views: 47.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:41 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (8.0ms)
+  Rendered users/show.html.erb within layouts/application (10.7ms)
+  Rendered shared/_navbar.html.erb (1.3ms)
+  Rendered shared/_flash.html.erb (0.4ms)
+Completed 200 OK in 250ms (Views: 244.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/bootstrap/util.self-f64fb4a9ddda386776cfb37d9db2a7841d5002250d6e841590f43a2c9045f4a4.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/alert.self-999461eed3fb98db5a4abfad3ef5dd8b56e4c1be9a4569ffbe91b1c254ec24be.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/dropdown.self-7f4d46a58ed9cac9e01cb79ac98562a6e3e30ab52f1da681e940fdf395fca73c.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/tab.self-3954947559bc2580b68d1fb39a5113ead434b993d6e70dde3c043452cc67f8ca.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/modal.self-baefb87c5382cb409c8b63554106035e3845e6c53dd8ccfab6046984409d5924.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/popover.self-a58bf55b8a920640c6030a961c201155089d5fcf54909e913850fa4a1168e7d7.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/tooltip.self-5f3a07d4901d37246128140dc5212a246c480acc5f7b5be9bb0ad53bcc75b1e7.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/carousel.self-d86dc633e1adaf9312708af2ec4222e406e66eaf48b1138d7b832d271dc9dff8.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/button.self-9661b25732647e2840cd97e9952681f15cbfddfc172927f1b1dead50a862ab54.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/scrollspy.self-15ab1200f1ceeb1c39da55ac143f91ebfe48de7d0e60c0359c62788e1a8706c8.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap-sprockets.self-636159b35205da4142a43bc02d2849d77d3ac07a0946211585cde15a9c6ff21f.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started GET "/assets/bootstrap/collapse.self-f4a202a127611263446f28d66c219a759545634c7b73c41b5caf6fef73711c01.js?body=1" for ::1 at 2017-11-18 07:22:42 +0000
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:22:43 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DnL5r86CQjOY/7syGsc4K+100E/KefKk/0Nr/+zUaFnOslvltMtur4W2Amo0VErvTDNBIBL1nnjtBFnUGrKuQg==", "id"=>"17"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.6ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 23]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 11ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:43 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (9.1ms)
+  Rendered users/show.html.erb within layouts/application (12.4ms)
+  Rendered shared/_navbar.html.erb (2.2ms)
+  Rendered shared/_flash.html.erb (0.8ms)
+Completed 200 OK in 82ms (Views: 74.4ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:22:45 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"2eB7UVmy13vXV+LuD8o/hZd+sSIfAUObU0u+8jsazQAZINkbI/v758oeW7YhWU1BNjkgTceNL0dBDIzZzXwLGw==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:22:45.853882"], ["updated_at", "2017-11-18 07:22:45.853882"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 15ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:45 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (10.5ms)
+  Rendered users/show.html.erb within layouts/application (12.8ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 89ms (Views: 81.0ms | ActiveRecord: 3.4ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:22:46 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5d4FeTKDMSzkbu7yqRVEaP7YgvHFGmQ3p2xKRkGiIiUlHqczSModsPknV6qHhjasX58Tnh2WCOu1K3htt8TkPg==", "id"=>"17"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (1.1ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 24]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 10ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:46 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (10.4ms)
+  Rendered users/show.html.erb within layouts/application (12.8ms)
+  Rendered shared/_navbar.html.erb (1.8ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 89ms (Views: 81.9ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:22:47 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"Z6O1ArLz/DdDrG+Wt4Cza1Q6Uk2qD0EoFsz6RMcwkZenYxdIyLrQq17l1s6ZE8Gv9X3DInKDLfQEi8hvMVZXjA==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:22:47.232640"], ["updated_at", "2017-11-18 07:22:47.232640"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 13ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:47 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (9.5ms)
+  Rendered users/show.html.erb within layouts/application (12.0ms)
+  Rendered shared/_navbar.html.erb (2.6ms)
+  Rendered shared/_flash.html.erb (0.6ms)
+Completed 200 OK in 94ms (Views: 87.5ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:22:48 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gtxBokouuz9b2XMJFS/Qk6voGtNcl3GPaXHTelD9HfpCHOPoMGeXo0aQylE7vKJXCq+LvIQbHVN7NuFRppvb4Q==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 25]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:48 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (9.6ms)
+  Rendered users/show.html.erb within layouts/application (11.7ms)
+  Rendered shared/_navbar.html.erb (1.5ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 75ms (Views: 69.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:22:49 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"sDZA4YnlUq9GSnz2Btb5TncQF5sCuoysdITPrqhsUFRw9uKr86x+M1sDxa4oRYuK1leG9No24HBmw/2FXgqWTw==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:22:49.027567"], ["updated_at", "2017-11-18 07:22:49.027567"]]
+  [1m[35m (15.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 30ms (ActiveRecord: 19.0ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.9ms)
+  Rendered users/show.html.erb within layouts/application (10.0ms)
+  Rendered shared/_navbar.html.erb (2.3ms)
+  Rendered shared/_flash.html.erb (1.2ms)
+Completed 200 OK in 71ms (Views: 65.3ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:22:49 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KK+sH0ei0g16pzMmO0MlleLBJm1HcDxroDNXZGyqTbDobw5VPev+kWfuin4V0FdRQ4a3Ap/8ULeydGVPmsyLqw==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 26]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:22:49 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.2ms)
+  Rendered users/show.html.erb within layouts/application (9.4ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 68.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:23:07 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"eDzqiuVx0QhaZPIT7k+DCuJW2iDA737Zjn++Hzb7/3+4/EjAnzj9lEctS0vA3PHOQxFLTxhjEgWcOIw0wJ05ZA==", "id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:23:07.843585"], ["updated_at", "2017-11-18 07:23:07.843585"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 14ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:23:07 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.0ms)
+  Rendered users/show.html.erb within layouts/application (9.1ms)
+  Rendered shared/_navbar.html.erb (1.7ms)
+  Rendered shared/_flash.html.erb (0.9ms)
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/friend_requests/17" for ::1 at 2017-11-18 07:29:00 +0000
+Processing by FriendRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"92nJ7Fe6JzPBtKwomejpgasEtoytJHPrsBRJq+HPIPA3qWumLfMLr9z9FXC3e5tFCkMn43WoHzeiU3uAF6nm6w==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mFriendRequest Load (0.6ms)[0m  [1m[34mSELECT  "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friend_id" = $2 LIMIT $3[0m  [["user_id", 18], ["friend_id", 17], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "friend_requests" WHERE "friend_requests"."id" = $1[0m  [["id", 27]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 6ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:29:00 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (6.7ms)
+  Rendered users/show.html.erb within layouts/application (9.0ms)
+  Rendered shared/_navbar.html.erb (1.2ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 46.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:34:03 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.6ms)
+  Rendered users/show.html.erb within layouts/application (9.7ms)
+  Rendered shared/_navbar.html.erb (1.6ms)
+  Rendered shared/_flash.html.erb (0.5ms)
+Completed 200 OK in 53ms (Views: 48.0ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/friend_requests?id=17" for ::1 at 2017-11-18 07:34:04 +0000
+Processing by FriendRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"R8Wi1qPtINpjBHU9NgoANBfS2OEwm9QMFJQOkO+ePcmHBQCc2aQMRn5NzGUYmXLwtpVJjugXuNAG0zy7Gfj70g==", "id"=>"17"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mFriendRequest Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "friend_requests" WHERE "friend_requests"."friend_id" = $1 AND "friend_requests"."user_id" = 18 LIMIT $2[0m  [["friend_id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 17], ["id", 18], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "friend_requests" ("user_id", "friend_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 18], ["friend_id", 17], ["created_at", "2017-11-18 07:34:04.611628"], ["updated_at", "2017-11-18 07:34:04.611628"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/users/17
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/17" for ::1 at 2017-11-18 07:34:04 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 18], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "friend_requests" ON "users"."id" = "friend_requests"."friend_id" WHERE "friend_requests"."user_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["user_id", 18], ["id", 17], ["LIMIT", 1]]
+  Rendered users/shared/_cover.html.erb (7.1ms)
+  Rendered users/show.html.erb within layouts/application (9.4ms)
+  Rendered shared/_navbar.html.erb (2.4ms)
+  Rendered shared/_flash.html.erb (0.7ms)
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 1.6ms)
+
+
