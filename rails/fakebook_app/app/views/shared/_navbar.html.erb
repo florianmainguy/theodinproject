@@ -23,14 +23,51 @@
           </div>
         </div>
       <% end %>
+
       <!-- Requests, Username, and Sign Out Links -->
       <ul class="navbar-nav ml-auto">
+
+        <% if current_user.pending_requests.any? %>
+          <li class="nav-element dropdown">
+            <div id="notifications">
+              <a href="#" class="dropdown-toggle box" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="nav-item">
+                  <%= pluralize(current_user.pending_requests.count, "Request") %>
+                </span>
+              </a>
+              <ul class="dropdown-menu">
+                <% current_user.pending_requests.each do |request| %>
+                  <li>
+                    <div class="request">
+                      <div class="request-image">
+                        <%= link_to request.user do %>
+                          <%= image_tag request.user.picture_url %>
+                        <% end %>
+                      </div>
+                      <div class="request-name">
+                        <%= link_to request.user do %>
+                          <%= request.user.full_name %>
+                        <% end %>
+                      </div>
+                      <div class="request-buttons">
+                        <%= link_to "Accept", friend_request_path(request.id), :method => :patch, class: "btn btn-success" %>
+                        <%= link_to "Decline", friend_request_path(request.id), :method => :delete, class: "btn btn-danger" %>
+                      </div>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </li>
+        <% end %>
+
         <li class="nav-element">
           <%= link_to authenticated_root_path(current_user) do %>
             <span class="fa fa-user nav-icon"></span>
             <%= current_user.full_name %>
           <% end %>
         </li>
+
         <li class="nav-element">
           <%= link_to destroy_user_session_path, :method => :delete do %>
             <span class="fa fa-sign-out nav-icon"></span>

@@ -19,3 +19,4 @@ nav-element --> hover full height
 new user registration bug
 flash errors layout
 check unfriend
+Do error if "add friend" and other user already sent request

@@ -30,6 +30,10 @@ class User < ApplicationRecord
     where('first_name ILIKE ? and last_name ILIKE ?', "%#{names[0]}%", "%#{names[1]}%")
   end
 
+  def pending_requests
+    FriendRequest.where(friend_id: self.id)
+  end
+
   def remove_friend(friend)
     self.friends.destroy(friend)
   end

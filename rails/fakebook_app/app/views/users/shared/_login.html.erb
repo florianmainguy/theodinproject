@@ -1,0 +1,37 @@
+<header class="login-header">
+  <div class="login-header-content">
+    <div class="login-logo-container">
+      <%#= image_tag "tracebook-logo.png", class: "login-logo" %>
+      <h1>Fakebook</h1>
+    </div>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "login-form-container"}) do |f|%>
+      <table class="login-form">
+        <tr>
+          <td>
+            <%= f.label :email %>
+          </td>
+          <td>
+            <%= f.label :password %>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.text_field :email %>
+          </td>
+          <td>
+            <%= f.password_field :password %>
+          <td>
+            <%= submit_tag "Log In" %>
+        </tr>
+        <tr>
+          <td>
+            <%= f.label 'remember_me' do %>
+              <%= check_box_tag :remember_me %>
+              Remember me?
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</header>

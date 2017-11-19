@@ -13,9 +13,9 @@
 </head>
 <body>
   <% if user_signed_in? %>
-    <%= render partial: "shared/navbar" %>
+    <%= render partial: "users/shared/navbar" %>
   <% else %>
-    <%= render partial: "shared/login" %>
+    <%= render partial: "users/shared/login" %>
   <% end %>
 
   <div id="flash">
