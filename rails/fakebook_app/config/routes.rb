@@ -1,13 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'friends/index'
-  get 'friends/destroy'
-
-  resources :friend_requests
-
   devise_for :users, controllers: { registrations: 'registrations' }
   
   resources :users, only: [:show, :index]
+  resources :friend_requests
+  resources :friendships, only: [:index, :destroy]
 
 
   get '/users/:id/photos', to: 'users#photo', as: 'photo'

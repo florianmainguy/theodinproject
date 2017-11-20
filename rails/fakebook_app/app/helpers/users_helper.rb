@@ -8,12 +8,13 @@ module UsersHelper
   def render_add_friend_or_unfriend(user)
     unless current_user == user
       if current_user.is_friend_with?(user)
-        link_to "Unfriend", friends_destroy_path(user), 
+        link_to "Unfriend", friendship_path(user), :method => :delete,
                             id: "profile-link", class: "btn btn-primary right"
       else
         if current_user.has_asked_to_be_friend_with?(user)
-          link_to "Cancel request", friend_request_path(user), :method => :delete,
-                                id: "profile-link", class: "btn btn-primary right"
+          link_to "Cancel request", friend_request_path(from_user: current_user, to_user: user),
+                                    :method => :delete,
+                                    id: "profile-link", class: "btn btn-primary right"
         else
           link_to "Add friend", friend_requests_path(:id => user.id), :method => :post,
                                 id: "profile-link", class: "btn btn-primary right"
