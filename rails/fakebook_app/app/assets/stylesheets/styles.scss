@@ -444,7 +444,7 @@ a {
     border-color: #ccc;
   }
 
-  li.nav-element {
+  li.nav-element-right {
     a {
       padding-left: 8px;
       padding-right: 8px;
@@ -501,10 +501,10 @@ a {
 }
 
 #notifications {
-  padding-right: 10px;
+  padding-right: 5px;
 
   .dropdown-toggle {
-    line-height: 50px;
+
     padding: 5px 8px;
     background-color: $thunderbird;
 
@@ -520,7 +520,7 @@ a {
 
     &:active {
       text-decoration: none;
-      background-color: #96281B;
+      background-color: $thunderbird;
     }
   }
 
@@ -576,8 +576,8 @@ a {
     background-color: $bluewood;
     padding: 5px 5px;
     border-radius: 0;
-    top: 48px;
-    right: -2px;
+    top: 55px;
+    left:auto;
 
     li {
       padding: 6px 5px;

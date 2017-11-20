@@ -20,4 +20,4 @@ new user registration bug
 flash errors layout
 check unfriend
 Do error if "add friend" and other user already sent request
-Unfriend
+layout friend request navbar
