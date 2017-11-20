@@ -572,7 +572,8 @@ a {
 
   .dropdown-menu {
     color: white;
-    min-width: 325px;
+    min-width: 345px;
+    font-size: 14px;
     background-color: $bluewood;
     padding: 5px 5px;
     border-radius: 0;
@@ -581,6 +582,7 @@ a {
 
     li {
       padding: 6px 5px;
+
     }
   }
 
@@ -938,6 +940,14 @@ a {
 }
 
 #photos {
+
+  .photo-picture {
+    max-height: 300px;
+    width:auto;
+    display: block;
+    margin: 0 auto;
+  }
+
 
   .box-link {
     margin-top: 10px;

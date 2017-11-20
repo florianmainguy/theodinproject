@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, except: [:new]
 
   def new
     @user = User.new
@@ -14,18 +15,22 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:id]
-      @user = User.find(params[:id])
-    else
-      @user = current_user
-    end
   end
 
   def photo
-    @user = current_user
+  end
+
+  def friends
   end
 
   private
+    def set_user
+      if params[:id]
+        @user = User.find(params[:id])
+      else
+        @user = current_user
+      end
+    end
 
     def user_params
       params.require(:user).permit(:content)
