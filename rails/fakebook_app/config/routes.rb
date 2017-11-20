@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :friend_requests
   resources :friendships, only: [:destroy]
+  resources :posts, only: [:index]
 
   get '/users/:id/photos', to: 'users#photo', as: 'photo'
   get '/users/:id/friends', to: 'users#friends', as: 'friends'
+  get '/users/:id/timeline', to: 'posts#index', as: 'timeline'
 
   devise_scope :user do
     authenticated :user do

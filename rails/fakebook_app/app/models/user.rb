@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :pending_friends, through: :friend_requests, source: :friend
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
+  has_many :posts
 
   def full_name
     "#{first_name} #{last_name}"
