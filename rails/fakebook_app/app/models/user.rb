@@ -13,7 +13,9 @@ class User < ApplicationRecord
   has_many :pending_friends, through: :friend_requests, source: :friend
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   def full_name
     "#{first_name} #{last_name}"
@@ -49,5 +51,12 @@ class User < ApplicationRecord
 
   def has_asked_to_be_friend_with?(user)
     self.pending_friends.exists?(user.id)
+  end
+
+  def feed_posts
+    Post.includes(:user, :likes, :comments)
+        .where(:user_id => self.friends.pluck(:id) << self.id)
+        .order(:created_at => :desc)
+        .limit(15)
   end
 end
