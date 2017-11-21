@@ -5,7 +5,21 @@ class PostsController < ApplicationController
     @posts = @user.feed_posts
   end
 
-  def new
+  def create
+    @post = current_user.posts.build(post_params)
+    if @post.save
+      flash[:success] = "Post has been created."
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: current_user) }
+        format.js { render :create_success }
+      end
+    else
+      flash[:error] = "Couldn't create post."
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: current_user) }
+        format.js { render partial: "shared/flash_ajax" }
+      end
+    end
   end
 
   private
@@ -19,5 +33,9 @@ class PostsController < ApplicationController
       flash[:error] = "You're not authorized for that action."
       redirect_back(fallback_location: current_user)
     end
+  end
+
+  def post_params
+    params.require(:post).permit(:body)
   end
 end

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   resources :friend_requests
   resources :friendships, only: [:destroy]
-  resources :posts, only: [:new]
+  resources :posts, only: [:create]
 
   get '/users/:id/photos', to: 'users#photo', as: 'photo'
   get '/users/:id/friends', to: 'users#friends', as: 'friends'
