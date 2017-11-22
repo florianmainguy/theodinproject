@@ -23,6 +23,13 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:success] = "Post deleted"
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: current_user) }
+      format.js { render :destroy_success }
+    end
   end
 
   private

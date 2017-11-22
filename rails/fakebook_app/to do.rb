@@ -22,3 +22,4 @@ check unfriend
 Do error if "add friend" and other user already sent request
 majuscule nom prénom dans search
 implement post destroy
+Nettoyer routes

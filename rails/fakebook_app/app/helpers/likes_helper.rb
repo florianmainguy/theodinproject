@@ -13,4 +13,40 @@ module LikesHelper
         :method => :post, :remote => true)
     end
   end
+
+  def post_like_feedback(likeable)
+    num_likers = likeable.likers.size
+    if num_likers > 0
+      result = ""
+      if num_likers == 1
+        if likeable.likers.include?(current_user)
+          result << "You like"
+        else
+          liker = likeable.likers.first
+          result << link_to(liker.full_name, user_path(liker)) + " likes"
+        end
+      else
+        array = []
+        array << "You" if likeable.likers.include?(current_user)
+        i = 0
+        until array.size == 2
+          liker = likeable.likers[i]
+          unless liker == current_user
+            array << link_to(liker.full_name, user_path(liker))
+          end
+          i += 1
+        end
+        if num_likers == 2
+          result << array.join(" and ") + " like"
+        else
+          result << array.join(", ") +
+                    ", and #{pluralize(num_likers - 2, 'other')} like"
+        end
+      end
+      result << " this."
+      content_tag(:span, result.html_safe)
+    else
+      nil
+    end
+  end
 end

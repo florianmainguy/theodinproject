@@ -21,15 +21,15 @@ p "Creating users..."
   full_name = first_name + "." + last_name
   email = Faker::Internet.email(full_name)
   about = Faker::Lorem.sentence
-  picture = Faker::LoremPixel.image("400x400")
-  cover = Faker::LoremPixel.image("700x500")
+  #picture = Faker::LoremPixel.image("400x400")
+  #cover = Faker::LoremPixel.image("700x500")
 
   User.create!(first_name: first_name,
                last_name: last_name,
                email: email,
                about: about,
-               remote_picture_url: picture,
-               remote_cover_url: cover,
+               #remote_picture_url: picture,
+               #remote_cover_url: cover,
                password: password,
                password_confirmation: password)
 end
@@ -58,3 +58,4 @@ User.all.each do |user|
     post.save!
   end
 end
+p "Posts created"

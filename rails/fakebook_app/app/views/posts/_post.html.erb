@@ -37,21 +37,21 @@
       </div>
 
       <% if  %>
-        <%= link_to "Delete", user_post_path(post.user, post),
+        <%= link_to "Delete", post_path(post),
                               :method => :delete,
                               :data => { confirm: "Delete post?" },
                               class: "pull-right",
                               remote: true %>
       <% end %>
     </div><!-- end links -->
-
+<% if false %>
     <!-- Feedback -->
     <div class="post-feedback">
       <div class="feedback-container">
-        <span><%= post_feedback(post) %></span>
+        <span><%= post_like_feedback(post) %></span>
       </div>
     </div><!-- end feedback -->
-
+<% end %>
     <div class="divider"></div>
 
     <!-- Comments -->
@@ -66,7 +66,7 @@
     </div>
 
     <%= render partial: "comments/comment_form",
-                          :locals => { commentable: post } %>
+                        :locals => {  } %>
 
   </div><!-- end footer box -->
 
