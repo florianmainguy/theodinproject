@@ -43,11 +43,12 @@ ActiveRecord::Schema.define(version: 20171121165315) do
   end
 
   create_table "likes", force: :cascade do |t|
+    t.string   "likeable_type"
     t.integer  "likeable_id"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["likeable_id"], name: "index_likes_on_likeable_id", using: :btree
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["likeable_type", "likeable_id"], name: "index_likes_on_likeable_type_and_likeable_id", using: :btree
     t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
   end
 

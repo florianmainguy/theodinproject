@@ -54,7 +54,7 @@ class User < ApplicationRecord
   end
 
   def feed_posts
-    Post.includes(:user, :likes, :comments)
+    Post.includes(:user)
         .where(:user_id => self.friends.pluck(:id) << self.id)
         .order(:created_at => :desc)
         .limit(15)

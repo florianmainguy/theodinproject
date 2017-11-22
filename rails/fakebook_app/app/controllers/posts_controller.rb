@@ -22,6 +22,9 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
   private
   def require_authorised_user
     @user = User.find(params[:id])

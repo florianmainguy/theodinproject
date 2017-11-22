@@ -13,6 +13,7 @@ Comment.destroy_all
 Friendship.destroy_all
 FriendRequest.destroy_all
 
+p "Creating users..."
 15.times do |index|
   password = Faker::Internet.password
   first_name = Faker::Name.first_name
@@ -48,3 +49,12 @@ User.create!(first_name: 'Chuck',
              password_confirmation: 'deltaforce')
 
 p "Created #{User.count} users"
+
+p "Creating posts..."
+User.all.each do |user|
+  10.times do
+    post = user.posts.build(body: Faker::Lorem.paragraph(10),
+                    created_at: Faker::Date.between(4.days.ago, Time.now))
+    post.save!
+  end
+end
