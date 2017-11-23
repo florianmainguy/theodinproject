@@ -2,21 +2,21 @@
   <div class="col-12">
     <!-- Comment Author Image -->
     <div class="author-img box pull-left">
-      <%= link_to comment.user do %>
-        <%= image_tag comment.user.picture_url %>
+      <%= link_to comment.commenter do %>
+        <%= image_tag comment.commenter.picture_url %>
       <% end %>
     </div>
     <!-- Comment Body -->
     <div class="comment-body pull-left">
       <!-- Comment Author Details -->
-      <%= link_to comment.user.full_name, user_path(comment.user) %>
+      <%= link_to comment.commenter.full_name, user_path(comment.commenter) %>
       <%= time_tag comment.created_at.to_date,
                    "Commented on #{date_to_string(comment.created_at)}",
                    class: "post-date inline" %>
 
       <!-- Comment Text -->
       <p><%= comment.body %></p>
-<% if false %>
+
       <!-- Comment Links -->
       <div class="comment-feedback">
         <div class="like-container">
@@ -27,7 +27,7 @@
         </span>
         <%= render_delete_link(comment) %>
       </div>
-<% end %>      
+     
     </div>
   </div>
 </div>

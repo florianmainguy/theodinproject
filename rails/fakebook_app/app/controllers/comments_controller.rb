@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-
-
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
@@ -21,6 +19,21 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    if @comment.destroy
+      flash[:success] = "Comment deleted."
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: current_user) }
+        format.js { render :destroy_success }
+      end
+    else
+      flash[:error] = "Couldn't delete comment."
+      respond_to do |format|
+        format.html { redirect_back(fallback_location: current_user) }
+        format.js { render partial: "shared/flash_ajax" }
+      end
+    end
   end
 
   private

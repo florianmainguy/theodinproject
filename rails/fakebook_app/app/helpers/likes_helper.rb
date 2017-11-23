@@ -1,8 +1,8 @@
 module LikesHelper
    def render_like_link(likeable)
-    if nil
+    if likeable.likers.include?(current_user)
       link_to("Unlike",
-        like_path(likeable.likes.find_by_user_id(current_user.id)),
+        like_path(likeable.likes.find_by(liker: current_user)),
         class: "like-link pull-left",
         :method => :delete, :remote => true)
     else
@@ -14,7 +14,7 @@ module LikesHelper
     end
   end
 
-  def post_like_feedback(likeable)
+  def post_feedback(likeable)
     num_likers = likeable.likers.size
     if num_likers > 0
       result = ""
@@ -44,6 +44,25 @@ module LikesHelper
         end
       end
       result << " this."
+      content_tag(:span, result.html_safe)
+    else
+      nil
+    end
+  end
+
+  def comment_feedback(likeable)
+    num_likers = likeable.likers.size
+    if num_likers > 0
+      result = ""
+      if likeable.likers.include?(current_user)
+        result << "You "
+        num_others = num_likers - 1
+        result << "and #{pluralize(num_others, 'person')} " if num_others > 0
+        result << "like this."
+      else
+        result << "#{pluralize(num_likers, 'person')} "
+        result << "#{num_likers > 1 ? 'like' : 'likes'} this."
+      end
       content_tag(:span, result.html_safe)
     else
       nil

@@ -1,9 +1,9 @@
 <section class="row" data-id="<%= post.id %>" data-type="Post">
-  <div class="box box-post padding-top padding-bottom col-xs-12">
+  <div class="box box-post padding-top padding-bottom col-12">
 
     <!-- Author -->
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-12">
         <div class="author-img">
           <%= link_to post.user do %>
             <%= image_tag post.user.picture_url %>
@@ -19,7 +19,7 @@
 
     <!-- Content -->
     <div class="row padding-top">
-      <div class="col-xs-12">
+      <div class="col-12">
         <p><%= post.body %></p>
       </div>
     </div><!-- end content -->
@@ -28,7 +28,7 @@
 
 
   <!-- Footer -->
-  <div class="box box-footer padding-top padding-bottom col-xs-12">
+  <div class="box box-footer padding-top padding-bottom col-12">
     <!-- Like/Comment/Delete Links -->
     <div class="post-links clearfix">
 
@@ -44,14 +44,14 @@
                               remote: true %>
       <% end %>
     </div><!-- end links -->
-<% if false %>
+
     <!-- Feedback -->
     <div class="post-feedback">
       <div class="feedback-container">
-        <span><%= post_like_feedback(post) %></span>
+        <span><%= post_feedback(post) %></span>
       </div>
     </div><!-- end feedback -->
-<% end %>
+
     <div class="divider"></div>
 
     <!-- Comments -->
