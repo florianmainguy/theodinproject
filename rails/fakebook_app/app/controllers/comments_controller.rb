@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
-  before_action :set_for_form
+
 
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
       flash[:success] = "Comment posted."
       respond_to do |format|
@@ -27,8 +28,7 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:body)
   end
 
-  def set_for_form
-    @post = Post.new
-    @comment = @post.comments.build(comment_params)
+  def define_comment
+    @comment = Comment.find(params[:comment_id])
   end
 end

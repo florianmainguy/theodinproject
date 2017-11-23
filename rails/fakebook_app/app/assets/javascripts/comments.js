@@ -28,8 +28,8 @@ TB.CommentsModule = ( function() {
     });
   }
 
-  var _getCommentsContainer = function(parentId, parentType) {
-    var $parent = $('[data-id="' + parentId + '"][data-type="' + parentType + '"]');
+  var _getCommentsContainer = function(parentId) {
+    var $parent = $('[data-id="' + parentId + '"]');
     return $parent.find('.comments-container');
   };
 
@@ -43,8 +43,8 @@ TB.CommentsModule = ( function() {
     form.reset();
   };
 
-  var addComment = function(parentId, parentType, comment) {
-    var $container = _getCommentsContainer(parentId, parentType);
+  var addComment = function(parentId, comment) {
+    var $container = _getCommentsContainer(parentId);
     var $comment = $(comment);
     $comment.appendTo($container).hide().slideDown('fast');
     _clearForm($container);
