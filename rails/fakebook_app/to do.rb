@@ -23,3 +23,5 @@ Do error if "add friend" and other user already sent request
 majuscule nom prénom dans search
 implement post destroy
 Nettoyer routes
+Remonter fenêtre commentaire quand click sur submit
+implement users index and friends index
