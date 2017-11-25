@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   end
 
   def friends
+    @friends = @user.friends
   end
 
   private

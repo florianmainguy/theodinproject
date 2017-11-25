@@ -20,48 +20,28 @@
               No results by that name.
             </p>
           <% else %>
-            <ul>
-              <% @users.each do |user| %>
-                <li><%= link_to(user.full_name, user_path(user)) %></li>
-              <% end %>
-            </ul>
-<% if false %>
-            <div class="col-md-12">
-              <div class="box item-box">
-                <a href="#">
-                  <div class="search-img">
-                    <%= link_to user_path(search_result) do %>
-                      <%= image_tag search_result.avatar_url %>
-                    <% end %>
+            <% @users.each do |user| %>
+              <div class="col-12">
+                <div class="box item-box">
+                  <a href="#">
+                    <div class="search-img">
+                      <%= link_to user_path(user) do %>
+                        <%= image_tag user.picture_url %>
+                      <% end %>
+                    </div>
+                  </a>
+                  <div class="search-details">
+                    <%= link_to user.full_name, user_path(user) %>
+                    <div class="search-friend-count">
+                      <small>
+                        <%= pluralize(user.friends.count, 'friend') %>
+                      </small>
+                    </div>
                   </div>
-                </a>
-                <div class="search-details">
-                  <%= link_to search_result.full_name, user_path(search_result) %>
-                  <div class="search-friend-count">
-                    <small>
-                      <%= pluralize(search_result.friended_users.count, 'friend') %>
-                    </small>
-                  </div>
-                  <div class="search-bio">
-                    <% if search_result.profile.location %>
-                      Currently lives in <%= search_result.profile.location %>
-                    <% end %>
-                  </div>
-                  <div class="search-bio">
-                    <% if search_result.profile.hometown %>
-                      From <%= search_result.profile.hometown %>
-                    <% end %>
-                  </div>
-                  <div class="search-bio">
-                    <% if search_result.profile.birthday %>
-                      Born on <%= date_to_string(search_result.profile.birthday) %>
-                    <% end %>
-                  </div>
+                  <%= render_add_friend_or_unfriend(user) %>
                 </div>
-                <%= render_friend_or_unfriend(search_result) %>
               </div>
-            </div>
-<% end %>
+            <% end %>
           <% end %>
 
         </div>
