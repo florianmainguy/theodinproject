@@ -5,7 +5,7 @@
     <div class="row">
       <div class="box box-header header-title col">
         <header>
-          <h2><%= @users.count %> Search Results</h2>
+          <h2><%= pluralize(@users.count, 'Search Result') %></h2>
         </header>
       </div>
     </div><!-- end row -->
@@ -16,7 +16,7 @@
         <div class="row">
           
           <% if @users.count == 0 %>
-            <p class="text-center margin-top padding-bottom">
+            <p class="text-center margin-top padding-bottom col">
               No results by that name.
             </p>
           <% else %>

@@ -7,7 +7,7 @@
     <div class="row">
       <div class="box box-header header-title col">
         <header>
-          <h2><%= @friends.count %> Search Results</h2>
+          <h2><%= pluralize(@friends.count, 'friend') %></h2>
         </header>
       </div>
     </div><!-- end row -->
