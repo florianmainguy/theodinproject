@@ -1,7 +1,7 @@
 <header class="login-header">
   <div class="login-header-content">
     <div class="login-logo-container">
-      <%#= image_tag "tracebook-logo.png", class: "login-logo" %>
+      
       <h1>Fakebook</h1>
     </div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {class: "login-form-container"}) do |f|%>
@@ -25,10 +25,8 @@
         </tr>
         <tr>
           <td>
-            <%= f.label 'remember_me' do %>
-              <%= check_box_tag :remember_me %>
-              Remember me?
-            <% end %>
+            <%= f.label 'remember_me' %>
+            <%= f.check_box :remember_me, class:"remember_me" %>
           </td>
         </tr>
       </table>

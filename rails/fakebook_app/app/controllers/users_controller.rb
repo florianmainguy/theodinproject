@@ -32,8 +32,4 @@ class UsersController < ApplicationController
         @user = current_user
       end
     end
-
-    def user_params
-      params.require(:user).permit(:content)
-    end
 end
