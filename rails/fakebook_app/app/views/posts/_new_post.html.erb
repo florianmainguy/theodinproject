@@ -1,9 +1,11 @@
+<!-- Post header -->
 <div class="row">
   <div class="box box-header header-title col-12">
     <h4>Post</h4>
   </div>
 </div>
 
+<!-- Post body -->
 <%= form_for @new_post, :html => { class:"row" } do |f| %>
   <div class="box box-body padding-top padding-bottom col-12">
     <%= f.text_area :body, class:"form-control", rows: 3,

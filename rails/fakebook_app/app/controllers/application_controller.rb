@@ -14,5 +14,4 @@ class ApplicationController < ActionController::Base
                                                               :cover, :cover_cache, :remove_cover,
                                                               :first_name, :last_name, :about])
   end
-
 end

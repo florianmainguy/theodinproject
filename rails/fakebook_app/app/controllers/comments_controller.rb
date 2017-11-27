@@ -40,8 +40,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:body)
   end
-
-  def define_comment
-    @comment = Comment.find(params[:comment_id])
-  end
 end

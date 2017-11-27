@@ -6,6 +6,7 @@
         <%= image_tag comment.commenter.picture_url %>
       <% end %>
     </div>
+
     <!-- Comment Body -->
     <div class="comment-body pull-left">
       <!-- Comment Author Details -->
@@ -26,8 +27,7 @@
           <%= comment_feedback(comment) %>
         </span>
         <%= render_delete_link(comment) %>
-      </div>
-     
-    </div>
+      </div>    
+    </div><!-- end comment body -->
   </div>
 </div>

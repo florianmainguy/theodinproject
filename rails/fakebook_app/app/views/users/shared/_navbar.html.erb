@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav id="top-nav" class="navbar navbar-expand-md navbar-dark">
   <div class="container">
-
+    <!-- Navbar-header -->
     <div class="navbar-brand">
       <%= link_to timeline_path(current_user) do %>
         <span class="nav-brand-word">Fakebook</span>
@@ -10,7 +10,6 @@
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon navbar-toggle"></span>
     </button>
-    <!-- end navbar-header -->
 
     <!-- Collapsible Nav -->
     <div id="navbarSupportedContent" class="collapse navbar-collapse navbar-collapse-spacing">
@@ -26,7 +25,6 @@
 
       <!-- Requests, Username, and Sign Out Links -->
       <ul class="navbar-nav ml-auto">
-
         <% if current_user.pending_requests.any? %>
           <li class="nav-element">
             <div id="notifications">

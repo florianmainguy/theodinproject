@@ -1,9 +1,7 @@
 class FriendRequestsController < ApplicationController
-
   def create
     friend = User.find(params[:id])
     @friend_request = current_user.friend_requests.new(friend: friend)
-
     if @friend_request.save
       flash[:success] = "Friend request sent"
       redirect_back(fallback_location: current_user)

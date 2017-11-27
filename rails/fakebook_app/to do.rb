@@ -26,4 +26,4 @@ Nettoyer routes
 Remonter fenêtre commentaire quand click sur submit
 implement users index and friends index
 friends number : get white
-pb with remember me : only style
+commment ordre chronologique

@@ -14,11 +14,11 @@
 
     <!-- Photo Profile Body -->
     <div class="row box padding-bottom box-body">
-
+      <!-- Photo -->
       <div class="padding-top col-8">
         <%= image_tag(@user.picture_url, alt: "Profile Picture", class: "box photo-picture") if @user.picture? %>
       </div>
-
+      <!-- Photo Upload Button -->
       <% if current_user == @user %>
         <div class="col-4 ">
           <h4 class="margin-top">Upload a Photo:</h4>
@@ -45,11 +45,11 @@
 
     <!-- Photo Cover Body -->
     <div class="row box padding-bottom box-body">
-
+      <!-- Photo -->
       <div class="padding-top col-8">
         <%= image_tag(@user.cover_url, alt: "Cover Picture", class: "box photo-picture") if @user.cover? %>
       </div>
-
+      <!-- Photo Upload Buttons -->
       <% if current_user == @user %>
         <div class="col-4">
           <h4 class="margin-top">Upload a Photo:</h4>
@@ -63,9 +63,6 @@
           <% end %>
         </div>
       <% end %>
-
     </div><!-- end row -->
-
   </main>
-
 </div>

@@ -1,6 +1,5 @@
 <section class="box">
   <div id="cover" class="row">
-
     <!-- Cover Image -->
     <div class="cover-img">
       <%= image_tag(@user.cover_url, alt: "Cover Picture") %>
@@ -13,9 +12,9 @@
     <div class="cover-name">
       <h1><%= @user.full_name %></h1>
     </div>
-
   </div>
 
+  <!-- Mid Page Navbar -->
   <div class="row">
     <nav id="main-nav">
       <ul class="nav">
@@ -42,5 +41,5 @@
       </ul>
       <%= render_add_friend_or_unfriend(@user) %>
     </nav>
-  </div>
+  </div><!-- end navbar -->
 </section>

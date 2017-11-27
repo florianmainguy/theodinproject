@@ -15,8 +15,7 @@
     <!-- Search Body -->
     <div class="row">
       <section class="box box-body padding-top padding-bottom col">
-        <div class="row">
-          
+        <div class="row">         
           <% if @friends.count == 0 %>
             <p class="text-center margin-top padding-bottom">
               Find people you may know by searching for their names!
@@ -33,19 +32,14 @@
                   <div class="friend-details">
                     <%= link_to friend.full_name, user_path(friend) %>
                     <small><%= pluralize(friend.friends.count, 'friend') %></small>
-                  </div>
-                  
-                  <%= render_add_friend_or_unfriend(friend) %>
-                  
+                  </div>                 
+                  <%= render_add_friend_or_unfriend(friend) %>              
                 </div>
               </div>
             <% end %>
           <% end %>
-
         </div>
       </section>
     </div><!-- end row -->
-
   </main>
-
 </div>

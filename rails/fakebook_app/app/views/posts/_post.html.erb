@@ -1,6 +1,7 @@
 <section class="row" data-id="<%= post.id %>" data-type="Post">
-  <div class="box box-post padding-top padding-bottom col-12">
 
+  <!-- Post body -->
+  <div class="box box-post padding-top padding-bottom col-12">
     <!-- Author -->
     <div class="row">
       <div class="col-12">
@@ -23,19 +24,16 @@
         <p><%= post.body %></p>
       </div>
     </div><!-- end content -->
-
-  </div><!-- end box -->
+  </div><!-- end post body -->
 
 
   <!-- Footer -->
   <div class="box box-footer padding-top padding-bottom col-12">
     <!-- Like/Comment/Delete Links -->
     <div class="post-links clearfix">
-
       <div class="like-container">
         <%= render_like_link(post) %>
       </div>
-
       <% if post.user == current_user %>
         <%= link_to "Delete", post_path(post),
                               :method => :delete,
@@ -56,18 +54,13 @@
 
     <!-- Comments -->
     <div class="comments-container">
-
       <%= render post.comments %>
-
     </div><!-- end comments -->
-
     <div class="comment-link-container padding-top">
       <%= link_to "Leave a Comment", nil, class: "comment-link" %>
     </div>
-
     <%= render partial: "comments/comment_form",
                         :locals => { post: post } %>
-
   </div><!-- end footer box -->
 
 </section>

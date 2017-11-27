@@ -1,10 +1,4 @@
 module UsersHelper
-  def gravatar_for(user)
-    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
-    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}"
-    image_tag(gravatar_url, alt: user.full_name, class: "gravatar")
-  end
-
   def render_add_friend_or_unfriend(user)
     unless current_user == user
       if current_user.is_friend_with?(user)
