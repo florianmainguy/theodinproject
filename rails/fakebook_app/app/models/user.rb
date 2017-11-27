@@ -15,6 +15,13 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  before_save :capitalize_names
+
+  def capitalize_names
+    self.first_name = first_name.camelcase
+    self.last_name = last_name.camelcase
+  end
+
   def full_name
     "#{first_name} #{last_name}"
   end

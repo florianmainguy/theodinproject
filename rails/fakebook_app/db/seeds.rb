@@ -62,11 +62,10 @@ p "Posts created"
 
 p "Creating comments..."
 Post.all.each do |post|
-  rand(0..10).times do
+  rand(0..7).times do
     comment = post.comments.build(user_id: User.pluck(:id).sample,
-                                  body: Faker::Lorem.paragraph,
-                                  created_at: Faker::Date.between(15.days.ago, Time.now))
-    post.save!
+                                  body: Faker::Lorem.paragraph)
+    comment.save!
   end
 end
 p "Comments created"

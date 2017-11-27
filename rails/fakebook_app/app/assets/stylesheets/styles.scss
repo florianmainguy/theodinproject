@@ -702,6 +702,10 @@ a {
           background-color: $madison;
           text-decoration: none;
         }
+
+        small {
+          color: white;
+        }
       }
     }
 
@@ -1055,6 +1059,12 @@ a {
 
     a, small {
       display: block;
+    }
+  }
+  
+  @media screen and (max-width: 767px){
+    .friend-button {
+      display: none;
     }
   }
 }
