@@ -800,7 +800,6 @@ a {
 .login-logo-container {
   position: relative;
   top: 10px;
-  left: 20px;
 }
 
 .login-logo {
@@ -815,9 +814,9 @@ a {
 .login-header-content {
   color: #fff;
   position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
+  width: 1000px;
+  left: 20px;
+  right: 20px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -831,7 +830,7 @@ a {
 .login-form-container {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 20px;
 }
 
 .login-form {
