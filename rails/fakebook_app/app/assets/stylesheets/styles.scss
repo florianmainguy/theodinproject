@@ -99,7 +99,7 @@ a {
   .main-bkg {
     background-color: $porcelain;
     min-width: 1000px;
-    padding: 60px 10px 10px;
+    padding: 60px 20px;
   }
 
   .main-container {
@@ -156,7 +156,7 @@ a {
 
   .col-right {
     display: inline-block;
-    width: 420px;
+    width: 350px;
   }
 
   .col-right h3 {
@@ -243,6 +243,11 @@ a {
     color: #888;
     width: 1000px;
     margin: 10px auto;
+    padding-left: 10px;
+  }
+
+  .fa {
+    font-size: 3em;
   }
 }
 
@@ -795,7 +800,7 @@ a {
 .login-logo-container {
   position: relative;
   top: 10px;
-  left: 10px;
+  left: 20px;
 }
 
 .login-logo {
@@ -811,7 +816,6 @@ a {
   color: #fff;
   position: absolute;
   width: 100%;
-  top: px;
   left: 0;
   right: 0;
   margin-left: auto;
