@@ -17,7 +17,7 @@
       <section class="box box-body padding-top padding-bottom col">
         <div class="row">         
           <% if @friends.count == 0 %>
-            <p class="text-center margin-top padding-bottom">
+            <p class="text-center margin-top padding-bottom col">
               Find people you may know by searching for their names!
             </p>
           <% else %>
@@ -33,8 +33,7 @@
                     <%= link_to friend.full_name, user_path(friend) %>
                     <small><%= pluralize(friend.friends.count, 'friend') %></small>
                   </div> 
-                  <div class="friend-button">               
-                  <%= render_add_friend_or_unfriend(friend) %>   
+                  <div class="friend-button">                
                   </div>       
                 </div>
               </div>

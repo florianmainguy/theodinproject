@@ -14,6 +14,24 @@ Friendship.destroy_all
 FriendRequest.destroy_all
 
 p "Creating users..."
+User.create!(first_name: 'Jean-Claude',
+             last_name: 'Van Damne',
+             email: 'jeanclaude@vandamne.com',
+             about: 'I now truly believe it is impossible for me to make a bad movie.',
+             picture: File.open("app/assets/images/vandamne-picture.jpg"),
+             cover: File.open("app/assets/images/vandamne-cover.jpg"),             
+             password: 'kickboxer',
+             password_confirmation: 'kickboxer')
+
+User.create!(first_name: 'Chuck',
+             last_name: 'Norris',
+             email: 'chuck@norris.com',
+             about: "I don't initiate violence, I retaliate.",
+             picture: File.open("app/assets/images/chuck-picture.jpeg"),
+             cover: File.open("app/assets/images/chuck-cover.jpg"), 
+             password: 'deltaforce',
+             password_confirmation: 'deltaforce')
+
 15.times do |index|
   password = Faker::Internet.password
   first_name = Faker::Name.first_name
@@ -33,21 +51,6 @@ p "Creating users..."
                password: password,
                password_confirmation: password)
 end
-
-User.create!(first_name: 'Jean-Claude',
-             last_name: 'Van Damne',
-             email: 'jeanclaude@vandamne.com',
-             about: 'I now truly believe it is impossible for me to make a bad movie.',
-             password: 'kickboxer',
-             password_confirmation: 'kickboxer')
-
-User.create!(first_name: 'Chuck',
-             last_name: 'Norris',
-             email: 'chuck@norris.com',
-             about: "I don't initiate violence, I retaliate.",
-             password: 'deltaforce',
-             password_confirmation: 'deltaforce')
-
 p "Created #{User.count} users"
 
 p "Creating posts..."
