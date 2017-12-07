@@ -1,12 +1,11 @@
-## Fakebook App
+## Fakebook
+
+A social network clone built with Ruby on Rails.
 
 From [The Odin Project](https://www.theodinproject.com/lessons/final-project)<br/><br/>
-Fakebook<br/>
 See it live: [Fakebook](https://fm-fakebook.herokuapp.com/)<br/>
 
 Mainly inspired by [Blackwright](https://github.com/blackwright/tracebook)
-
-A social network clone built with Ruby on Rails. View it on [Heroku](https://fm-fakebook.herokuapp.com/).
 
 Explore the app by logging in with one of the prepopulated accounts, or start from scratch with a blank guest account.
 
