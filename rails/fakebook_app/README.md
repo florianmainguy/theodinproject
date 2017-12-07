@@ -4,7 +4,7 @@ A social network clone built with Ruby on Rails.
 
 From [The Odin Project](https://www.theodinproject.com/lessons/final-project)
 
-See it live: [Fakebook](https://fm-fakebook.herokuapp.com/)
+Main repo: [Github](https://github.com/florianmainguy/fakebook) - See it live: [Fakebook](https://fm-fakebook.herokuapp.com/)
 
 Mainly inspired by [Blackwright](https://github.com/blackwright/tracebook)
 
