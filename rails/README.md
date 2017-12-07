@@ -20,3 +20,7 @@ Build a basic flight booker app. Search flights by airport and date and book a f
 
 #### [Kittens API](https://github.com/florianmainguy/theodinproject/tree/master/rails/odin-kittens)
 Build a data-producing API.
+
+#### [Fakebook](https://github.com/florianmainguy/theodinproject/tree/master/rails/fakebook_app)
+Final Rails project.
+Build a Facebook clone.
