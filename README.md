@@ -4,6 +4,8 @@
 
 I did the curriculum till the end of the Ruby & Rails section. My goal was to get a foot into the door in web development. It gave me a good overview and even more. At the end of this course, I was able to create and deploy complete rails applications.
 
+EDIT: Most Apps are not maintained anymore following Heroku updates
+
 Curriculum:
 
 ## 1- Web development 101
